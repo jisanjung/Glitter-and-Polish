@@ -9,26 +9,73 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: minmax(20px, auto);
+    background-color: rgba(229, 229, 229, 0.4);
 }
 /* header */
 header {
     border: 1px #000 solid;
     grid-row: 1/6;
+    position: relative;
+    background-color: #FEDCEC;
+}
+header h1 {
+    font-family: 'Parisienne', cursive;
+    font-weight: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 15%;
+    font-size: 36px;
+}
+header h1 a {
+    text-decoration: none;
+    color: #000;
+}
+header h4 {
+    font-family: 'Ovo', serif;
+    font-weight: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
 }
 /* nav */
 nav {
-    border: 1px #000 solid;
     grid-row: 6/8;
+    background-color: #fff;
+    position: relative;
 }
 nav ul {
     display: none;
 }
 nav #call {
     width: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+nav #phone-number {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
 }
 nav #menu {
     width: 26px;
     float: right;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
 }
 #toggle-nav {
     border: 1px #000 solid;
@@ -138,6 +185,11 @@ footer ul li a .icons {
     width: 30px;
 }
 /* media queries */
+@media screen and (min-width: 768px) {
+    nav #phone-number {
+        left: 10%;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         display: grid;
@@ -159,6 +211,9 @@ footer ul li a .icons {
     }
     nav #menu {
         display: none;
+    }
+    nav #phone-number {
+        left: 8%;
     }
     #showcase {
         grid-column: 1/7;
