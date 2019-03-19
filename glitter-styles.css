@@ -4,14 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container {
+#container {
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: minmax(20px, auto);
     background-color: #F5F5F5;
     letter-spacing: 0.05em;
-    position: relative;
 }
 /* header */
 header {
@@ -80,23 +79,48 @@ nav #menu {
     transform: translateY(-50%);
     right: 5%;
 }
+nav #menu:hover {
+    cursor: pointer;
+}
 #toggle-nav {
     border: 1px #000 solid;
     grid-row: 8/20;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 40%;
     background-color: rgba(0, 0, 0, 0.78);
+    z-index: 2;
     display: none;
 }
+#toggle-nav #wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#toggle-nav #wrapper #x {
+    width: 36px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%;
+}
+#toggle-nav #wrapper #x:hover {
+    cursor: pointer;
+}
 #toggle-nav ul {
-    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 #toggle-nav ul li {
-    padding: 5%;
+    padding: 10%;
+    list-style: none;
+    text-align: center;
 }
 #toggle-nav ul li a {
     color: #fff;
@@ -106,22 +130,13 @@ nav #menu {
     letter-spacing: 0.05em;
     font-weight: normal;
 }
-#toggle-nav #wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-#toggle-nav #wrapper #x {
-    width: 48px;
-    position: absolute;
-    right: 3%
-}
 /* showcase */
 #showcase {
     grid-row: 8/20;
     position: relative;
+    background-color: #000;
 }
-#showcase h1 {
+#showcase .slides h1 {
     position: absolute;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
@@ -131,12 +146,14 @@ nav #menu {
     letter-spacing: 0.05em;
     top: 10%;
     left: 5%;
+    z-index: 1;
 }
-#showcase .gallery {
+#showcase .slides .gallery {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    position: absolute;
 }
 #showcase #left {
     width: 35px;
@@ -144,6 +161,10 @@ nav #menu {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
+}
+#showcase #left:hover {
+    cursor: pointer;
 }
 #showcase #right {
     width: 35px;
@@ -151,6 +172,10 @@ nav #menu {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
+}
+#showcase #right:hover {
+    cursor: pointer;
 }
 /* deals */
 #deals {
@@ -352,6 +377,14 @@ footer .copyright {
     #organic ul li {
         font-size: 16px;
     }
+    #new p {
+        margin-top: 5%;
+    }
+}
+@media screen and (max-width: 375px) {
+    #showcase .slides h1 {
+        font-size: 21px;
+    }
 }
 @media screen and (min-width: 375px) {
     #quote {
@@ -364,9 +397,6 @@ footer .copyright {
         transform: translate(-50%, -50%);
         width: 90%;
     }
-    #toggle-nav #wrapper #x {
-        top: 5%;
-    }
 }
 @media screen and (min-width: 425px) {
     #new {
@@ -375,26 +405,27 @@ footer .copyright {
     #new h1 {
         position: absolute;
         top: 10%;
-        left: 40px;
+        left: 30px;
     }
     #new h2 {
         position: absolute;
         top: 20%;
-        left: 150px;
+        left: 140px;
         width: 70%
     }
     #new p {
         position: absolute;
         text-align: center;
         top: 40%;
-        left: 25%;
-        width: 70%;
+        left: 20%;
+        width: 80%;
     }
     #new ul {
         position: absolute;
         top: 50%;
         left: 60%;
     }
+}
 @media screen and (min-width: 768px) {
     nav #phone-number {
         left: 10%;
@@ -413,16 +444,28 @@ footer .copyright {
         line-height: 25px;
     }
     #toggle-nav ul {
-        margin-top: 5%;
+        margin-top: 10%;
+    }
+    #toggle-nav ul li {
+        padding: 5%;
+    }
+    #deals #white-box #mon-wed h3 {
+        font-size: 28px;
+    }
+    #deals #white-box .separate p {
+        font-size: 21px;    
     }
 }
 @media screen and (min-width: 768px) , screen and (min-width: 1023px) {
     #organic #pink-box p {
         width: 70%;
-    }    
+    }   
+    #showcase .slides h1 {
+        left: 10%;
+    }
 }
 @media screen and (min-width: 1024px) {
-    .container {
+    #container {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: minmax(20px, auto);
@@ -459,6 +502,10 @@ footer .copyright {
     nav ul li a {
         text-decoration: none;
         color: #000;
+    }
+    nav ul li:nth-child(n):hover {
+        font-size: 20px;
+        transition: 0.2s ease;
     }
     nav #menu {
         display: none;
@@ -499,8 +546,8 @@ footer .copyright {
     #deals #white-box #mon-wed h3 {
         font-size: 72px;
     }
-    .separate p {
-        font-size: 48px;
+    #deals #white-box .separate p {
+        font-size: 64px;
         width: 75%;
         margin: 0 auto;
     }
@@ -611,4 +658,45 @@ footer .copyright {
     #organic #pink-box p {
         line-height: 2.5em;
     }
+}
+/* animations */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: 0.5}
+    to {opacity: 1}
+}
+#toggle-nav {
+    animation-name: in;
+    animation-duration: 1s;
+}
+@keyframes in {
+    0% {left: 100%;}
+    50% {left: 40%;}
+}
+#showcase .slides h1 {
+    animation-name: caption;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+@keyframes caption {
+    0% {left: 0%;}
+    100% {left: 5%;}
+}
+@media screen and (min-width: 768px) {
+    @keyframes caption {
+        0% {left: 0%;}
+        100% {left: 10%;}
+    }
+}
+header h1, header h4 {
+    animation-name: title;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+}
+@keyframes title {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
