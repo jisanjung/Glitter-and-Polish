@@ -511,6 +511,9 @@ footer .copyright {
     #deals #white-box .separate p {
         font-size: 21px;    
     }
+    .table tr td {
+        padding: 0 20px;
+    }
 }
 @media screen and (min-width: 768px) , screen and (min-width: 1023px) {
     #organic #pink-box p {
@@ -689,22 +692,26 @@ footer .copyright {
     }
     #waxing {
         grid-column: 1/4;
+        grid-row: 8/10;
+        margin: 5% 5% 5% 20%;
     }
     #manicure {
         grid-column: 4/7;
-        grid-row: 8/30;
-        margin-top: 5%;
+        grid-row: 8/11;
+        margin: 5% 20% 0 0;
     }
     #pedicure {
         grid-column: 1/4;
-        grid-row: 10/45;
+        grid-row: 10/20;
+        margin: 0 5% 0 20%;
     }
     #children {
         grid-column: 4/7;
-        grid-row: 30/45;
+        grid-row: 15/20;
+        margin-right: 20%;
     }
     #services-footer {
-        grid-row: 45;
+        grid-row: 25;
     }
     .table tr th {
         text-align: center;
