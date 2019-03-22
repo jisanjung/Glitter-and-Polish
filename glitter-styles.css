@@ -86,14 +86,13 @@ nav #menu:hover {
     border: 1px #000 solid;
     grid-row: 8/20;
     position: fixed;
-    z-index: 1;
+    width: 70%;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 40%;
+    left: 100%;
     background-color: rgba(0, 0, 0, 0.78);
     z-index: 2;
-    display: none;
+    transition: transform 0.5s;
 }
 #toggle-nav #wrapper {
     position: relative;
@@ -331,9 +330,9 @@ nav #menu:hover {
     font-family: 'Signika Negative', sans-serif;
     font-weight: normal;
     font-size: 18px;
-    text-align: center;
     line-height: 24px;
     letter-spacing: 0.05em;
+    text-align: center;
 }
 /* footer */
 footer {
@@ -520,8 +519,14 @@ footer .copyright {
     #showcase #right {
         width: 48px;
     }
+    #showcase #right:hover {
+        width: 50px;
+    }
     #showcase #left {
         width: 48px;
+    }
+    #showcase #left:hover {
+        width: 50px;
     }
     #showcase h1 {
         font-size: 48px;
@@ -667,14 +672,6 @@ footer .copyright {
 @keyframes fade {
     from {opacity: 0.5}
     to {opacity: 1}
-}
-#toggle-nav {
-    animation-name: in;
-    animation-duration: 1s;
-}
-@keyframes in {
-    0% {left: 100%;}
-    50% {left: 40%;}
 }
 #showcase .slides h1 {
     animation-name: caption;
