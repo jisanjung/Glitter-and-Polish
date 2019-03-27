@@ -784,3 +784,21 @@ header h1, header h4 {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+#waxing, #pedicure {
+    position: relative;
+    animation-name: left-tables;
+    animation-duration: 0.5s;
+}
+@keyframes left-tables {
+    0% {left: -100%;}
+    100% {left: 0%;}
+}
+#manicure, #children {
+    position: relative;
+    animation-name: right-tables;
+    animation-duration: 0.5s;
+}
+@keyframes right-tables {
+    0% {right: -100%;}
+    100% {right: 0%;}
+}
