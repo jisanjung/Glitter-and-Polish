@@ -422,6 +422,8 @@ footer .copyright {
     font-family: 'Signika Negative', sans-serif;
     font-weight: normal;
 }
+/* book */
+
 /* media queries */
 @media screen and (max-width: 320px) {
     #toggle-nav ul {
@@ -604,6 +606,8 @@ footer .copyright {
     #deals #white-box {
         width: 95%;
         margin: 0 auto;
+        margin-top: 50px;
+        padding-bottom: 10%;
     }
     #deals #white-box #mon-wed {
         width: 100%;
