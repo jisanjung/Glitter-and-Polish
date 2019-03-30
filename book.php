@@ -9,21 +9,21 @@
         $date = $_POST['date'];
         $msg = $_POST['message'];
         
-        if (empty($name) && empty($email) && empty($msg) && empty($individual_or_group)) {
-            $valid = "please enter all fields";
+        if (!empty($name) && !empty($email) && !empty($msg) && !empty($individual_or_group)) {
+            echo "passed";
+            
+            $to = 'jjsk8er13@gmail.com';
+            $subject = 'APPOINTMENT FOR '.$name;
+            $message = "Name: ".$name."\n"."Email: ".$email."\n"."Phone Number: ".$phone."\n"."Individual or Group: ".$individual_or_group."\n"."Number of People: ".$people."\n"."Date: ".$date."\n"."Message: "."\n".$msg;
+            $headers = "From: ".$email;
+
+            if (mail($to, $subject, $message, $headers)) {
+                $valid = "thank you";
+            } else {
+                $valid = "failed";
+            }
         } else {
-            $valid = "passed";
-        }
-        
-        $to = 'jjsk8er13@gmail.com';
-        $subject = 'APPOINTMENT FOR '.$name;
-        $message = "Name: ".$name."\n"."Email: ".$email."\n"."Phone Number: ".$phone."\n"."Individual or Group: ".$individual_or_group."\n"."Number of People: ".$people."\n"."Date: ".$date."\n"."Message: "."\n".$msg;
-        $headers = "From: ".$email;
-        
-        if (mail($to, $subject, $message, $headers)) {
-            $valid = "thank you";
-        } else {
-            $valid = "failed";
+            echo "please enter all fields";
         }
     }
 ?>
@@ -81,7 +81,7 @@
                 <input type="email" name="email" id="name" placeholder="Email *">
                 <input type="phone" name="phone" id="phone-number" placeholder="Phone No. *">
                     <br>
-                <input type="radio" name="individual-or-group" id="individual" value="individual">
+                <input type="radio" name="individual-or-group" id="individual" value="individual" checked="checked">
                 <label>Individual *</label>
                 <input type="radio" name="individual-or-group" id="group" value="group">
                 <label>Group *</label>

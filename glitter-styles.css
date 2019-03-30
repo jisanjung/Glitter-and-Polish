@@ -423,7 +423,7 @@ footer .copyright {
     font-weight: normal;
 }
 /* book */
-
+    
 /* media queries */
 @media screen and (max-width: 320px) {
     #toggle-nav ul {
