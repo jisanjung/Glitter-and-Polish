@@ -1,5 +1,6 @@
 <?php
     $valid = "";
+    $empty_form = "";
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -10,7 +11,6 @@
         $msg = $_POST['message'];
         
         if (!empty($name) && !empty($email) && !empty($msg) && !empty($individual_or_group)) {
-            echo "passed";
             
             $to = 'jjsk8er13@gmail.com';
             $subject = 'APPOINTMENT FOR '.$name;
@@ -23,7 +23,7 @@
                 $valid = "failed";
             }
         } else {
-            echo "please enter all fields";
+            $empty_form = "please fill all forms";
         }
     }
 ?>
@@ -76,6 +76,10 @@
             <?php if($valid != ""): ?>
                 <div class="success"><?php echo $valid; ?></div>
             <?php endif; ?>
+            <?php if($empty_form != ""): ?>
+                <div class="failed"><?php echo $empty_form; ?></div>
+            <?php endif; ?>
+            <div id="make-appointment">MAKE AN APPOINTMENT</div>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="main-form" id="book-form" name="form" method="post">
                 <input type="text" name="name" id="name" placeholder="Name *">
                 <input type="email" name="email" id="name" placeholder="Email *">
@@ -91,7 +95,12 @@
                     <br>
                 <button type="submit" name="submit" id="submit">Submit</button>
             </form>
-            <footer id="services-footer" class="blur">
+            <section class="notice" id="booking-notice">For group/party bookings, you may call us as well as fill out a form on this page, no later than 1 week
+                 prior to the event date. 
+                In this form, please provide a detailed description of desired services.
+
+                feel free to bring your own snack and refreshments!</section>
+            <footer id="book-footer" class="blur">
                 <h1>
                 THANK YOU
                     <br>

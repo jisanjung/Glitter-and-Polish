@@ -423,7 +423,28 @@ footer .copyright {
     font-weight: normal;
 }
 /* book */
-    
+.success {
+    grid-row: 8/9;
+}
+.failed {
+    grid-row: 8/9;
+}
+#make-appointment {
+    border: 1px #000 solid;
+    grid-row: 8/9;
+    font-family: 'Dosis', sans-serif;
+}
+#book-form {
+    border: 1px #000 solid;
+    grid-row: 9/12;
+}
+#booking-notice {
+    border: 1px #000 solid;
+    grid-row: 12/15;
+}
+#book-footer {
+    grid-row: 20/25;
+}
 /* media queries */
 @media screen and (max-width: 320px) {
     #toggle-nav ul {
@@ -719,6 +740,21 @@ footer .copyright {
     .table tr th {
         text-align: center;
         padding-right: 0;
+    }
+    .success {
+        grid-column: 1/7;
+    }
+    .failed {
+        grid-column: 1/7;
+    }
+    #make-appointment {
+        grid-column: 1/4;
+    }
+    #book-form {
+        grid-column: 4/7;
+    }
+    #booking-notice {
+        grid-column: 2/3;
     }
 }
 @media screen and (min-width: 1440px) {
