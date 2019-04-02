@@ -18,12 +18,12 @@
             $headers = "From: ".$email;
 
             if (mail($to, $subject, $message, $headers)) {
-                $valid = "thank you";
+                $valid = "Thank you! Sent successfully";
             } else {
-                $valid = "failed";
+                $empty_form = "Error: Something went wrong";
             }
         } else {
-            $empty_form = "please fill all forms";
+            $empty_form = "Please fill in all the fields";
         }
     }
 ?>
@@ -33,7 +33,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Glitter and Polish | Services</title>
-        <link rel="stylesheet" href="glitter-styles.css" type="text/css">
+        <link rel="stylesheet" href="styles.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ovo" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
@@ -46,7 +46,7 @@
         <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
     </head>
     <body>
-        <div id="container">
+        <div id="container" class="black">
             <header class="blur">
                 <h1><a href="index.html">Glitter & Polish</a></h1>
                 <h4>nail spa</h4>
@@ -74,32 +74,40 @@
                 </div>
             </div>
             <?php if($valid != ""): ?>
-                <div class="success"><?php echo $valid; ?></div>
+                <div class="success blur"><?php echo $valid; ?></div>
             <?php endif; ?>
             <?php if($empty_form != ""): ?>
-                <div class="failed"><?php echo $empty_form; ?></div>
+                <div class="failed blur"><?php echo $empty_form; ?></div>
             <?php endif; ?>
-            <div id="make-appointment">MAKE AN APPOINTMENT</div>
+            <div id="make-appointment" class="blur"><h1>MAKE AN APPOINTMENT</h1></div>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="main-form" id="book-form" name="form" method="post">
-                <input type="text" name="name" id="name" placeholder="Name *">
-                <input type="email" name="email" id="name" placeholder="Email *">
-                <input type="phone" name="phone" id="phone-number" placeholder="Phone No. *">
+                <input type="text" name="name" id="name" placeholder="Name *" class="blur">
+                <input type="email" name="email" id="name" placeholder="Email *" class="blur">
+                <input type="phone" name="phone" id="phone-number" placeholder="Phone No. *" class="blur">
                     <br>
-                <input type="radio" name="individual-or-group" id="individual" value="individual" checked="checked">
-                <label>Individual *</label>
-                <input type="radio" name="individual-or-group" id="group" value="group">
-                <label>Group *</label>
-                <input type="number" name="people" id="people" placeholder="Number of People *">
-                <input type="datetime" name="date" id="date" placeholder="Date/Time *">
-                <textarea name="message" id="message" placeholder="Types of Services *"></textarea>
+                <div class="radio-container blur">
+                    <input type="radio" name="individual-or-group" id="individual" value="individual" checked="checked">
+                    <span class="circle"></span>
+                    <label for="individual">Individual *</label>
+                </div>
                     <br>
-                <button type="submit" name="submit" id="submit">Submit</button>
+                <div class="radio-container blur">
+                    <input type="radio" name="individual-or-group" id="group" value="group">
+                    <span class="circle"></span>
+                    <label for="group">Group *</label>
+                </div>
+                    <br>
+                <input type="number" name="people" id="people" placeholder="Number of People *" class="blur">
+                <input type="datetime" name="date" id="date" placeholder="Date/Time *" class="blur">
+                <textarea name="message" id="message" placeholder="Types of Services *" rows="5" class="blur"></textarea>
+                    <br>
+                <button type="submit" name="submit" class="submit blur">Submit</button>
             </form>
-            <section class="notice" id="booking-notice">For group/party bookings, you may call us as well as fill out a form on this page, no later than 1 week
+            <section class="notice blur" id="booking-notice"><p>For group/party bookings, you may call us as well as fill out a form on this page, no later than 1 week
                  prior to the event date. 
-                In this form, please provide a detailed description of desired services.
+                In this form, please provide a detailed description of desired services.</p>
 
-                feel free to bring your own snack and refreshments!</section>
+                <p>Feel free to bring your own snack and refreshments!</p></section>
             <footer id="book-footer" class="blur">
                 <h1>
                 THANK YOU

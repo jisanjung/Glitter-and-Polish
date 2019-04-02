@@ -423,24 +423,125 @@ footer .copyright {
     font-weight: normal;
 }
 /* book */
+.black {
+    background-color: #2B2B2B !important;
+}
 .success {
     grid-row: 8/9;
+    color: #fff;
+    background-color: #09e818;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Signika Negative', sans-serif;
 }
 .failed {
     grid-row: 8/9;
+    color: #fff;
+    background-color: #F70505;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Signika Negative', sans-serif;
 }
 #make-appointment {
-    border: 1px #000 solid;
-    grid-row: 8/9;
+    grid-row: 9/10;
     font-family: 'Dosis', sans-serif;
 }
+#make-appointment h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.main-form {
+    font-family: 'Aguafina Script', cursive;
+    color: #fff;
+}
+.main-form input, .main-form textarea {
+    background-color: #2B2B2B;
+    border: none;
+    border-bottom: 1px #fff solid;
+    font-size: 21px;
+    line-height: 41px;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+.main-form input::placeholder, .main-form textarea::placeholder {
+    font-family: 'Aguafina Script', cursive;
+    color: #fff;
+    font-size: 21px;
+}
+#book-form .radio-container {
+    position: relative;
+    border-bottom: 1px #fff solid;
+}
+#book-form #phone-number {
+    margin-bottom: 20px;
+}
 #book-form {
-    border: 1px #000 solid;
-    grid-row: 9/12;
+    grid-row: 10/12;
+    width: 85%;
+    margin: 0 auto;
+}
+#book-form label {
+    font-size: 21px;
+    margin-left: 15%;
+}
+#book-form input[type="radio"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -48%;
+    z-index: 1;
+    opacity: 0;
+}
+#book-form input[type="radio"]:hover {
+    cursor: pointer;
+}
+#book-form .circle {
+    border: 2px #fff solid;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+#book-form input[type="radio"]:checked + .circle {
+    background-color: #fff;
+}
+#book-form .submit {
+    width: 100%;
+    padding: 5px 0;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 21px;
+    background-color: #fff;
+    border: none;
+    margin-top: 5px;
+}
+#book-form .submit:hover {
+    cursor: pointer;
 }
 #booking-notice {
-    border: 1px #000 solid;
     grid-row: 12/15;
+    width: 85%;
+    margin: 0 auto;
+    border: 2px #F70505 solid;
+    color: #fff;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+#booking-notice p:nth-child(2) {
+    margin-top: 25px;
 }
 #book-footer {
     grid-row: 20/25;
@@ -748,13 +849,40 @@ footer .copyright {
         grid-column: 1/7;
     }
     #make-appointment {
-        grid-column: 1/4;
+        grid-column: 2/4;
+        grid-row: 9/10;
+        margin: 5% 5% 0 0;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    #make-appointment h1 {
+        font-size: 38px;
     }
     #book-form {
-        grid-column: 4/7;
+        grid-column: 4/6;
+        width: 100%;
+        margin-left: 10px;
+    }
+    #book-form #message {
+        height: 150px;
     }
     #booking-notice {
-        grid-column: 2/3;
+        grid-column: 2/4;
+        grid-row: 10/11;
+        margin-top: 20%;
+        width: 75%;
+    }
+    #booking-notice p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    #book-form .submit {
+        width: 100px;
+        display: block;
+        margin: 0 auto;
     }
 }
 @media screen and (min-width: 1440px) {
@@ -780,6 +908,9 @@ footer .copyright {
     }
     #quote h1 {
         font-size: 64px;
+    }
+    #booking-notice p {
+        line-height: 28px;
     }
 }
 @media screen and (min-width: 1880px) {
