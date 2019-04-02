@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Glitter and Polish | Paoli | Pennsylvania</title>
+        <title>Glitter and Polish | Services</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ovo" rel="stylesheet">
@@ -15,9 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Signika+Negative" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Aguafina+Script" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     </head>
     <body>
-        <div id="container">
+        <div id="container" class="black">
             <header class="blur">
                 <h1><a href="index.html">Glitter & Polish</a></h1>
                 <h4>nail spa</h4>
@@ -44,69 +45,46 @@
                     </ul>
                 </div>
             </div>
-            <section id="showcase" class="blur">
-                <img src="images/iconfinder_Rounded-13_2024662.png" alt="left" id="left">
-                <img src="images/iconfinder_Rounded-14_2024661.png" alt="right" id="right">
-                <div class="slides fade">
-                    <h1>FRIENDLY & TRENDY</h1>
-                    <img src="images/hello.PNG" alt="nail salon" class="gallery">
-                </div>
-                <div class="slides fade">
-                    <h1>SPEND LESS 
-                            <br>
-                        FOR 
-                        BETTER QUALITY</h1>
-                    <img src="images/IMG_3366.JPEG" alt="spongebob" class="gallery">
-                </div>
-                <div class="slides fade">
-                    <h1>DETAIL-ORIENTED</h1>
-                    <img src="images/IMG_3374.JPEG" alt="sunflower" class="gallery">
-                </div>
-            </section>
-            <section id="deals" class="blur">
-                <h1>DAILY DEALS</h1>
-                <div id="white-box">
-                    <div id="mon-wed">
-                        <h3>Mon - Wed Special</h3>
-                        <div class="separate">
-                            <p>Gel Mani - <span>$25</span></p>
-                            <p>Pedi & Mani - <span>$38</span></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="organic" class="blur">
+            <section id="let-us-know"><h1>Let us know what you think!</h1></section>
+            <form class="main-form" id="contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="form" method="post">
+                <input type="text" name="name" id="name" placeholder="Full Name *" class="blur">
+                <input type="email" name="email" id="name" placeholder="Email *" class="blur">
+                <input type="phone" name="phone" id="phone-number" placeholder="Phone Number *" class="blur">
+                <textarea name="message" id="message" placeholder="Questions & Comments Here *" rows="5" class="blur"></textarea>
+                    <br>
+                <button type="submit" name="submit" class="submit desktop-submit blur">Submit</button>
+            </form>
+            <section id="contact-info">
                 <ul>
-                    <li>REFLEXOLOGY · </li>
-                    <li>RELAXATION · </li>
-                    <li>RESTORATIVE</li>
-                </ul>    
-                    <div id="pink-box">
-                        <h3>ORGANIC SPA PEDICURES</h3>
-                        <p>Soak your tired feet in a soothing bath of sea salt, as it stimulates and replenish your skin. In addition to a comprehensive nail & cuticle maintenance, be pampered with a special lotion massage and two hot stones. Finally, release all that tension in you mind and body with a towel wrap around the lower legs.</p>
-                    </div>
-            </section>
-            <section id="new" class="blur">
-                <h1>NEW</h1>
-                <h2>HOT OIL MANICURE</h2>
-                <p>Perfect remedy for unmanageable, dry cuticles</p>
+                    <li>Glitter & Polish Nail Spa</li>
+                    <li>39 W Lancaster Avenue</li>
+                    <li>Paoli, PA 19301, USA</li>
+                    <li>484.329.7989</li>
+                    <li>484.329.7939</li>
+                    <li>glitterpolishnailspa@gmail.com</li>
+                    <li>Facebook/glitterpolishpaoli</li>
+                    <li>Instagram @glitterpolishpaoli</li>
+                </ul>
                 <ul>
-                    <li>Stop the biting and splitting of nails</li>
-                    <li>Recover from gel/artificial nails</li>
-                    <li>Maintain healthy appearance</li>
-                    <li>Defend from dry and cold weather</li>
+                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_Marker_red_1891013.png" alt="location"></a></li>
+                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_mail-icon_380447.png" alt="mail"></a></li>
+                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_circle-facebook__317752.png"></a></li>
+                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_circle-instagram_1312095.png"></a></li>
+                </ul>
+                <ul>
+                    <li>Store Hours</li>
+                    <li>Mon 9:30am - 7pm</li>
+                    <li>Tues 9:30am - 7pm</li>
+                    <li>Wed 9:30am - 7pm</li>
+                    <li>Thurs 9:30am - 7pm</li>
+                    <li>Fri 9:30am - 7pm</li>
+                    <li>Sat 9am - 6pm</li>
+                    <li>Sun 10am - 5pm</li>
                 </ul>
             </section>
-            <section id="hours" class="blur">
-                <h2>STORE HOURS</h2>
-                <img src="images/hours.jpg" alt="hours" id="hours-pic">
-            </section>
-            <section id="quote" class="blur">
-            <h1>"What looks good on your
-                    <br>
-                hands, looks good on our hands"</h1>
-            </section>
-            <footer class="blur">
+            <section id="map"></section>
+            <section class="notice" id="contact-notice">Additional parking available in rear parking lot</section>
+            <footer id="contact-footer" class="blur">
                 <h1>
                 THANK YOU
                     <br>
@@ -126,5 +104,6 @@
         </div>
     </body>
     <script src="global.js"></script>
-    <script src="slideshow.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="map.js"></script>
 </html>

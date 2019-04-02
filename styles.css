@@ -515,7 +515,7 @@ footer .copyright {
 #book-form input[type="radio"]:checked + .circle {
     background-color: #fff;
 }
-#book-form .submit {
+.submit {
     width: 100%;
     padding: 5px 0;
     font-family: 'Ubuntu Condensed', sans-serif;
@@ -524,20 +524,26 @@ footer .copyright {
     border: none;
     margin-top: 5px;
 }
-#book-form .submit:hover {
+.submit:hover {
     cursor: pointer;
+    background-color: #2B2B2B;
+    color: #fff;
+    border: 2px #fff solid;
+    transition: 0.2s ease;
 }
 #booking-notice {
     grid-row: 12/15;
     width: 85%;
     margin: 0 auto;
+    margin-top: 20px;
+}
+.notice {
     border: 2px #F70505 solid;
     color: #fff;
     font-family: 'Signika Negative', sans-serif;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
-    margin-top: 20px;
     padding: 10px;
 }
 #booking-notice p:nth-child(2) {
@@ -545,6 +551,62 @@ footer .copyright {
 }
 #book-footer {
     grid-row: 20/25;
+}
+/* contact */
+#let-us-know {
+    grid-row: 9/10;
+}
+#let-us-know h1 {
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+}
+#contact-form {
+    grid-row: 11/25;
+    width: 85%;
+    margin: 0 auto;
+}
+#contact-info {
+    grid-row: 26/50;
+    color: #fff;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    width: 85%;
+    margin: 5% auto;
+}
+#contact-info ul {
+    text-align: center;
+    font-size: 18px;
+    line-height: 26px;
+}
+#contact-info ul li {
+    list-style: none;
+}
+#contact-info .inline-logos {
+    display: inline;
+}
+#contact-info ul:nth-child(2) {
+    margin: 5% 0;
+}
+#contact-info ul .inline-logos + .inline-logos {
+    padding-left: 5%;
+}
+#contact-info ul li a img {
+    width: 36px;
+}
+#map {
+    grid-row: 51/60;
+    width: 85%;
+    margin: 0 auto;
+}
+#contact-notice {
+    grid-row: 61/64;
+    width: 85%;
+    margin: 0 auto;
+}
+#contact-footer {
+    grid-row: 70;
 }
 /* media queries */
 @media screen and (max-width: 320px) {
@@ -879,10 +941,53 @@ footer .copyright {
         font-size: 16px;
         line-height: 26px;
     }
-    #book-form .submit {
+    .desktop-submit{
         width: 100px;
         display: block;
         margin: 0 auto;
+    }
+    #let-us-know {
+        grid-column: 2/5;
+        grid-row: 10/12;
+    }
+    #let-us-know h1 {
+        font-size: 64px;
+        text-align: left;
+    }
+    #contact-form {
+        grid-column: 2/4;
+        grid-row: 13/30;
+    }
+    #contact-form .submit {
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+    #contact-info {
+        grid-column: 4/5;
+        grid-row: 13/30;
+        width: 90%;
+        margin: 0;
+        margin-right: 10px;
+    }
+    #contact-info ul li {
+        font-size: 14px;
+    }
+    #contact-info ul li a img {
+        width: 32px;
+    }
+    #map {
+        grid-column: 5/6;
+        grid-row: 13/25;
+        width: 100%;
+    }
+    #contact-notice {
+        grid-column: 5/6;
+        grid-row: 26/28;
+        width: 100%;
+    }
+    #contact-footer {
+        grid-row: 35;
     }
 }
 @media screen and (min-width: 1440px) {

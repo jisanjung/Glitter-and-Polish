@@ -58,7 +58,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="book.php">Book Online</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
                 <img src="images/iconfinder_menu_3671806.png" alt="menu" id="menu">
             </nav>
@@ -69,7 +69,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="service.html">Services</a></li>
                         <li><a href="book.php">Book Online</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 <input type="datetime" name="date" id="date" placeholder="Date/Time *" class="blur">
                 <textarea name="message" id="message" placeholder="Types of Services *" rows="5" class="blur"></textarea>
                     <br>
-                <button type="submit" name="submit" class="submit blur">Submit</button>
+                <button type="submit" name="submit" class="submit desktop-submit blur">Submit</button>
             </form>
             <section class="notice blur" id="booking-notice"><p>For group/party bookings, you may call us as well as fill out a form on this page, no later than 1 week
                  prior to the event date. 
@@ -122,7 +122,7 @@
                     <li><a href="#"><img src="images/iconfinder_2_-_Facebook_1774980.png" alt="facebook" class="icons"></a></li>
                 </ul>
                 <div class="copyright">
-                    <p>&copy; 2018 by Glitter & Polish</p>
+                    <p>&copy; 2019 by Glitter & Polish</p>
                 </div>
             </footer>
         </div>
