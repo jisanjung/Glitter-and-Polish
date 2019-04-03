@@ -5,5 +5,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([40.0423, -75.4819]).addTo(map)
-    .bindPopup('Glitter and Polish')
+    .bindPopup("39 W Lancaster Avenue <br> Paoli, PA 19301")
     .openPopup();

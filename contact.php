@@ -1,3 +1,29 @@
+<?php
+    $valid = "";
+    $empty_form = "";
+    
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $msg = $_POST['message'];
+        
+        if (!empty($name) && !empty($email) && !empty($msg)) {
+            $to = 'jjsk8er13@gmail.com';
+            $subject = 'COMMENT FROM: '.$name;
+            $message = "Name: ".$name."\n"."Email: ".$email."\n"."Phone Number: ".$phone."\n"."Message: "."\n".$msg;
+            $headers = "From: ".$email;
+            
+            if (mail($to, $subject, $message, $headers)) {
+                $valid = "Thank you! Sent successfully";
+            } else {
+                $empty_form = "Error: Something went wrong";
+            }
+        } else {
+            $empty_form = "Please fill in all the fields";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +71,13 @@
                     </ul>
                 </div>
             </div>
-            <section id="let-us-know"><h1>Let us know what you think!</h1></section>
+            <?php if($valid != ""): ?>
+                <div class="success blur"><?php echo $valid; ?></div>
+            <?php endif; ?>
+            <?php if($empty_form != ""): ?>
+                <div class="failed blur"><?php echo $empty_form; ?></div>
+            <?php endif; ?>
+            <section id="let-us-know" class="blur"><h1>Let us know what you think!</h1></section>
             <form class="main-form" id="contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="form" method="post">
                 <input type="text" name="name" id="name" placeholder="Full Name *" class="blur">
                 <input type="email" name="email" id="name" placeholder="Email *" class="blur">
@@ -54,7 +86,7 @@
                     <br>
                 <button type="submit" name="submit" class="submit desktop-submit blur">Submit</button>
             </form>
-            <section id="contact-info">
+            <section id="contact-info" class="blur">
                 <ul>
                     <li>Glitter & Polish Nail Spa</li>
                     <li>39 W Lancaster Avenue</li>
@@ -82,8 +114,8 @@
                     <li>Sun 10am - 5pm</li>
                 </ul>
             </section>
-            <section id="map"></section>
-            <section class="notice" id="contact-notice">Additional parking available in rear parking lot</section>
+            <section id="map" class="blur"></section>
+            <section class="notice blur" id="contact-notice">Additional parking available in rear parking lot</section>
             <footer id="contact-footer" class="blur">
                 <h1>
                 THANK YOU
@@ -93,9 +125,9 @@
                     NAIL SPA
                 </h1>
                 <ul>
-                    <li><a href="#"><img src="images/iconfinder_social_media_logo_yelp_1221590.png" alt="yelp" class="icons"></a></li>
-                    <li><a href="#"><img src="images/iconfinder_Gplus_3380452.png" alt="google-plus" class="icons"></a></li>
-                    <li><a href="#"><img src="images/iconfinder_2_-_Facebook_1774980.png" alt="facebook" class="icons"></a></li>
+                    <li><a href="https://www.yelp.com/biz/glitter-and-polish-nail-spa-paoli"><img src="images/iconfinder_social_media_logo_yelp_1221590.png" alt="yelp" class="icons"></a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=glitterpolishnailspa@gmail.com"><img src="images/iconfinder_Gplus_3380452.png" alt="google-plus" class="icons"></a></li>
+                    <li><a href="https://www.facebook.com/glitterpolishpaoli/"><img src="images/iconfinder_2_-_Facebook_1774980.png" alt="facebook" class="icons"></a></li>
                 </ul>
                 <div class="copyright">
                     <p>&copy; 2019 by Glitter & Polish</p>

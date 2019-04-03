@@ -117,9 +117,9 @@
                     NAIL SPA
                 </h1>
                 <ul>
-                    <li><a href="#"><img src="images/iconfinder_social_media_logo_yelp_1221590.png" alt="yelp" class="icons"></a></li>
-                    <li><a href="#"><img src="images/iconfinder_Gplus_3380452.png" alt="google-plus" class="icons"></a></li>
-                    <li><a href="#"><img src="images/iconfinder_2_-_Facebook_1774980.png" alt="facebook" class="icons"></a></li>
+                    <li><a href="https://www.yelp.com/biz/glitter-and-polish-nail-spa-paoli"><img src="images/iconfinder_social_media_logo_yelp_1221590.png" alt="yelp" class="icons"></a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=glitterpolishnailspa@gmail.com"><img src="images/iconfinder_Gplus_3380452.png" alt="google-plus" class="icons"></a></li>
+                    <li><a href="https://www.facebook.com/glitterpolishpaoli/"><img src="images/iconfinder_2_-_Facebook_1774980.png" alt="facebook" class="icons"></a></li>
                 </ul>
                 <div class="copyright">
                     <p>&copy; 2019 by Glitter & Polish</p>
