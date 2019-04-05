@@ -12,7 +12,7 @@
         
         if (!empty($name) && !empty($email) && !empty($msg) && !empty($individual_or_group)) {
             
-            $to = 'jjsk8er13@gmail.com';
+            $to = 'glitterpolishnailspa@gmail.com';
             $subject = 'APPOINTMENT FOR '.$name;
             $message = "Name: ".$name."\n"."Email: ".$email."\n"."Phone Number: ".$phone."\n"."Individual or Group: ".$individual_or_group."\n"."Number of People: ".$people."\n"."Date: ".$date."\n"."Message: "."\n".$msg;
             $headers = "From: ".$email;
@@ -32,7 +32,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Glitter and Polish | Services</title>
+        <title>Glitter and Polish | Book Online</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ovo" rel="stylesheet">
