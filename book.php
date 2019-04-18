@@ -57,6 +57,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="service.html">Services</a></li>
+                    <li><a href="specials.html">Specials</a></li>
                     <li><a href="book.php">Book Online</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                 </ul>
@@ -68,6 +69,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="service.html">Services</a></li>
+                        <li><a href="specials.html">Specials</a></li>
                         <li><a href="book.php">Book Online</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                     </ul>
@@ -126,6 +128,6 @@
                 </div>
             </footer>
         </div>
+        <script src="global.js"></script>
     </body>
-    <script src="global.js"></script>
 </html>

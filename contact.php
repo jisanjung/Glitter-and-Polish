@@ -55,6 +55,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="service.html">Services</a></li>
+                    <li><a href="specials.html">Specials</a></li>
                     <li><a href="book.php">Book Online</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                 </ul>
@@ -66,6 +67,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="service.html">Services</a></li>
+                        <li><a href="specials.html">Specials</a></li>
                         <li><a href="book.php">Book Online</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                     </ul>
@@ -98,10 +100,10 @@
                     <li>Instagram @glitterpolishpaoli</li>
                 </ul>
                 <ul>
-                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_Marker_red_1891013.png" alt="location"></a></li>
-                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_mail-icon_380447.png" alt="mail"></a></li>
-                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_circle-facebook__317752.png"></a></li>
-                    <li class="inline-logos"><a href="#"><img src="images/iconfinder_circle-instagram_1312095.png"></a></li>
+                    <li class="inline-logos"><a href="https://www.google.com/maps/place/Glitter+%26+Polish+Nail+Spa/@40.042293,-75.481851,15z/data=!4m5!3m4!1s0x0:0xef1286777b1874ec!8m2!3d40.042293!4d-75.481851s"><img src="images/iconfinder_Marker_red_1891013.png" alt="location"></a></li>
+                    <li class="inline-logos"><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=glitterpolishnailspa@gmail.coms"><img src="images/iconfinder_mail-icon_380447.png" alt="mail"></a></li>
+                    <li class="inline-logos"><a href="https://www.facebook.com/glitterpolishpaoli/"><img src="images/iconfinder_circle-facebook__317752.png"></a></li>
+                    <li class="inline-logos"><a href="https://www.instagram.com/glitterpolishpaoli/?hl=ens"><img src="images/iconfinder_circle-instagram_1312095.png"></a></li>
                 </ul>
                 <ul>
                     <li>Store Hours</li>
@@ -134,8 +136,8 @@
                 </div>
             </footer>
         </div>
+        <script src="global.js"></script>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+        <script src="map.js"></script>
     </body>
-    <script src="global.js"></script>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-    <script src="map.js"></script>
 </html>

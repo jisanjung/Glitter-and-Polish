@@ -182,7 +182,6 @@ nav #menu:hover {
 #deals {
     grid-row: 21/35;
     position: relative;
-    margin-top: 15px;
 }
 #deals h1 {
     text-align: center;
@@ -193,9 +192,6 @@ nav #menu:hover {
 }
 #deals #white-box {
     height: 70%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
     position: absolute;
     right: 0;
     left: 0;
@@ -203,73 +199,93 @@ nav #menu:hover {
     transform: translateY(-50%);
     background-color: #fff;
     margin-top: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
-#deals #mon-wed {
-    grid-column: 1/13;
-    grid-row: 4/12;
+#mon-wed {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+#deals h3 {
     text-align: center;
     font-family: 'Ubuntu Condensed', sans-serif;
-    width: 70%;
-    margin: 0 auto;
-}
-#deals #mon-wed h3 {
     font-size: 20px;
     font-weight: normal;
 }
-#deals #mon-wed .separate {
-    position: relative;
-    top: 30%;
-}
-.separate p span {
-    color: #F73F05;
+#deals .link {
+    border: 1px #000 solid;
+    text-decoration: none;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    font-size: 14px;
+    background-color: #000;
 }
 /* organic */
 #organic {
     grid-row: 35/50;
-}
-#organic ul {
-    position: relative;
-    top: 5px;
-    text-align: center;
-    font-family: 'Ubuntu Condensed', sans-serif;
-}
-#organic ul li {
-    display: inline;
-    font-size: 18px;
+    margin-bottom: 10%;
 }
 #organic #pink-box {
-    background-color: #FEDCEC;
-    text-align: center;
-    min-height: 200px;
+    background-color: #292929;
+    height: 250px;
+    position: relative;
 }
 #organic #pink-box h3 {
-    font-family: 'Chau Philomene One', sans-serif;
-    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    text-align: center;
     font-weight: normal;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding-bottom: 15px;
-    padding-top: 5px;
+    color: #fff;
+    padding-bottom: 10px;
+    padding-top: 20px;
 }
 #organic #pink-box p {
     font-family: 'Signika Negative', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
     width: 80%;
+    color: #fff;
+    padding-bottom: 15px;
     margin: 0 auto;
-    padding-bottom: 30px;
     line-height: 19px;
     letter-spacing: 0.05em;
+}
+#organic #pink-box ul {
+    color: #fff;
+    width: 270px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Signika Negative', sans-serif;
+}
+#organic #pink-box ul li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+}
+#organic #pink-box ul li::before {
+    content: "- ";
 }
 /* new */
 #new {
     grid-row: 50/65;
-    background-color: #292929;
+    background-image: linear-gradient(#DAA520, #000);
     position: relative;
 }
 #new h1 {
-    font-family: 'Aguafina Script', cursive;
+    font-family: 'Signika Negative', sans-serif;
     color: #fff;
-    font-weight: normal;
-    font-size: 64px;
+    font-size: 48px;
     position: relative;
     top: 10px;
     left: 30px;
@@ -277,8 +293,8 @@ nav #menu:hover {
 #new h2 {
     font-family: 'Dosis', sans-serif;
     font-weight: normal;
-    font-size: 36px;
-    color: #F73F05;
+    font-size: 28px;
+    color: #fff;
     position: absolute;
     right: 10%;
 }
@@ -287,26 +303,13 @@ nav #menu:hover {
     font-family: 'Dosis', sans-serif;
     font-weight: normal;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 5%;
-}
-#new ul {
-    color: #fff;
-    font-family: 'Signika Negative', sans-serif;
-    font-weight: normal;
-    position: absolute;
-    bottom: 25px;
-    font-size: 14px;
-    width: 250px;
-    line-height: 19px;
-    letter-spacing: .05em;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    list-style: none;
-}
-#new ul li::before {
-    content: "- ";
+    width: 70%;
+    text-align: center;
+    line-height: 21px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
 }
 /* hours */
 #hours {
@@ -410,9 +413,9 @@ footer .copyright {
 .table tr td {
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 16px;
-    width: 100%;
+    width: 70%;
     letter-spacing: 0.05em;
-    padding: 1px 5px;
+    padding: 5px 5px;
 }
 .table tr td:nth-child(2) {
     text-align: right;
@@ -456,7 +459,7 @@ footer .copyright {
     margin-bottom: 15px;
 }
 .main-form {
-    font-family: 'Aguafina Script', cursive;
+    font-family: 'Dosis', sans-serif;
     color: #fff;
 }
 .main-form input, .main-form textarea {
@@ -472,9 +475,9 @@ footer .copyright {
     padding-left: 10px;
 }
 .main-form input::placeholder, .main-form textarea::placeholder {
-    font-family: 'Aguafina Script', cursive;
+    font-family: 'Dosis', sans-serif;
     color: #fff;
-    font-size: 21px;
+    font-size: 20px;
 }
 #book-form .radio-container {
     position: relative;
@@ -489,7 +492,7 @@ footer .copyright {
     margin: 0 auto;
 }
 #book-form label {
-    font-size: 21px;
+    font-size: 20px;
     margin-left: 15%;
 }
 #book-form input[type="radio"] {
@@ -539,13 +542,13 @@ footer .copyright {
     margin: 0 auto;
 }
 .notice {
-    border: 2px #F70505 solid;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     font-family: 'Signika Negative', sans-serif;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 #booking-notice p:nth-child(2) {
     margin-top: 25px;
@@ -609,6 +612,65 @@ footer .copyright {
 #contact-footer {
     grid-row: 70;
 }
+/* specials */
+.title {
+    grid-row: 9/10;
+}
+.title h1 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 36px;
+}
+#specials {
+    grid-row: 11/20;
+}
+#discounts {
+    grid-row: 21/30;
+}
+#membership {
+    grid-row: 31/40;
+}
+.footnote {
+    grid-row: 41/42;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+.pink-span {
+    background-color: #FEDCEC;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-auto-rows: minmax(20px, auto);
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    height: 350px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+.cards {
+    grid-column: 2/12;
+    grid-row: 4/12;
+    background-color: #fff;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+.cards .card-content {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 21px;
+    line-height: 30px;
+}
+.subtitle {
+    grid-column: 2/12;
+    grid-row: 2/3;
+    font-size: 24px;
+}
+#special-footer {
+    grid-row: 45;
+}
 /* media queries */
 @media screen and (max-width: 320px) {
     #toggle-nav ul {
@@ -647,23 +709,14 @@ footer .copyright {
         top: 10%;
         left: 30px;
     }
+    #new p {
+        bottom: 20%;
+    }
     #new h2 {
         position: absolute;
         top: 20%;
         left: 140px;
         width: 70%
-    }
-    #new p {
-        position: absolute;
-        text-align: center;
-        top: 40%;
-        left: 20%;
-        width: 80%;
-    }
-    #new ul {
-        position: absolute;
-        top: 50%;
-        left: 60%;
     }
     .table tr th {
         padding-right: 10%;
@@ -692,14 +745,20 @@ footer .copyright {
     #toggle-nav ul li {
         padding: 5%;
     }
-    #deals #white-box #mon-wed h3 {
+    #deals #white-box h3 {
         font-size: 28px;
     }
-    #deals #white-box .separate p {
+    #deals #white-box p {
         font-size: 21px;    
     }
     .table tr td {
-        padding: 0 20px;
+        padding: 5px 20px;
+    }
+    #new p {
+        bottom: 40%;
+    }
+    #deals .link {
+        margin-top: 10px;
     }
 }
 @media screen and (min-width: 768px) , screen and (min-width: 1023px) {
@@ -710,24 +769,16 @@ footer .copyright {
         left: 10%;
     }
 }
-@media screen and (max-height: 860px) and (min-width: 1024px) {
-    #deals #white-box {
-        margin-top: 5%;
-    }
-    #deals #white-box #mon-wed .separate > p {
-        font-size: 48px;
-    }
-}
-@media screen and (max-height: 495px) and (min-width: 1024px) {
-    #deals {
-        padding-bottom: 50%;
-    }
-}
 @media screen and (min-width: 1024px) {
     #container {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: minmax(20px, auto);
+    }
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        border: 3px red solid;
     }
     header {
         grid-column: 1/7;
@@ -752,11 +803,12 @@ footer .copyright {
         transform: translateY(-50%);
         right: 50px;
         font-family: 'Ubuntu Condensed', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
+        padding-right: 10%;
     }
     nav ul li {
         display: inline;
-        padding: 20px;
+        padding: 15px;
     }
     nav ul li a {
         text-decoration: none;
@@ -769,8 +821,14 @@ footer .copyright {
     nav #menu {
         display: none;
     }
+    nav #call {
+        margin-left: 10%;
+        width: 20px;
+    }
     nav #phone-number {
         left: 8%;
+        margin-left: 10%;
+        font-size: 16px;
     }
     #showcase {
         grid-column: 1/7;
@@ -793,37 +851,41 @@ footer .copyright {
         left: 10%;
     }
     #deals {
-        grid-column: 1/7;
-        height: 100vh;
+        grid-column: 2/6;
+        position: relative;
     }
     #deals h1 {
-        font-size: 120px;
         text-align: left;
         padding-left: 10%;
+        font-size: 48px;
     }
-    #deals #white-box {
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 10%;
+    #deals #mon-wed {
+        position: absolute;
+        left: 50%;
     }
-    #deals #white-box #mon-wed {
-        width: 100%;
+    #mon-wed h3, #mon-wed p {
+        text-align: center;
     }
-    #deals #white-box #mon-wed h3 {
-        font-size: 72px;
+    #deals #mon-wed h3 {
+        font-size: 36px;
     }
-    #deals #white-box .separate p {
-        font-size: 64px;
-        width: 75%;
-        margin: 0 auto;
+    #deals .link {
+        left: 50%;
+        transform: translate(-50%);
+    }
+    #deals .link:hover {
+        border: 1px #000 solid;
+        background-color: #fff;
+        color: #000;
+        transition: 0.2s;
     }
     #organic {
-        grid-column: 4/7;
-        grid-row: 36/50;
-        margin: 0 5%;
+        grid-column: 4/6;
+        grid-row: 37/50;
         position: relative;
         bottom: 20px;
+        margin-left: 5%;
+        margin-bottom: 0;
     }
     #organic #pink-box {
         height: 280px;
@@ -832,34 +894,36 @@ footer .copyright {
         font-size: 24px;
     }
     #organic #pink-box h3 {
-        font-size: 24px;
+        font-size: 32px;
     }
     #organic #pink-box p {
         font-size: 18px;
         width: 85%;
-        line-height: 30px;
+        line-height: 25px;
     }
     #new {
-        grid-column: 1/4;
-        grid-row: 36/50;
-        margin-left: 5%;
+        grid-column: 2/4;
+        grid-row: 37/50;
         position: relative;
         bottom: 20px;
+        margin-right: 5%;
+    }
+    #new h1 {
+        top: 3%;
+    }
+    #new h2 {
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        text-align: center;
     }
     #new p {
-        font-size: 18px;
-        width: 75%;
-    }
-    #new ul li {
-        font-size: 16px;
-        width: 500px;
-        line-height: 30px;
-        letter-spacing: 0.05em;
+        bottom: 10%;
     }
     #hours {
         grid-column: 3/5;
         grid-row: 50/65;
-        width: 500px;
+        width: 100%;
         margin: 0 auto;
     }
     #quote {
@@ -894,27 +958,33 @@ footer .copyright {
         padding: 25px 0;
     }
     #waxing {
-        grid-column: 1/4;
+        grid-column: 2/4;
         grid-row: 8/10;
-        margin: 5% 5% 5% 20%;
+        margin: 5% 5% 5% 0;
     }
     #manicure {
-        grid-column: 4/7;
-        grid-row: 8/11;
-        margin: 5% 20% 0 0;
+        grid-column: 4/6;
+        grid-row: 8/15;
+        margin: 5% 0 0 0;
     }
     #pedicure {
-        grid-column: 1/4;
-        grid-row: 10/20;
-        margin: 0 5% 0 20%;
+        grid-column: 2/4;
+        grid-row: 10/30;
+        margin: 0 5% 0 0;
+        min-height: 100px;
     }
     #children {
-        grid-column: 4/7;
-        grid-row: 15/20;
-        margin-right: 20%;
+        grid-column: 4/6;
+        grid-row: 15/30;
+        margin-right: 0;
+        position: relative;
+    }
+    #children .table {
+        position: absolute;
+        bottom: 0;
     }
     #services-footer {
-        grid-row: 25;
+        grid-row: 35;
     }
     .table tr th {
         text-align: center;
@@ -1005,23 +1075,41 @@ footer .copyright {
     #contact-footer {
         grid-row: 35;
     }
+    .title {
+        grid-column: 2/4;
+    }
+    .title h1 {
+        text-align: left;
+    }
+    .pink-span {
+        grid-column: 1/7;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    .subtitle {
+        grid-column: 3/6;
+        grid-row: 5/6;
+        text-align: left;
+    }
+    .cards {
+        grid-column: 8/11;
+        grid-row: 4/10;
+    }
+    .footnote {
+        grid-column: 2;
+        font-size: 21px;
+    }
 }
 @media screen and (min-width: 1440px) {
     #showcase h1 {
         font-size: 64px;
     }
-    #new h1 {
-        font-size: 72px;
-    }
     #new h2 {
-        font-size: 40px;
-        padding-left: 15px;
+        font-size: 36px;
     }
-    #new h1, #new h2 {
-        margin-left: 15%;
-    }
-    #hours #hours-pic {
-        width: 600px;
+    #new p {
+        font-size: 18px;
+        bottom: 20%;
     }
     #hours h2 {
         padding: 0;
@@ -1036,13 +1124,23 @@ footer .copyright {
     #make-appointment h1 {
         font-size: 64px;
     }
+    #deals #mon-wed h3 {
+        font-size: 48px;
+    }
+    #deals #mon-wed {
+        top: 5%;
+    }
+    #deals .link {
+        bottom: 10%;
+        transform: translate(-50%);
+    }
 }
 @media screen and (min-width: 1880px) {
-    #new h1, #new h2 {
-        margin-left: 25%;
-    }
     #organic #pink-box p {
         line-height: 2.5em;
+    }
+    #new p {
+        bottom: 25%;
     }
 }
 /* animations */
@@ -1113,4 +1211,14 @@ header h1, header h4 {
 @keyframes title-down2 {
     0% {top: -200%;}
     100% {top: 0%;}
+}
+.cards {
+    position: relative;
+    animation-name: right-tables;
+    animation-duration: 1s;
+}
+.subtitle {
+    position: relative;
+    animation-name: left-tables;
+    animation-duration: 1s;
 }
