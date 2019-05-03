@@ -622,54 +622,53 @@ footer .copyright {
     text-align: center;
     font-size: 36px;
 }
-#specials {
-    grid-row: 11/20;
-}
-#discounts {
-    grid-row: 21/30;
-}
-#membership {
-    grid-row: 31/40;
-}
-.footnote {
-    grid-row: 41/42;
-    font-family: 'Dosis', sans-serif;
-    text-align: center;
-    font-size: 18px;
-}
-.pink-span {
-    background-color: #FEDCEC;
+.grid-container {
+    grid-row: 11/30;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
     grid-auto-rows: minmax(20px, auto);
-    font-family: 'Dosis', sans-serif;
-    text-align: center;
-    height: 350px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
 .cards {
-    grid-column: 2/12;
-    grid-row: 4/12;
+    border: 1px #bcbcbc solid;
+    margin: 0 20px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    height: 200px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.20);
 }
-.cards .card-content {
-    width: 80%;
-    margin: 0 auto;
+.card-wrap {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 21px;
-    line-height: 30px;
+    padding: 20px;
 }
-.subtitle {
-    grid-column: 2/12;
-    grid-row: 2/3;
-    font-size: 24px;
+.card-wrap h3 {
+    margin-bottom: 10px;
+}
+.card-wrap ul li {
+    list-style: none;
+}
+#card1 {
+    grid-column: 1/13;
+    grid-row: 1/6;
+}
+#card2 {
+    grid-column: 1/13;
+    grid-row: 7/12;
+}
+#card3 {
+    grid-column: 1/13;
+    grid-row: 13/18;
+}
+#footnote {
+    grid-row: 31/32;
+    text-align: center;
+    font-family: 'Signika Negative', sans-serif;
 }
 #special-footer {
-    grid-row: 45;
+    grid-row: 35/40;
 }
 /* media queries */
 @media screen and (max-width: 320px) {
@@ -1081,23 +1080,37 @@ footer .copyright {
     .title h1 {
         text-align: left;
     }
-    .pink-span {
-        grid-column: 1/7;
-        height: 250px;
-        margin-bottom: 20px;
+    .grid-container {
+        grid-column: 2/6;
     }
-    .subtitle {
-        grid-column: 3/6;
-        grid-row: 5/6;
-        text-align: left;
+    .grid-container #card1 {
+        grid-column: 1/5;
+        grid-row: 1/6;
+    }
+    .grid-container #card2 {
+        grid-column: 5/9;
+        grid-row: 1/6;
+    }
+    .grid-container #card3 {
+        grid-column: 9/13;
+        grid-row: 1/6;
     }
     .cards {
-        grid-column: 8/11;
-        grid-row: 4/10;
+        margin: 0;
     }
-    .footnote {
-        grid-column: 2;
-        font-size: 21px;
+    .cards + .cards {
+        margin-left: 10px;
+    }
+    .card-wrap {
+        padding: 40px 10px;
+    }
+    #footnote {
+        grid-column: 1/7;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .card-wrap {
+        padding: 40px 20px;
     }
 }
 @media screen and (min-width: 1440px) {
@@ -1214,11 +1227,10 @@ header h1, header h4 {
 }
 .cards {
     position: relative;
-    animation-name: right-tables;
-    animation-duration: 1s;
+    animation-name: appear-solid;
+    animation-duration: 2s;
 }
-.subtitle {
-    position: relative;
-    animation-name: left-tables;
-    animation-duration: 1s;
+@keyframes appear-solid {
+    0% {opacity: 0; bottom: -100px;}
+    100% {opacity: 1; bottom: 0;}
 }

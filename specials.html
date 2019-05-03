@@ -3,6 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Glitter and Polish nail spa is the salon to go to when you need precise yet beautiful nails.">
+        <meta name="keywords" content="glitter, polish, nails, spa, salon, gel">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139462509-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-139462509-1');
+        </script>
         <title>Glitter and Polish | Specials</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
@@ -49,37 +60,34 @@
             <section class="title blur">
                 <h1>DAILY DEALS*</h1>
             </section>
-            <section id="specials" class="pink-span blur">
-                <h3 class="subtitle">MON-WED SPECIALS</h3>
-                <div class="cards">
-                    <div class="card-content">
-                        <h5>Gel Manicure $25</h5>
-                        <h5>Reg. Mani & Pedi $38</h5>
+            <div class="grid-container">
+                <div class="cards" id="card1">
+                    <div class="card-wrap">
+                        <h3>MON-WED SPECIALS</h3>
+                        <ul>
+                            <li>Gel Manicure $25</li>
+                            <li>Reg. Mani & Pedi $38</li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-            <section id="discounts" class="pink-span blur">
-                <h3 class="subtitle">SPEND CASH & GET DISCOUNTS*</h3>
-                <div class="cards">
-                    <div class="card-content">
-                        <h5>$14 & up -> $1 off</h5>
-                        <h5>$30 & up -> $2 off</h5>
-                        <h5>max $3 off</h5>
+                <div class="cards" id="card2">
+                    <div class="card-wrap">
+                        <h3>SPEND CASH & GET DISCOUNTS*</h3>
+                        <ul>
+                            <li>$14 & up -> $1 off</li>
+                            <li>$30 & up -> $2 off</li>
+                            <li>max $3 off</li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-            <section id="membership" class="pink-span blur">
-                <h3 class="subtitle">SIGN UP FOR A MEMBERSHIP TO RECEIVE BONUS POINTS</h3>
-                <div class="cards">
-                    <div class="card-content">
-                        <h5>Collect bonus points on every dollar you spend</h5>
-                        <h5>Minimum of 14 points can be used toward any service</h5>
+                <div class="cards" id="card3">
+                    <div class="card-wrap">
+                        <h3>SIGN UP FOR A MEMBERSHIP TO RECEIVE BONUS POINTS</h3>
+                        <p>Collect bonus points on every dollar you spend. Minimum of 14 points can be used toward any service.</p>
                     </div>
                 </div>
-            </section>
-            <section class="footnote blur">
-                <h6>*Deals cannot be combined</h6>
-            </section>
+            </div>
+            <p id="footnote">*Deals cannot be combined</p>
             <footer id="special-footer" class="blur">
                 <h1>
                 THANK YOU
