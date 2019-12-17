@@ -71,10 +71,11 @@ html, body {
 header {
     height: 70px;
     background-color: transparent;
-    margin-top: 20px;
+    top: 20px;
     position: fixed;
     z-index: 2;
     width: 100%;
+    transition: 0.5s all;
 }
 header .logo {
     color: #fff;
@@ -167,3 +168,11 @@ header .menu img {
 }
 
 /* animations */
+.showcase-text {
+    animation-name: caption;
+    animation-duration: 1s;
+}
+@keyframes caption {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
