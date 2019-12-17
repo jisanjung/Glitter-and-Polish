@@ -1,0 +1,98 @@
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.grid-wrap {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(20px, auto);
+}
+.test {
+    border: solid 1px red;
+}
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.horizontal-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.center-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.tint {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* header */
+header {
+    height: 70px;
+    background-color: transparent;
+    margin-top: 20px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+header .logo {
+    color: #fff;
+}
+header .logo span {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    padding-left: 5px;
+    width: 150px;
+}
+header .logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+header .header-container {
+    position: relative;
+    height: 100%;
+}
+header .menu {
+    right: 0;
+    background-color: transparent;
+    border: none;
+}
+header .menu img {
+    width: 25px;
+}
+
+/* showcase */
+.showcase {
+    height: 100vh;
+    position: relative;
+}
+.showcase img {
+    height: 100%;
+}
+.showcase .fade {
+    height: 100%;
+}
+.showcase .fade div {
+    height: 100%;
+}
