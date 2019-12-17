@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.playfair-serif {
+    font-family: 'Playfair Display', serif;
+}
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -33,18 +36,35 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.container {
+.container-lg {
     width: 90%;
     margin: 0 auto;
 }
-.tint {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+.container-sm {
+    width: 50%;
+    margin: 0 auto;
+}
+.container-md {
+    width: 70%;
+    margin: 0 auto;
+}
+.z-index1 {
     z-index: 1;
+}
+.z-index2 {
+    z-index: 2;
+}
+.text-white {
+    color: #fff !important;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
 }
 
 /* header */
@@ -53,7 +73,7 @@ header {
     background-color: transparent;
     margin-top: 20px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
 }
 header .logo {
@@ -65,6 +85,7 @@ header .logo span {
     transform: translateY(-50%);
     padding-left: 5px;
     width: 150px;
+    line-height: 18px;
 }
 header .logo img {
     width: 40px;
@@ -87,6 +108,7 @@ header .menu img {
 .showcase {
     height: 100vh;
     position: relative;
+    background-color: #000;
 }
 .showcase img {
     height: 100%;
@@ -97,10 +119,33 @@ header .menu img {
 .showcase .fade div {
     height: 100%;
 }
+.showcase .fade div img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+}
+.showcase .fade div p {
+    width: 100%;
+}
+.showcase .fade div p .first-child {
+    font-size: 14px;
+    font-style: italic;
+}
+.showcase .fade div p span {
+    font-size: 30px;
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.showcase .fade div p .last-child {
+    font-size: 20px;
+}
 .slick-arrow {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 50%;
+    transform: translateY(-50%);
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -120,3 +165,5 @@ header .menu img {
     background-color: rgba(0, 0, 0, 0.8);
     border: none;
 }
+
+/* animations */
