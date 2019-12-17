@@ -57,6 +57,9 @@ html, body {
 .text-white {
     color: #fff !important;
 }
+.text-blue {
+    color: #00cbd8;
+}
 .text-center {
     text-align: center;
 }
@@ -65,6 +68,13 @@ html, body {
 }
 .text-left {
     text-align: left;
+}
+.btn-blue {
+    font-family: 'Oswald', sans-serif;
+    background-color: #00cbd8;
+    color: #fff;
+    padding: 0.5em;
+    width: 14em;
 }
 
 /* header */
@@ -87,6 +97,10 @@ header .logo span {
     padding-left: 5px;
     width: 150px;
     line-height: 18px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+header .logo span i {
+    font-style: normal !important;
 }
 header .logo img {
     width: 40px;
@@ -141,6 +155,12 @@ header .menu img {
 }
 .showcase .fade div p .last-child {
     font-size: 20px;
+}
+.showcase .fade div p a {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 3px auto;
 }
 .slick-arrow {
     position: absolute;
