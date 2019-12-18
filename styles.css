@@ -7,6 +7,12 @@
 .playfair-serif {
     font-family: 'Playfair Display', serif;
 }
+.oswald-sans {
+    font-family: 'Oswald', sans-serif;
+}
+.cursor-pointer:hover {
+    cursor: pointer;
+}
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -119,6 +125,24 @@ header .menu img {
     width: 25px;
 }
 
+/* nav */
+nav {
+    width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    display: none;
+}
+nav ul li {
+    padding: 12px 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+nav ul li + li {
+    border-top: 1px solid #eee;
+}
+
 /* showcase */
 .showcase {
     height: 100vh;
@@ -172,6 +196,7 @@ header .menu img {
     overflow: hidden;
     width: 35px;
     height: 35px;
+    cursor: pointer;
 }
 .slick-prev {
     background: url("images/prev.png") center center;

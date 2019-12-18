@@ -22,5 +22,10 @@ $(document).ready(function() {
         }
     });
 
+    // toggle nav menu
+    $(".menu").on("click", function() {
+        $("nav").slideToggle();
+    });
+
     //----------end------------
 });
