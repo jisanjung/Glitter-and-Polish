@@ -7,11 +7,25 @@
 .playfair-serif {
     font-family: 'Playfair Display', serif;
 }
+.normal {
+    font-weight: normal;
+}
+.light {
+    font-weight: lighter;
+}
+.bold {
+    font-weight: bold;
+}
 .oswald-sans {
     font-family: 'Oswald', sans-serif;
 }
 .open-sans {
     font-family: 'Open Sans', sans-serif;
+}
+.p-text {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 1px;
 }
 .cursor-pointer:hover {
     cursor: pointer;
@@ -108,6 +122,7 @@ html, body {
     width: 250px;
     height: 1px;
     margin: 0 auto;
+    margin-bottom: 40px;
 }
 .divider:after {
     content: "";
@@ -258,18 +273,22 @@ nav ul li + li {
     border: none;
 }
 
-/* about */
+/* main */
 .main {
     background-color: #fff;
     position: relative;
 }
-.main .about {
+.main .section {
     background-color: #fff;
-    width: 90%;
     margin: 0 auto;
     position: relative;
     top: -85px;
     height: 100%;
+}
+
+/* about */
+.main .about {
+    width: 90%;
 }
 .main .about img {
     width: 100%;
@@ -277,15 +296,11 @@ nav ul li + li {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 40px;
     margin-bottom: 20px;
     background-color: #e3e3e3;
     grid-column: 1/13;
 }
 .main .about p {
-    font-size: 14px;
-    line-height: 1.7;
-    letter-spacing: 1px;
     margin-bottom: 20px;
     grid-column: 1/13;
 }
@@ -295,6 +310,25 @@ nav ul li + li {
     width: 115px;
     margin: 15px 0;
     grid-column: 1/13;
+}
+
+/* services */
+.services .service-item {
+    grid-column: 1/13;
+    padding: 30px 40px;
+}
+.services .service-item:first-child {
+    margin-top: 10px;
+}
+.services .service-item:nth-child(odd) {
+    background-color: #B5DCE9;
+}
+.services .service-item:nth-child(even) {
+    background-color: #E0E0E0;
+}
+.services .service-item h1 {
+    font-size: 32px;
+    padding-bottom: 15px;
 }
 
 /* animations */
