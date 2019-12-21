@@ -468,6 +468,12 @@ nav ul li + li {
     height: 100%;
 }
 
+/* footer */
+footer {
+    background-color: #000;
+    color: #fff;
+}
+
 /* animations */
 .showcase-text {
     animation-name: caption;

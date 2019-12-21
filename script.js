@@ -8,7 +8,9 @@ $(document).ready(function() {
         cssEase: "linear",
         fade: true,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 5000,
+        pauseOnFocus: false,
+        pauseOnHover: false
     });
 
     // toggle header style on scroll
