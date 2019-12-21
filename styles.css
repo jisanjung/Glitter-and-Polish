@@ -169,6 +169,18 @@ html, body {
 .input::placeholder {
     font-size: 14px;
 }
+.back-to-top {
+    width: 50px !important;
+    height: 50px;
+    background: #00cbd8 url("images/up.png") center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 20px;
+    right: -50px;
+    transition: 0.25s all;
+    z-index: 999;
+    display: block;
+}
 
 /* header */
 header {
@@ -176,7 +188,7 @@ header {
     background-color: transparent;
     top: 20px;
     position: fixed;
-    z-index: 99;
+    z-index: 9999;
     width: 100%;
     transition: 0.5s all;
 }
