@@ -415,6 +415,8 @@ nav ul li + li {
     display: none;
     z-index: 10000;
     position: fixed;
+    max-width: 95%;
+    max-height: 70%;
 }
 
 /* book */
@@ -467,9 +469,23 @@ nav ul li + li {
     padding-bottom: 30px;
     grid-row: 1/20;
 }
+.contact form .error {
+    display: none;
+    font-size: 10px;
+    color: #ff0000;
+    font-family: 'Open Sans', sans-serif;
+}
 .contact form .input {
     display: block;
     width: 100%;
+    margin-bottom: 15px;
+}
+.contact form .input:focus {
+    border: 1px solid #66afe9;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
+    -moz-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
+    box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
 }
 .contact form textarea {
     height: 114px;
