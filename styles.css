@@ -175,7 +175,7 @@ html, body {
     background: #00cbd8 url("images/up.png") center center;
     background-repeat: no-repeat;
     position: fixed;
-    bottom: 20px;
+    bottom: 5px;
     right: -50px;
     transition: 0.25s all;
     z-index: 999;
@@ -465,8 +465,7 @@ nav ul li + li {
 .contact form {
     grid-column: 1/13;
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 40px;
     grid-row: 1/20;
 }
 .contact form .error {
@@ -520,6 +519,9 @@ footer {
     padding: 20px;
     letter-spacing: 1px;
 }
+.footer-bg {
+    display: none;
+}
 .footer-section {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -534,10 +536,10 @@ footer ul li {
     margin-bottom: 15px;
     font-size: 15px;
 }
-.footer-section:first-child ul li:nth-child(2) a {
+#phone-number {
     color: #fff;
 }
-.footer-section:first-child ul li:nth-child(3) a {
+#email-link {
     color: #888;
 }
 .footer-section:nth-child(3) {
@@ -546,6 +548,9 @@ footer ul li {
 footer div:nth-child(4) {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+footer div:nth-child(4) p {
+    text-align: center;
 }
 .footer-icons {
     padding-top: 15px;
@@ -568,6 +573,83 @@ footer div:nth-child(4) {
 }
 .footer-section ul li span {
     margin-left: 25px;
+}
+
+/* media queries */
+@media screen and (min-width: 768px) {
+    /* showcase */
+    .showcase .fade div p .first-child {
+        font-size: 25px;
+    }
+    .showcase .fade div p span {
+        font-size: 56px;
+    }
+    .showcase .fade div p .last-child {
+        font-size: 38px;
+    }
+    .showcase .fade div p a {
+        font-size: 16px;
+    }
+    
+    /* about */
+    .main .about img {
+        height: 500px;
+    }
+
+    /* services */
+    .services .grid-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* gallery */
+    .gallery .grid-wrap {
+        grid-column-gap: 15px;
+    }
+    .gallery img:first-child {
+        grid-column: 1/8;
+        grid-row: 1/20;
+    }
+    .gallery img:nth-child(2) {
+        grid-column: 8/13;
+        grid-row: 1/10;
+    }
+    .gallery img:nth-child(3) {
+        grid-column: 8/10;
+        grid-row: 11/20;
+    }
+    .gallery img:nth-child(4) {
+        grid-column: 10/13;
+        grid-row: 11/20;
+    }
+    .gallery img:nth-child(5) {
+        grid-column: 1/4;
+        grid-row: 21/30;
+    }
+    .gallery img:nth-child(6) {
+        grid-column: 4/8;
+        grid-row: 21/30;
+    }
+    .gallery img:nth-child(7) {
+        grid-column: 8/13;
+        grid-row: 21/30;
+    }
+
+    /* footer */
+    footer {
+        background: #000 url("images/footer_bg.jpg") top center;
+        background-repeat: no-repeat;
+    }
+    .footer-section:nth-child(3) {
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+    footer div:nth-child(4) p {
+        text-align: left;
+    }
+    .footer-icons ul {
+        text-align: left;
+    }
 }
 
 /* animations */
