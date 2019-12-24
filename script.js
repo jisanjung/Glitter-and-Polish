@@ -91,89 +91,68 @@ $(document).ready(function() {
 
     // form validation
     (function formValid() {
-        var isValid = {
-            name: function() {
-                var name = $("#name");
 
-                name.on("blur", function() {
-                    if (!/^[a-z ,.'-]+$/i.test(name.val())) {
-                        $(this).css("border", "1px solid red");
-                        $("#nameError").show();
-                    } else {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#nameError").hide();
-                    }
-                });
-                name.on("focus", function() {
-                    if (/^[a-z ,.'-]+$/i.test(name.val())) {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#nameError").hide();
-                    }
-                });
-            },
-            email: function() {
-                var email = $("#email");
-
-                email.on("blur", function() {
-                    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.val())) {
-                        $(this).css("border", "1px solid red");
-                        $("#emailError").show();
-                    } else {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#emailError").hide();
-                    }
-                });
-                email.on("focus", function() {
-                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.val())) {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#emailError").hide();
-                    }
-                });
-            },
-            subject: function() {
-                var subject = $("#subject");
-
-                subject.on("blur", function() {
-                    if (subject.val() === "" || subject.val() === null || subject.val() === undefined) {
-                        $(this).css("border", "1px solid red");
-                        $("#subjectError").show();
-                    } else {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#subjectError").hide();
-                    }
-                });
-                subject.on("focus", function() {
-                    if (subject.val() !== "" || subject.val() !== null || subject.val() !== undefined) {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#subjectError").hide();
-                    }
-                });
-            },
-            message: function() {
-                var message = $("#message");
-
-                message.on("blur", function() {
-                    if (message.val() === "" || message.val() === null || message.val() === undefined) {
-                        $(this).css("border", "1px solid red");
-                        $("#messageError").show();
-                    } else {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#messageError").hide();
-                    }
-                });
-                message.on("focus", function() {
-                    if (message.val() !== "" || message.val() !== null || message.val() !== undefined) {
-                        $(this).css("border", "1px solid #ccc");
-                        $("#messageError").hide();
-                    }
-                });
-            }
+        // constructor
+        var Validation = function(id, regex) {
+            this.id = id;
+            this.regex = regex;
         };
 
-        isValid.name();
-        isValid.email();
-        isValid.subject();
-        isValid.message();
+        // method 1 - validate regular expression
+        Validation.prototype.isValid = function() {
+            var inputType = $(this.id);
+            var regExp = this.regex;
+            var error = this.id + "Error";
+
+            inputType.on("blur", function() {
+                if (!regExp.test(inputType.val())) {
+                    $(this).css("border", "1px solid red");
+                    $(error).show();
+                } else {
+                    $(this).css("border", "1px solid #ccc");
+                    $(error).hide();
+                }
+            });
+            inputType.on("focus", function() {
+                if (regExp.test(inputType.val())) {
+                    $(this).css("border", "1px solid #ccc");
+                    $(error).hide();
+                }
+            });
+        };
+        
+        // method 2 - check for empty input
+        Validation.prototype.isEmpty = function() {
+            var inputType = $(this.id);
+            var regExp = this.regex;
+            var error = this.id + "Error";
+
+            inputType.on("blur", function() {
+                if (inputType.val() === "" || inputType.val() === null || inputType.val() === undefined) {
+                    $(this).css("border", "1px solid red");
+                    $(error).show();
+                } else {
+                    $(this).css("border", "1px solid #ccc");
+                    $(error).hide();
+                }
+            });
+            inputType.on("focus", function() {
+                if (inputType.val() !== "" || inputType.val() !== null || inputType.val() !== undefined) {
+                    $(this).css("border", "1px solid #ccc");
+                    $(error).hide();
+                }
+            });
+        };
+
+        var name = new Validation("#name", /^[a-z ,.'-]+$/i);
+        var email = new Validation("#email", /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        var subject = new Validation("#subject", "");
+        var message = new Validation("#message", "");
+        name.isValid();
+        email.isValid();
+        subject.isEmpty();
+        message.isEmpty();
+        
     })();
 
     //----------end------------
