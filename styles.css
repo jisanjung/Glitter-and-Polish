@@ -491,6 +491,11 @@ header .menu img {
     -moz-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
     box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
 }
+.contact button {
+    border: none;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
 .contact form textarea {
     height: 114px;
     margin-bottom: 30px;
@@ -891,4 +896,73 @@ footer div:nth-child(4) p {
 @keyframes caption {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+.btn-white {
+    position: relative;
+    z-index: 0;
+}
+.btn-white:hover {
+    color: #fff;
+    transition: 0.3s all;
+}
+.btn-white::before {
+    content: "";
+    background: #00cbd8;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.3s;
+}
+.btn-white:hover::before {
+    width: 100%;
+}
+.btn-black {
+    position: relative;
+    z-index: 0;
+}
+.btn-black:hover {
+    color: #fff;
+    transition: 0.3s all;
+}
+.btn-black::before {
+    content: "";
+    background: #00cbd8;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.3s;
+}
+.btn-black:hover::before {
+    width: 100%;
+}
+.btn-blue {
+    position: relative;
+    z-index: 0;
+}
+.btn-blue:hover {
+    color: #fff;
+    transition: 0.3s all;
+}
+.btn-blue::before {
+    content: "";
+    background: #000;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.3s;
+}
+.btn-blue:hover::before {
+    width: 100%;
 }
