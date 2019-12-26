@@ -688,8 +688,7 @@ footer div:nth-child(4) p {
     .desktop-nav ul li {
         list-style: none;
         display: inline-block;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding: 20px 15px;
         font-size: 14px;
         letter-spacing: 1px;
     }
@@ -965,4 +964,23 @@ footer div:nth-child(4) p {
 }
 .btn-blue:hover::before {
     width: 100%;
+}
+
+.desktop-nav ul .link-animate {
+    position: relative;
+}
+.desktop-nav ul .link-animate::before {
+    content: "";
+    background: #00cbd8;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+.desktop-nav ul .link-animate:hover::before {
+    opacity: 1;
 }
