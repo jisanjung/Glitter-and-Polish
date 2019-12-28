@@ -369,13 +369,41 @@ header .menu img {
 }
 .services .service-item:nth-child(odd) {
     background-color: #B5DCE9;
+    color: #444;
 }
 .services .service-item:nth-child(even) {
     background-color: #E0E0E0;
+    color: #444;
 }
 .services .service-item h1 {
     font-size: 32px;
     padding-bottom: 15px;
+    color: #222 !important;
+}
+.services .service-item .table-wrap {
+    width: 100%;
+    display: none;
+}
+.services .service-item .table-wrap table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.services .service-item table, th, td {
+    border: 1px solid black;
+}
+.services .service-item button {
+    background-color: transparent;
+    border: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #444;
+    padding: 10px 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+    transition: 0.25s;
 }
 
 /* gallery */
@@ -619,6 +647,10 @@ footer div:nth-child(4) p {
     .services .grid-wrap {
         width: 90%;
         margin: 0 auto;
+    }
+    .services .service-item button:hover {
+        cursor: pointer;
+        color: #00cbd8;
     }
 
     /* gallery */
