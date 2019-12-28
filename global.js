@@ -35,17 +35,5 @@ $(document).ready(function() {
     });
 
 
-    // leaflet map
-    (function setMap() {
-        var mymap = L.map('mapid').setView([40.0423, -75.4819], 13);
-        
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/           copyright">OpenStreetMap</a> contributors'
-        }).addTo(mymap);
-        var marker = L.marker([40.0423, -75.4819]).addTo(mymap);
-        marker.bindPopup("39 W Lancaster Avenue <br> Paoli, PA 19301").openPopup();
-    })();
-
-
     //----------end------------
 });
