@@ -56,7 +56,13 @@ $(document).ready(function() {
 
         thisTable.stop().slideToggle();
         $(".table-wrap").not(thisTable).slideUp();
-        $(this).text(text == "READ MORE" ? "READ LESS": "READ MORE");
+    });
+
+
+    // smooth scroll
+    $('a[href*=\\#]').on('click', function(event){     
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
     });
 
 

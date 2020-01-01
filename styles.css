@@ -388,9 +388,19 @@ header .menu img {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
+    margin-top: 20px;
 }
-.services .service-item table, th, td {
-    border: 1px solid black;
+.services .service-item .table-wrap table tr td {
+    padding: 5px 0px;
+}
+.services .service-item .table-wrap table tr td:nth-child(2) {
+    float: right;
+}
+.services .service-item .table-wrap .blue-table tr:nth-child(even) {
+    background-color: #cbe9f2;
+}
+.services .service-item .table-wrap .gray-table tr:nth-child(even) {
+    background-color: #ededed;
 }
 .services .service-item button {
     background-color: transparent;
