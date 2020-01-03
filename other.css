@@ -166,6 +166,12 @@
     }
 
     /* staff */
+    .staff .divider {
+        margin-bottom: 70px;
+    }
+    .staff {
+        margin-bottom: 50px;
+    }
     .staff-profile {
         width: 1024px;
         margin: 0 auto;

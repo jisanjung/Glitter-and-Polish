@@ -879,6 +879,9 @@ footer div:nth-child(4) p {
     }
 }
 @media screen and (min-width: 1200px) {
+    .title {
+        font-size: 40px;
+    }
     /* showcase */
     .showcase .fade div img {
         width: 100%;
