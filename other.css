@@ -104,6 +104,64 @@
     display: block;
 }
 
+/* booking */
+.booking .book-form {
+    width: 95%;
+    margin: 30px auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+.booking .book-form form {
+    padding: 15px 40px;
+    font-size: 14px;
+}
+.booking .book-form form fieldset {
+    margin-bottom: 15px;
+    grid-column: 1/13;
+}
+.booking .book-form form fieldset .waxing, .booking .book-form form fieldset .pedicure, .booking .book-form form fieldset .children, .booking .book-form form fieldset .manicure {
+    display: none;
+}
+.booking .book-form form fieldset input[type=date], .booking .book-form form fieldset input[type=time], .booking .book-form form fieldset input[type=text], .booking .book-form form fieldset input[type=email], .booking .book-form form fieldset input[type=tel], .booking .book-form form fieldset select, .booking .book-form form fieldset textarea {
+    width: 100%;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+.booking .book-form form fieldset textarea {
+    height: 50px;
+}
+.booking .book-form form fieldset input::placeholder, .booking .book-form form fieldset textarea::placeholder {
+    color: rgb(156, 156, 156);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.booking .book-form form fieldset label {
+    margin-right: 10px;
+}
+.booking .book-form form fieldset legend {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.booking .book-form form button {
+    grid-column: 1/13;
+    width: 130px;
+    margin: 15px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.booking .book-form h1 {
+    background-color: rgba(1,203,217,0.95);
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    padding: 15px;
+}
+fieldset {
+    border: 0;
+}
+
 /* media queries */
 @media screen and (min-width: 375px) {
     .staff-profile img {
@@ -127,6 +185,20 @@
     }
     .staff-profile h3 {
         margin: 10px auto !important;
+    }
+
+    /* booking */
+    .booking .book-form {
+        width: 598px;
+    }
+    .booking .book-form .grid-wrap {
+        grid-column-gap: 30px;
+    }
+    .booking .book-form form fieldset:nth-child(2), .booking .book-form form fieldset:nth-child(5) {
+        grid-column: 1/7;
+    }
+    .booking .book-form form fieldset:nth-child(3), .booking .book-form form fieldset:nth-child(6) {
+        grid-column: 7/13;
     }
 }
 @media screen and (min-width: 1024px) {

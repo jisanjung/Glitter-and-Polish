@@ -65,8 +65,109 @@
         <!--main section-->
         <main class="booking">
             <div class="book-form">
-                <h1>Booking Form</h1>
-                    
+                <h1 class="text-white open-sans text-center">Booking Form</h1>
+                <form class="open-sans grid-wrap">
+
+                <fieldset>
+                    <legend>Title:</legend>
+                    <input type="radio" name="mr" value="mr">
+                    <label for="mr">Mr.</label>
+                    <input type="radio" name="mrs" value="mrs">
+                    <label for="mrs">Mrs.</label>
+                    <input type="radio" name="ms" value="ms">
+                    <label for="ms">Ms.</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Request Date:</legend>
+                    <input type="date" name="date" placeholder="Date">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Request Time:</legend>
+                    <input type="time" name="time" placeholder="Time">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Name:</legend>
+                    <input type="text" name="name" placeholder="Enter your Name">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Email:</legend>
+                    <input type="email" name="email" placeholder="Enter Email">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Phone:</legend>
+                    <input type="tel" name="phone" placeholder="Enter Phone">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Service:</legend>
+                    <select>
+                        <option value="service">Please select a service</option>
+                        <option value="waxing">Waxing</option>
+                        <option value="manicure">Manicure</option>
+                        <option value="pedicure">Pedicure</option>
+                        <option value="children">Children</option>
+                    </select>
+                    <select class="waxing">
+                        <option value="eyebrow">Eyebrow</option>
+                        <option value="lip">Lip</option>
+                        <option value="chin">Chin</option>
+                        <option value="sideburns">Sideburns</option>
+                        <option value="underarm">Underarm</option>
+                        <option value="partial leg">Partial Leg</option>
+                        <option value="full leg">Full Leg</option>
+                        <option value="partial arm">Partial Arm</option>
+                        <option value="full arm">Full Arm</option>
+                        <option value="bikini">Bikini</option>
+                        <option value="brazilian">Brazilian</option>
+                        <option value="fingers">Fingers</option>
+                        <option value="toes">Toes</option>
+                    </select>
+                    <select class="manicure">
+                        <option value="polish change">Polish Change</option>
+                        <option value="regular manicure">Regular Manicure</option>
+                        <option value="hot oil manicure">Hot Oil Manicure</option>
+                        <option value="gel polish change">Gel Polish Change</option>
+                        <option value="regular gel manicure">Regular Gel Manicure</option>
+                        <option value="organic spa manicure">Organic Spa Manicure</option>
+                        <option value="extended wear polish">Extended Wear Polish</option>
+                        <option value="design">Design</option>
+                        <option value="french/american">French/American</option>
+                    </select>
+                    <select class="pedicure">
+                        <option value="polish change">Polish Change</option>
+                        <option value="express pedicure">Express Pedicure</option>
+                        <option value="regular pedicure">Regular Pedicure</option>
+                        <option value="signature spa pedicure">Signature Spa Pedicure</option>
+                        <option value="premium spa pedicure">Premium Spa Pedicure</option>
+                        <option value="glitter & polish special">Glitter & Polish Special</option>
+                        <option value="extended wear polish">Extended Wear Polish</option>
+                        <option value="design">Design</option>
+                        <option value="french/american">French/American</option>
+                        <option value="gel polish add on">Gel Polish Add On</option>
+                    </select>
+                    <select class="children">
+                        <option value="polish change fingers/toes">Polish Change Fingers/Toes</option>
+                        <option value="regular manicure">Regular Manicure</option>
+                        <option value="regular pedicure">Regular Pedicure</option>
+                        <option value="extended wear polish">Extended Wear Polish</option>
+                        <option value="design">Design</option>
+                        <option value="french/american">French/American</option>
+                        <option value="gel polish add on">Gel Polish Add On</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Inquery:</legend>
+                    <textarea placeholder="Inquery"></textarea>
+                </fieldset>
+
+                <button type="submit" class="btn btn-blue">BOOK NOW</button>
+
                 </form>
             </div>
         </main>
@@ -128,5 +229,6 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
         <script src="global.js"></script>
+        <script src="booking.js"></script>
     </body>
 </html>
