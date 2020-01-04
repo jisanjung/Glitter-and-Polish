@@ -105,6 +105,10 @@
 }
 
 /* booking */
+.booking {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 .booking .book-form {
     width: 95%;
     margin: 30px auto;
@@ -116,7 +120,7 @@
     font-size: 14px;
 }
 .booking .book-form form fieldset {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     grid-column: 1/13;
 }
 .booking .book-form form fieldset .waxing, .booking .book-form form fieldset .pedicure, .booking .book-form form fieldset .children, .booking .book-form form fieldset .manicure {
@@ -131,10 +135,18 @@
 .booking .book-form form fieldset label {
     margin-right: 10px;
 }
-.booking .book-form form fieldset legend {
+.labels {
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 5px;
+}
+.specific-label {
+    margin-top: 5px;
+    display: none;
+}
+.waxing, .manicure, .pedicure, .children, .specific-label {
+    float: right;
+    width: 95% !important;
 }
 .booking .book-form form button {
     grid-column: 1/13;
@@ -292,5 +304,10 @@ fieldset {
     /* staff */
     .staff-profile h1 {
         font-size: 32px;
+    }
+
+    /* booking */
+    .booking .book-form h1 {
+        font-size: 40px;
     }
 }
