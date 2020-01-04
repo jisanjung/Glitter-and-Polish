@@ -124,17 +124,9 @@
 }
 .booking .book-form form fieldset input[type=date], .booking .book-form form fieldset input[type=time], .booking .book-form form fieldset input[type=text], .booking .book-form form fieldset input[type=email], .booking .book-form form fieldset input[type=tel], .booking .book-form form fieldset select, .booking .book-form form fieldset textarea {
     width: 100%;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
-    padding: 6px 12px;
 }
 .booking .book-form form fieldset textarea {
     height: 50px;
-}
-.booking .book-form form fieldset input::placeholder, .booking .book-form form fieldset textarea::placeholder {
-    color: rgb(156, 156, 156);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
 }
 .booking .book-form form fieldset label {
     margin-right: 10px;

@@ -167,6 +167,13 @@ html, body {
     color: #555;
     font-size: 14px;
 }
+.focused:focus {
+    border: 1px solid #66afe9;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
+    -moz-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
+    box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
+}
 .input::placeholder {
     font-size: 14px;
 }
@@ -517,7 +524,7 @@ header .menu img {
     padding: 30px 40px;
     grid-row: 1/20;
 }
-.contact form .error {
+.error {
     display: none;
     font-size: 10px;
     color: #ff0000;
@@ -527,13 +534,6 @@ header .menu img {
     display: block;
     width: 100%;
     margin-bottom: 15px;
-}
-.contact form .input:focus {
-    border: 1px solid #66afe9;
-    outline: none;
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
-    -moz-box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
-    box-shadow: 0px 0px 12px -2px rgba(199,199,199,1);
 }
 .contact button {
     border: none;

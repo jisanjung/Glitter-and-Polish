@@ -78,71 +78,15 @@ $(document).ready(function() {
     })();
 
 
-    // form validation
-    (function formValid() {
-
-        // constructor
-        var Validation = function(id, regex) {
-            this.id = id;
-            this.regex = regex;
-        };
-
-        // method 1 - validate regular expression
-        Validation.prototype.isValid = function() {
-            var inputType = $(this.id);
-            var regExp = this.regex;
-            var error = this.id + "Error";
-
-            inputType.on("blur", function() {
-                if (!regExp.test(inputType.val())) {
-                    $(this).css("border", "1px solid red");
-                    $(error).show();
-                } else {
-                    $(this).css("border", "1px solid #ccc");
-                    $(error).hide();
-                }
-            });
-            inputType.on("focus", function() {
-                if (regExp.test(inputType.val())) {
-                    $(this).css("border", "1px solid #ccc");
-                    $(error).hide();
-                }
-            });
-        };
-        
-        // method 2 - check for empty input
-        Validation.prototype.isEmpty = function() {
-            var inputType = $(this.id);
-            var regExp = this.regex;
-            var error = this.id + "Error";
-
-            inputType.on("blur", function() {
-                if (inputType.val() === "" || inputType.val() === null || inputType.val() === undefined) {
-                    $(this).css("border", "1px solid red");
-                    $(error).show();
-                } else {
-                    $(this).css("border", "1px solid #ccc");
-                    $(error).hide();
-                }
-            });
-            inputType.on("focus", function() {
-                if (inputType.val() !== "" || inputType.val() !== null || inputType.val() !== undefined) {
-                    $(this).css("border", "1px solid #ccc");
-                    $(error).hide();
-                }
-            });
-        };
-
-        var name = new Validation("#name", /^[a-z ,.'-]+$/i);
-        var email = new Validation("#email", /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-        var subject = new Validation("#subject", "");
-        var message = new Validation("#message", "");
-        name.isValid();
-        email.isValid();
-        subject.isEmpty();
-        message.isEmpty();
-        
-    })();
+    // contact validation
+    var name = new Validation("#name", /^[a-z ,.'-]+$/i);
+    var email = new Validation("#email", /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    var subject = new Validation("#subject", /^\s*\S+.*/);
+    var message = new Validation("#message", /^\s*\S+.*/);
+    name.isValid();
+    email.isValid();
+    subject.isValid();
+    message.isValid();
 
     //----------end------------
 });

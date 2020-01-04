@@ -70,49 +70,56 @@
 
                 <fieldset>
                     <legend>Title:</legend>
-                    <input type="radio" name="mr" value="mr">
+                    <input type="radio" name="title" value="mr">
                     <label for="mr">Mr.</label>
-                    <input type="radio" name="mrs" value="mrs">
+                    <input type="radio" name="title" value="mrs">
                     <label for="mrs">Mrs.</label>
-                    <input type="radio" name="ms" value="ms">
+                    <input type="radio" name="title" value="ms">
                     <label for="ms">Ms.</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Request Date:</legend>
-                    <input type="date" name="date" placeholder="Date">
+                    <input type="date" name="date" placeholder="Date" class="input focused" id="date">
+                    <span id="dateError" class="error">Invalid date</span>
                 </fieldset>
 
                 <fieldset>
                     <legend>Request Time:</legend>
-                    <input type="time" name="time" placeholder="Time">
+                    <input type="time" name="time" placeholder="Time" class="input focused" id="time">
+                    <span id="timeError" class="error">AM or PM?</span>
                 </fieldset>
 
                 <fieldset>
                     <legend>Name:</legend>
-                    <input type="text" name="name" placeholder="Enter your Name">
+                    <input type="text" name="name" placeholder="Enter your Name" class="input focused" id="name">
+                    <span id="nameError" class="error">Invalid input</span>
                 </fieldset>
 
                 <fieldset>
                     <legend>Email:</legend>
-                    <input type="email" name="email" placeholder="Enter Email">
+                    <input type="email" name="email" placeholder="Enter Email" class="input focused" id="email">
+                    <span id="emailError" class="error">Invalid email</span>
                 </fieldset>
 
                 <fieldset>
                     <legend>Phone:</legend>
-                    <input type="tel" name="phone" placeholder="Enter Phone">
+                    <input type="tel" name="phone" placeholder="Enter Phone" class="input focused" id="phone">
+                    <span id="phoneError" class="error">Invalid number</span>
                 </fieldset>
 
                 <fieldset>
                     <legend>Service:</legend>
-                    <select>
+                    <select class="input focused" id="select">
                         <option value="service">Please select a service</option>
                         <option value="waxing">Waxing</option>
                         <option value="manicure">Manicure</option>
                         <option value="pedicure">Pedicure</option>
                         <option value="children">Children</option>
                     </select>
-                    <select class="waxing">
+                    <span id="selectError" class="error">You must select a service</span>
+
+                    <select class="waxing input focused">
                         <option value="eyebrow">Eyebrow</option>
                         <option value="lip">Lip</option>
                         <option value="chin">Chin</option>
@@ -127,7 +134,7 @@
                         <option value="fingers">Fingers</option>
                         <option value="toes">Toes</option>
                     </select>
-                    <select class="manicure">
+                    <select class="manicure input focused">
                         <option value="polish change">Polish Change</option>
                         <option value="regular manicure">Regular Manicure</option>
                         <option value="hot oil manicure">Hot Oil Manicure</option>
@@ -138,7 +145,7 @@
                         <option value="design">Design</option>
                         <option value="french/american">French/American</option>
                     </select>
-                    <select class="pedicure">
+                    <select class="pedicure input focused">
                         <option value="polish change">Polish Change</option>
                         <option value="express pedicure">Express Pedicure</option>
                         <option value="regular pedicure">Regular Pedicure</option>
@@ -150,7 +157,7 @@
                         <option value="french/american">French/American</option>
                         <option value="gel polish add on">Gel Polish Add On</option>
                     </select>
-                    <select class="children">
+                    <select class="children input focused">
                         <option value="polish change fingers/toes">Polish Change Fingers/Toes</option>
                         <option value="regular manicure">Regular Manicure</option>
                         <option value="regular pedicure">Regular Pedicure</option>
@@ -163,7 +170,7 @@
 
                 <fieldset>
                     <legend>Inquery:</legend>
-                    <textarea placeholder="Inquery"></textarea>
+                    <textarea placeholder="Inquery" class="input focused"></textarea>
                 </fieldset>
 
                 <button type="submit" class="btn btn-blue">BOOK NOW</button>
@@ -228,6 +235,7 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <script src="validation.js"></script>
         <script src="global.js"></script>
         <script src="booking.js"></script>
     </body>
