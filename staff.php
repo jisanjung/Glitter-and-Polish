@@ -6,8 +6,8 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="other.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/other.css">
         <link rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
@@ -16,36 +16,9 @@
     <body>
         <div class="other-showcase" id="showcaseID">
             <!--header-->
-            <header>
-                <div class="container-lg header-container">
-                    <a href="index.html" class="cursor-pointer">
-                        <div class="logo vertical-center"><img src="images/logo.png" alt="Logo">
-                            <span class="playfair-serif"><i class="text-blue">glitter</i></br>&polish</span>
-                        </div>
-                    </a>
-                    <button type="button" class="menu vertical-center cursor-pointer"><img src="images/icons8-menu-48.png" alt="Menu"></button>
-                    <nav class="oswald-sans desktop-nav vertical-center">
-                        <ul>
-                            <li class="link-animate"><a href="index.html">HOME</a></li>
-                            <li class="link-animate"><a href="#">ABOUT</a></li>
-                            <li class="link-animate"><a href="#">SERVICES</a></li>
-                            <li class="link-animate"><a href="#">OUR STAFF</a></li>
-                            <li class="link-animate"><a href="#">CONTACT</a></li>
-                            <li><a href="#" class="btn btn-blue">BOOK NOW</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <nav class="oswald-sans mobile-nav">
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">OUR STAFF</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="#">BOOK NOW</a></li>
-                    </ul>
-                </nav>
-            </header>
+            <?php
+                include "header.php";
+            ?>
         </div>
 
         <!--section divider-->
@@ -114,53 +87,14 @@
         </div>
 
         <!--footer-->
-        <footer class="footer">
-            <!--side image 2-->
-            <img src="images/side_img2.png" alt="Side Image 2 - Nail Polish" class="side-img" id="side-img2">
-            <div class="footer-bg"></div>
-            <div class="grid-wrap">
-                <div class="footer-section">
-                    <h3 class="oswald-sans">Contact</h3>
-                    <ul class="open-sans">
-                        <li><img src="images/marker.png" alt="Location" class="contact-icons">39 W Lancaster Avenue</br><span>Paoli, PA 19301</span></li>
-                        <li><img src="images/phone.png" alt="Phone" class="contact-icons"><a href="tel:484-329-7989" id="phone-number">(484) 695-2601</a></li>
-                        <li class="oswald-sans"><img src="images/mail.png" alt="Mail" class="contact-icons"><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=glitterpolishnailspa@gmail.com" id="email-link">glitterpolishnailspa@gmail.com</a></li>
-                        <li><img src="images/payments.png" alt="Payment Methods"></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 class="oswald-sans">We are Open</h3>
-                    <ul class="open-sans">
-                        <li>Monday - Friday 9:30AM - 7PM</li>
-                        <li>Saturday 9AM - 6PM</li>
-                        <li>Sunday 10AM - 5PM</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 class="oswald-sans">Facebook</h3>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fm.facebook.com%2Fglitterpolishpaoli%2F&tabs&width=340&height=121&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="121" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="wrap">
-                    <div class="copyright">
-                        <p class="open-sans">&copy 2020 by Glitter & Polish. All Rights Reserved</p>
-                    </div>
-                    <div class="footer-icons">
-                        <ul>
-                            <li><a href="#"><img src="images/fb.png" alt="Facebook"></a></li>
-                            <li><a href="#"><img src="images/insta.png" alt="Facebook"></a></li>
-                            <li><a href="#"><img src="images/yelp.png" alt="Facebook"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php
+            include "footer.php";
+        ?>
         <!--javascript-->
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-        <script src="global.js"></script>
+        <script src="src/global.js"></script>
     </body>
 </html>
