@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +37,7 @@
             </div>
             <div><img src="images/carousel3.jpg" alt="Image 3">
                 <p class="text-white text-center center-all playfair-serif showcase-text"><span>TRUE BEAUTY</span></br><span class="last-child">comes from within</span>
-                    <a href="#" class="btn-blue">SCHEDULE AN APPOINTMENT</a>
+                    <a href="book.php" class="btn-blue">SCHEDULE AN APPOINTMENT</a>
                 </p>
             </div>
         </div>
@@ -298,7 +299,7 @@
                 <div class="book-divider"></div>
                 <h1 class="text-white title text-center">Book with us today</h1>
                 <div class="tint"></div>
-                <a href="book.html" class="btn btn-black text-center">BOOK NOW</a>
+                <a href="book.php" class="btn btn-black text-center">BOOK NOW</a>
             </div>
 
             <!--contact-->
@@ -306,22 +307,25 @@
                 <h1 class="title text-center">Contact Us</h1>
                 <div class="divider"></div>
                 <div class="grid-wrap">
-                    <form>
+                    <form id="contactForm" method="post">
+
+                        <div class="submit-message"></div>
+
                         <div>
                             <span id="nameError" class="error">Invalid name</span>
-                            <input type="text" id="name" placeholder="Enter Name" class="input focused">
+                            <input type="text" id="name" name="name" placeholder="Enter Name" class="input focused">
                             <span id="emailError" class="error">Invalid email</span>
-                            <input type="email" id="email" placeholder="Enter Email" class="input focused">
+                            <input type="email" id="email" name="email" placeholder="Enter Email" class="input focused">
                             <span id="subjectError" class="error">Cannot be blank</span>
-                            <input type="text" id="subject" placeholder="Subject" class="input focused">
+                            <input type="text" id="subject" placeholder="Subject" class="input focused" name="subject">
                             <span id="messageError" class="error">Cannot be blank</span>
-                            <textarea id="message" placeholder="Enter Message" class="input focused"></textarea>
-                            <button type="submit" class="btn btn-blue2 text-center cursor-pointer">SEND YOUR MESSAGE</button>
+                            <textarea id="message" placeholder="Enter Message" class="input focused" name="message"></textarea>
+                            <button type="submit" name="submit" class="btn btn-blue2 text-center cursor-pointer" id="submit">SEND YOUR MESSAGE</button>
                         </div>
                     </form>
                     <div class="map">
                         <div class="container-lg">
-                            <div id="mapid" class="img img-temp"></div>
+                            <div id="mapid"></div>
                         </div>
                     </div>
                 </div>

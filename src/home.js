@@ -88,5 +88,32 @@ $(document).ready(function() {
     subject.isValid();
     message.isValid();
 
+
+    // contact form
+    $("#submit").click(function(e) {
+        e.preventDefault();
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var subject = $("#subject").val();
+        var message = $("#message").val();
+
+        // ajax
+        $.post("contact.php", {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        }, function(data) {
+            if (data === "incomplete") {
+                $(".submit-message").html("please fill in all forms");
+            } else if (data === "fail") {
+                $(".submit-message").html("error");
+            } else if (data === "pass") {
+                $(".submit-message").html("thank you");
+            }
+        });
+    });
+
+
     //----------end------------
 });

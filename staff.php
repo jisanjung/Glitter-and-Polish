@@ -83,7 +83,7 @@
             <div class="book-divider"></div>
             <h1 class="text-white title text-center">Book with us today</h1>
             <div class="tint"></div>
-            <a href="#" class="btn btn-black text-center">BOOK NOW</a>
+            <a href="book.php" class="btn btn-black text-center">BOOK NOW</a>
         </div>
 
         <!--footer-->
