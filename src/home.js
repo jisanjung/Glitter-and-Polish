@@ -108,12 +108,17 @@ $(document).ready(function() {
 
             if (data === "incomplete") {
                 $(".submit-message").html("Please fill in all input fields");
+                $(".submit-message").removeClass("success");
                 $(".submit-message").addClass("danger");
             } else if (data === "fail") {
                 $(".submit-message").html("Something went wrong");
+                $(".submit-message").removeClass("success");
                 $(".submit-message").addClass("danger");
             } else if (data === "pass") {
+                $("input").val("");
+                $("textarea").val("");
                 $(".submit-message").html("Thank you! Sent successfully");
+                $(".submit-message").removeClass("danger");
                 $(".submit-message").addClass("success");
             }
         });

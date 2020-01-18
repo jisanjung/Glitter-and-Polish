@@ -106,7 +106,6 @@
 
 /* booking */
 .booking {
-    margin-top: 50px;
     margin-bottom: 50px;
 }
 .booking .book-form {
@@ -165,6 +164,14 @@
 fieldset {
     border: 0;
 }
+.submit-message {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    margin: 0;
+    margin-top: 30px;
+}
 
 /* media queries */
 @media screen and (min-width: 375px) {
@@ -203,6 +210,9 @@ fieldset {
     }
     .booking .book-form form fieldset:nth-child(3), .booking .book-form form fieldset:nth-child(6) {
         grid-column: 7/13;
+    }
+    .submit-message {
+        width: 596px;
     }
 }
 @media screen and (min-width: 1024px) {

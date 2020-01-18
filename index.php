@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/styles.css">
@@ -336,6 +337,7 @@
         <?php
             include "footer.php";
         ?>
+
         <!--javascript-->
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"

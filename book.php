@@ -37,6 +37,9 @@
 
         <!--main section-->
         <main class="booking">
+
+            <span class="submit-message"></span>
+
             <div class="book-form">
                 <h1 class="text-white open-sans text-center">Booking Form</h1>
                 <form class="open-sans grid-wrap">

@@ -11,18 +11,19 @@
         $phone = $_POST["phone"];
         $service = $_POST["service"];
         $inquery = $_POST["inquery"];
+        $date = $_POST["date"];
 
         if (empty($requestDate) || empty($requestTime) || empty($name) || empty($email) || empty($phone) || empty($service)) {
             echo "incomplete";
         } else {
-            $query = "insert into appointments(request_date, request_time, name, email, phone, service, inquery) values('$requestDate', '$requestTime', '$name', '$email', '$phone', '$service', '$inquery')";
+            $query = "insert into appointments(request_date, request_time, name, email, phone, service, inquery, date_posted) values('$requestDate', '$requestTime', '$name', '$email', '$phone', '$service', '$inquery', '$date')";
 
             $result = mysqli_query($conn, $query);
 
             if (!$result) {
-                echo "data not inserted";
+                echo "fail";
             } else {
-                echo "data inserted";
+                echo "pass";
             }
         }
     }

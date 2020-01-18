@@ -43,6 +43,7 @@ $(document).ready(function() {
         var phone = $("#phone");
         var service = $("#select");
         var inquery = $("#inquery");
+        var date = currentDate();
 
         $.ajax({
             method: "POST",
@@ -54,13 +55,41 @@ $(document).ready(function() {
                 email: email.val(),
                 phone: phone.val(),
                 service: service.val(),
-                inquery: inquery.val()
+                inquery: inquery.val(),
+                date: date
             },
             success: function(data) {
-                console.log(data);
+                window.scrollTo(0, 0);
+
+                $(".submit-message").css("display", "block");
+
+                if (data === "incomplete") {
+                    $(".submit-message").html("Please fill in all input fields");
+                    $(".submit-message").removeClass("success");
+                    $(".submit-message").addClass("danger");
+                } else if (data === "fail") {
+                    $(".submit-message").html("Something went wrong");
+                    $(".submit-message").removeClass("success");
+                    $(".submit-message").addClass("danger");
+                } else if (data === "pass") {
+                    $("input").val("");
+                    $("textarea").val("");
+                    $(".submit-message").html("Thank you! Sent successfully");
+                    $(".submit-message").addClass("danger");
+                    $(".submit-message").addClass("success");
+                }
             }
         });
     });
+
+    function currentDate() {
+        var d = new Date();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+        var output = d.getFullYear() + "-" + (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.setSeconds();
+        
+        return output;
+    }
     
 
 });
