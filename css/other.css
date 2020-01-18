@@ -173,6 +173,20 @@ fieldset {
     margin-top: 30px;
 }
 
+/* orders */
+#orders {
+    padding: 0;
+}
+.order-item {
+    display: block;
+    padding: 3px;
+}
+.each-order {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    list-style: none;
+}
+
 /* media queries */
 @media screen and (min-width: 375px) {
     .staff-profile img {
@@ -261,12 +275,15 @@ fieldset {
     .staff-profile {
         width: 1024px;
         margin: 0 auto;
+        padding-bottom: 20px;
     }
     .staff-profile img {
         grid-column: 1/5;
         grid-row: 1/5;
         width: 300px;
         height: 300px;
+        left: 0;
+        transform: translateX(0px);
     }
     .staff-profile h1, .staff-profile h3, .staff-profile p {
         grid-column: 5/13;
@@ -275,6 +292,12 @@ fieldset {
     }
     .staff-profile h1, .staff-profile h3, .staff-profile p {
         padding: 0 20px;
+    }
+
+    /* orders */
+    .appointments {
+        width: 1000px;
+        margin: 0 auto;
     }
 }
 @media screen and (min-width: 1200px) {

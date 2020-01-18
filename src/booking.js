@@ -47,7 +47,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "POST",
-            url: "appointments.php",
+            url: "post.php",
             data: {
                 requestDate: requestDate.val(),
                 requestTime: requestTime.val(),
