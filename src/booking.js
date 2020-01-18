@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     var date = new Validation("#date", /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/);
     date.isValid();
 
@@ -28,14 +29,38 @@ $(document).ready(function() {
         }
     });
 
-    // certain select input shows depending on user's selection
-    select.on("change", function() {
-        var value = $(this).val();
-        $(".specific-label").hide();
-        $("#" + value + "-label").css("display", "block");
 
-        $(".specific-input").hide();
-        $("." + value).show();
+    // post data into database
+    var button = $("#bookBtn");
+    
+    button.on("click", function(e) {
+        e.preventDefault();
+
+        var requestDate = $("#date");
+        var requestTime = $("#time");
+        var name = $("#name");
+        var email = $("#email");
+        var phone = $("#phone");
+        var service = $("#select");
+        var inquery = $("#inquery");
+
+        $.ajax({
+            method: "POST",
+            url: "appointments.php",
+            data: {
+                requestDate: requestDate.val(),
+                requestTime: requestTime.val(),
+                name: name.val(),
+                email: email.val(),
+                phone: phone.val(),
+                service: service.val(),
+                inquery: inquery.val()
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        });
     });
+    
 
 });

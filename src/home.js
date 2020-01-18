@@ -104,12 +104,17 @@ $(document).ready(function() {
             subject: subject,
             message: message
         }, function(data) {
+            $(".submit-message").show();
+
             if (data === "incomplete") {
-                $(".submit-message").html("please fill in all forms");
+                $(".submit-message").html("Please fill in all input fields");
+                $(".submit-message").addClass("danger");
             } else if (data === "fail") {
-                $(".submit-message").html("error");
+                $(".submit-message").html("Something went wrong");
+                $(".submit-message").addClass("danger");
             } else if (data === "pass") {
-                $(".submit-message").html("thank you");
+                $(".submit-message").html("Thank you! Sent successfully");
+                $(".submit-message").addClass("success");
             }
         });
     });

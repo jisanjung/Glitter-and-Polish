@@ -540,6 +540,24 @@ header .menu img {
     padding-right: 1.5em;
     padding-left: 1.5em;
 }
+.submit-message {
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+.danger {
+    background-color: pink;
+    border: 1px solid maroon;
+    color: maroon;
+}
+.success {
+    background-color: #A5DFAC;
+    border: 1px solid darkgreen;
+    color: darkgreen;
+}
 .contact form textarea {
     height: 114px;
     margin-bottom: 30px;

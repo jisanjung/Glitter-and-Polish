@@ -308,9 +308,6 @@
                 <div class="divider"></div>
                 <div class="grid-wrap">
                     <form id="contactForm" method="post">
-
-                        <div class="submit-message"></div>
-
                         <div>
                             <span id="nameError" class="error">Invalid name</span>
                             <input type="text" id="name" name="name" placeholder="Enter Name" class="input focused">
@@ -321,6 +318,8 @@
                             <span id="messageError" class="error">Cannot be blank</span>
                             <textarea id="message" placeholder="Enter Message" class="input focused" name="message"></textarea>
                             <button type="submit" name="submit" class="btn btn-blue2 text-center cursor-pointer" id="submit">SEND YOUR MESSAGE</button>
+
+                            <span class="submit-message"></span>
                         </div>
                     </form>
                     <div class="map">

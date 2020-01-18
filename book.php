@@ -91,69 +91,14 @@
                         <option value="children">Children</option>
                     </select>
                     <span id="selectError" class="error">You must select a service</span>
-
-                    <span class="labels specific-label" id="waxing-label">Specify type:</span>
-                    <select class="waxing input focused specific-input">
-                        <option value="eyebrow">Eyebrow</option>
-                        <option value="lip">Lip</option>
-                        <option value="chin">Chin</option>
-                        <option value="sideburns">Sideburns</option>
-                        <option value="underarm">Underarm</option>
-                        <option value="partial leg">Partial Leg</option>
-                        <option value="full leg">Full Leg</option>
-                        <option value="partial arm">Partial Arm</option>
-                        <option value="full arm">Full Arm</option>
-                        <option value="bikini">Bikini</option>
-                        <option value="brazilian">Brazilian</option>
-                        <option value="fingers">Fingers</option>
-                        <option value="toes">Toes</option>
-                    </select>
-
-                    <span class="labels specific-label" id="manicure-label">Specify type:</span>
-                    <select class="manicure input focused specific-input">
-                        <option value="polish change">Polish Change</option>
-                        <option value="regular manicure">Regular Manicure</option>
-                        <option value="hot oil manicure">Hot Oil Manicure</option>
-                        <option value="gel polish change">Gel Polish Change</option>
-                        <option value="regular gel manicure">Regular Gel Manicure</option>
-                        <option value="organic spa manicure">Organic Spa Manicure</option>
-                        <option value="extended wear polish">Extended Wear Polish</option>
-                        <option value="design">Design</option>
-                        <option value="french/american">French/American</option>
-                    </select>
-
-                    <span class="labels specific-label" id="pedicure-label">Specify type:</span>
-                    <select class="pedicure input focused specific-input">
-                        <option value="polish change">Polish Change</option>
-                        <option value="express pedicure">Express Pedicure</option>
-                        <option value="regular pedicure">Regular Pedicure</option>
-                        <option value="signature spa pedicure">Signature Spa Pedicure</option>
-                        <option value="premium spa pedicure">Premium Spa Pedicure</option>
-                        <option value="glitter & polish special">Glitter & Polish Special</option>
-                        <option value="extended wear polish">Extended Wear Polish</option>
-                        <option value="design">Design</option>
-                        <option value="french/american">French/American</option>
-                        <option value="gel polish add on">Gel Polish Add On</option>
-                    </select>
-
-                    <span class="labels specific-label" id="children-label">Specify type:</span>
-                    <select class="children input focused specific-input">
-                        <option value="polish change fingers/toes">Polish Change Fingers/Toes</option>
-                        <option value="regular manicure">Regular Manicure</option>
-                        <option value="regular pedicure">Regular Pedicure</option>
-                        <option value="extended wear polish">Extended Wear Polish</option>
-                        <option value="design">Design</option>
-                        <option value="french/american">French/American</option>
-                        <option value="gel polish add on">Gel Polish Add On</option>
-                    </select>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Inquery:</legend>
-                    <textarea placeholder="Inquery" class="input focused"></textarea>
+                    <textarea placeholder="Inquery" class="input focused" id="inquery"></textarea>
                 </fieldset>
 
-                <button type="submit" class="btn btn-blue cursor-pointer">BOOK NOW</button>
+                <button type="submit" class="btn btn-blue cursor-pointer" id="bookBtn">BOOK NOW</button>
 
                 </form>
             </div>
