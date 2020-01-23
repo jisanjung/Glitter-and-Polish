@@ -186,6 +186,10 @@ fieldset {
     margin-top: 30px;
     list-style: none;
 }
+.category {
+    display: inline;
+    font-weight: bold;
+}
 
 /* media queries */
 @media screen and (min-width: 375px) {

@@ -4,7 +4,7 @@
     if (!$conn) {
         echo "connection error".mysqli_connect_error();
     } else {
-        $query = "select * from appointments";
+        $query = "select * from appointments order by id desc";
         $result = mysqli_query($conn, $query);
         $json = array();
 
