@@ -173,24 +173,6 @@ fieldset {
     margin-top: 30px;
 }
 
-/* orders */
-#orders {
-    padding: 0;
-}
-.order-item {
-    display: block;
-    padding: 3px;
-}
-.each-order {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    list-style: none;
-}
-.category {
-    display: inline;
-    font-weight: bold;
-}
-
 /* media queries */
 @media screen and (min-width: 375px) {
     .staff-profile img {
@@ -296,12 +278,6 @@ fieldset {
     }
     .staff-profile h1, .staff-profile h3, .staff-profile p {
         padding: 0 20px;
-    }
-
-    /* orders */
-    .appointments {
-        width: 1000px;
-        margin: 0 auto;
     }
 }
 @media screen and (min-width: 1200px) {

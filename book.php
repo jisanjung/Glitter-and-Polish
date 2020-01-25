@@ -87,11 +87,11 @@
                 <fieldset>
                     <legend class="labels">Service:</legend>
                     <select class="input focused" id="select">
-                        <option value="service">Please select a service</option>
-                        <option value="waxing">Waxing</option>
-                        <option value="manicure">Manicure</option>
-                        <option value="pedicure">Pedicure</option>
-                        <option value="children">Children</option>
+                        <option value="Service">Please select a service</option>
+                        <option value="Waxing">Waxing</option>
+                        <option value="Manicure">Manicure</option>
+                        <option value="Pedicure">Pedicure</option>
+                        <option value="Children">Children</option>
                     </select>
                     <span id="selectError" class="error">You must select a service</span>
                 </fieldset>

@@ -1043,15 +1043,15 @@ footer div:nth-child(4) p {
 .btn-black:hover::before {
     width: 100%;
 }
-.btn-blue {
+.btn-blue, .btn-blue2 {
     position: relative;
     z-index: 0;
 }
-.btn-blue:hover {
+.btn-blue:hover, .btn-blue2 {
     color: #fff;
     transition: 0.3s all;
 }
-.btn-blue::before {
+.btn-blue::before, .btn-blue2::before {
     content: "";
     background: #000;
     position: absolute;
@@ -1063,7 +1063,7 @@ footer div:nth-child(4) p {
     z-index: -1;
     transition: all 0.3s;
 }
-.btn-blue:hover::before {
+.btn-blue:hover::before, .btn-blue2:hover::before {
     width: 100%;
 }
 

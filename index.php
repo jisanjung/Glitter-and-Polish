@@ -60,7 +60,7 @@
                         <p class="open-sans text-gray p-text">Mea graece labitur ad, eripuit explicari concludaturque mel te. Falli patrioque splendide te pri, vim ubique virtute ponderum no.</p>
                         <a href="#showcaseID" class="back-to-top cursor-pointer">
                         </a>
-                        <a href="#" class="btn btn-white text-decoration text-center">READ MORE</a>
+                        <a href="about.php" class="btn btn-white text-decoration text-center">READ MORE</a>
                     </div>
                 </div>
             </div>

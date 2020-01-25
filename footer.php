@@ -34,8 +34,8 @@
                     <div class="footer-icons">
                         <ul>
                             <li><a href="#"><img src="images/fb.png" alt="Facebook"></a></li>
-                            <li><a href="#"><img src="images/insta.png" alt="Facebook"></a></li>
-                            <li><a href="#"><img src="images/yelp.png" alt="Facebook"></a></li>
+                            <li><a href="https://www.instagram.com/glitterandpolishpaoli/"><img src="images/insta.png" alt="Facebook"></a></li>
+                            <li><a href="https://www.yelp.com/biz/glitter-and-polish-nail-spa-paoli"><img src="images/yelp.png" alt="Facebook"></a></li>
                         </ul>
                     </div>
                 </div>

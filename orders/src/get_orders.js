@@ -57,7 +57,7 @@ function getOrder() {
 
 // apply data to DOM
 function handleData(i, data) {
-    $("#orders").append("<li class='each-order'><span class='order-item'><span class='category'>Name: </span>"+ data[i].name +"</span><span class='order-item'><span class='category'>Email: </span>"+ data[i].email +"</span><span class='order-item'><span class='category'>Phone: </span>"+ data[i].phone +"</span><span class='order-item'><span class='category'>Requested Date: </span>"+ data[i].convertDate().requestDate +"</span><span class='order-item'><span class='category'>Requested Time: </span>"+ data[i].convertDate().time +"</span><span class='order-item'><span class='category'>Type of Service: </span>"+ data[i].service +"</span><span class='order-item'><span class='category'>Inquery: </span>"+ data[i].inquery +"</span><i class='status'>"+ data[i].convertDate().fromNow +"</i></li>");
+    $("#orders").append("<tr><td>"+ data[i].name +"</td><td>"+ data[i].email +"</td><td>"+ data[i].phone +"</td><td>"+ data[i].convertDate().requestDate +"</td><td>"+ data[i].convertDate().time +"</td><td>"+ data[i].service +"</td><td>"+ data[i].inquery +"</td><td class='status'>"+ data[i].convertDate().fromNow +"</td></tr>");
 }
 
 
@@ -65,13 +65,11 @@ function handleData(i, data) {
 function handleStatus() {
     $(".status").each(function() {
         if ($(this).text().includes("second") || $(this).text().includes("minute")) {
-            $(this).css("color", "green");
-            $(this).append("<span>new</span>");
+            $(this).addClass("text-success");
         } else if ($(this).text().includes("hour")) {
-            $(this).css("color", "orange");
+            $(this).addClass("text-warning");
         } else if ($(this).text().includes("day") || $(this).text().includes("week") || $(this).text().includes("month") || $(this).text().includes("year")) {
-            $(this).css("color", "red");
-            $(this).append("<span>late</span>");
+            $(this).addClass("text-danger");
         }
     });
 }
