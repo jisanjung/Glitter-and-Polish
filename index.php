@@ -52,7 +52,7 @@
                 <h1 class="title text-center">About Our Salon</h1>
                 <div class="divider"></div>
                 <div class="container-lg grid-wrap">
-                    <img class="img img-temp">
+                    <img src="images/colors.jpg" class="img">
                     <div class="about-text">
                         <p class="open-sans text-gray p-text">Lorem ipsum dolor sit amet, ludus maluisset his cu, ut prodesset posidonium nam, quo facilisis democritum eloquentiam at. Pri ad ipsum assueverit, cu sea possim concludaturque. No eos aliquid phaedrum, ex viderer salutandi mea. In has prima assum voluptatibus.</p>
                         <p class="open-sans text-gray p-text">Vel eros option mediocrem no. In quidam dolorem mei, in ornatus sententiae percipitur has. Cu vim amet singulis, mei saepe ceteros partiendo ex. Eam tation eirmod ei, utamur delectus vis id. Iudico maiestatis mea ut, ne admodum consulatu mea, suas tamquam
@@ -74,7 +74,7 @@
                 <div class="divider"></div>
                 <div class="grid-wrap">
                    <div class="service-item">
-                       <h1 class="playfair-serif light text-center">Pedicure</h1>
+                       <h1 class="playfair-serif light text-center">Waxing</h1>
                        <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
 
                        <div class="table-wrap">
@@ -137,7 +137,7 @@
                        <button type="button" class="oswald-sans">READ MORE</button>
                    </div>
                    <div class="service-item">
-                       <h1 class="playfair-serif light text-center">Nail Repair</h1>
+                       <h1 class="playfair-serif light text-center">Manicure</h1>
                        <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
 
                        <div class="table-wrap">
@@ -184,7 +184,7 @@
                        <button type="button" class="oswald-sans">READ MORE</button>
                    </div>
                    <div class="service-item">
-                       <h1 class="playfair-serif light text-center">Nail Art</h1>
+                       <h1 class="playfair-serif light text-center">Pedicure</h1>
                        <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
 
                        <div class="table-wrap">
@@ -235,7 +235,7 @@
                        <button type="button" class="oswald-sans">READ MORE</button>
                    </div>
                    <div class="service-item">
-                       <h1 class="playfair-serif light text-center">Toe Nail Polish</h1>
+                       <h1 class="playfair-serif light text-center">Children 10 & Under</h1>
                        <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
 
                        <div class="table-wrap">
@@ -281,18 +281,18 @@
                 <h1 class="title text-center">Gallery</h1>
                 <div class="divider"></div>
                 <div class="container-lg grid-wrap">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
-                    <img class="img img-temp">
+                    <img src="images/purpnails.jpg" class="img cursor-pointer">
+                    <img src="images/glitternails.jpg" class="img cursor-pointer">
+                    <img src="images/designnails.jpg" class="img cursor-pointer">
+                    <img src="images/graynails.jpg" class="img cursor-pointer">
+                    <img src="images/maroonnails.jpg" class="img cursor-pointer">
+                    <img src="images/clientseats.jpg" class="img cursor-pointer">
+                    <img src="images/blacknails.jpg" class="img cursor-pointer">
                 </div>
             </div>
 
             <!--modal-->
-            <div id="modalBackground"></div>
+            <div id="modalBackground" class="cursor-pointer"></div>
             <img src="" alt="Selected Image" class="center-all" id="image">
 
             <!--book-->

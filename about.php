@@ -37,7 +37,7 @@
 
         <main class="about-main">
             <div class="grid-wrap">
-                <img src="images/book.jpg" class="img img-temp">
+                <img src="images/welcomedesk.jpg" class="img img-temp">
                 <h1 class="playfair-serif">Welcome to Glitter & Polish</h1>
                 <div class="right-column">
                     <p class="open-sans">
@@ -55,7 +55,7 @@
                         The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. ]
                     </p>
                 </div>
-                <img src="images/book.jpg" class="img img-temp last-image">
+                <img src="images/frontsign.jpg" class="img img-temp last-image">
             </div>
         </main>
 

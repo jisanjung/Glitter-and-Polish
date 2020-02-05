@@ -104,7 +104,17 @@ $(document).ready(function() {
             subject: subject,
             message: message
         }, function(data) {
-            $(".submit-message").show();
+            var mql = window.matchMedia("(max-width: 451px)");
+
+            if (mql.matches) {
+                $(".submit-message").css({
+                    "display" : "block",
+                    "margin-left" : "0px",
+                    "margin-top" : "10px",
+                });
+            } else {
+                $(".submit-message").show();
+            }
 
             if (data === "incomplete") {
                 $(".submit-message").html("Please fill in all input fields");

@@ -12,7 +12,6 @@
                 <li class="link-animate"><a href="index.php">HOME</a></li>
                 <li class="link-animate"><a href="about.php">ABOUT</a></li>
                 <li class="link-animate"><a href="index.php#servicesID">SERVICES</a></li>
-                <li class="link-animate"><a href="staff.php">OUR STAFF</a></li>
                 <li class="link-animate"><a href="index.php#contactID">CONTACT</a></li>
                 <li><a href="book.php" class="btn btn-blue">BOOK NOW</a></li>
             </ul>
@@ -23,7 +22,6 @@
             <li><a href="index.php">HOME</a></li>
             <li><a href="about.php">ABOUT</a></li>
             <li><a href="index.php#servicesID">SERVICES</a></li>
-            <li><a href="staff.php">OUR STAFF</a></li>
             <li><a href="index.php#contactID">CONTACT</a></li>
             <li><a href="book.php">BOOK NOW</a></li>
         </ul>
