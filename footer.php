@@ -23,7 +23,7 @@
                 </div>
                 <div class="footer-section">
                     <h3 class="oswald-sans">Facebook</h3>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fm.facebook.com%2Fglitterpolishpaoli%2F&tabs&width=340&height=121&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="121" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGlitter-Polish-Paoli-109432443956433&tabs&width=340&height=120&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
             <div class="footer-bottom">

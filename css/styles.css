@@ -33,6 +33,9 @@ a {
 .cursor-pointer:hover {
     cursor: pointer;
 }
+.overflow-hidden {
+    overflow: hidden;
+}
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -430,7 +433,7 @@ header .menu img {
 .gallery img {
     grid-column: 1/13;
     height: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .gallery .grid-wrap {
     grid-auto-rows: minmax(15px, auto);
@@ -691,6 +694,13 @@ footer div:nth-child(4) p {
     }
     .gallery img {
         margin: 0;
+        transition: all 0.3s linear;
+    }
+    .gallery img {
+        height: 100%;
+    }
+    .gallery img:hover {
+        opacity: 0.5;
     }
     .gallery img:first-child {
         grid-column: 1/8;
