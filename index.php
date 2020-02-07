@@ -38,7 +38,7 @@
             </div>
             <div><img src="images/carousel3.jpg" alt="Image 3">
                 <p class="text-white text-center center-all playfair-serif showcase-text"><span>TRUE BEAUTY</span></br><span class="last-child">comes from within</span>
-                    <a href="book.php" class="btn-blue">SCHEDULE AN APPOINTMENT</a>
+                    <a href="book" class="btn-blue">SCHEDULE AN APPOINTMENT</a>
                 </p>
             </div>
         </div>
@@ -60,7 +60,7 @@
                         <p class="open-sans text-gray p-text">Mea graece labitur ad, eripuit explicari concludaturque mel te. Falli patrioque splendide te pri, vim ubique virtute ponderum no.</p>
                         <a href="#showcaseID" class="back-to-top cursor-pointer">
                         </a>
-                        <a href="about.php" class="btn btn-white text-decoration text-center">READ MORE</a>
+                        <a href="about" class="btn btn-white text-decoration text-center">READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -300,7 +300,7 @@
                 <div class="book-divider"></div>
                 <h1 class="text-white title text-center">Book with us today</h1>
                 <div class="tint"></div>
-                <a href="book.php" class="btn btn-black text-center">BOOK NOW</a>
+                <a href="book" class="btn btn-black text-center">BOOK NOW</a>
             </div>
 
             <!--contact-->
