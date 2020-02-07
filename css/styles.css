@@ -439,6 +439,10 @@ header .menu img {
     grid-auto-rows: minmax(15px, auto);
     margin-bottom: 60px;
 }
+.gallery .img {
+    max-width: 100%;
+    max-height: 100%;
+}
 .gallery img:first-child {
     grid-row: 1/32;
 }
@@ -554,12 +558,12 @@ header .menu img {
     border-radius: 4px;
 }
 .danger {
-    background-color: pink;
+    background-color: #F8D7DA;
     border: 1px solid maroon;
     color: maroon;
 }
 .success {
-    background-color: #A5DFAC;
+    background-color: #D4EDDA;
     border: 1px solid darkgreen;
     color: darkgreen;
 }
@@ -694,39 +698,40 @@ footer div:nth-child(4) p {
     }
     .gallery img {
         margin: 0;
-        transition: all 0.3s linear;
+        transition: all 0.3s;
     }
-    .gallery img {
-        height: 100%;
+    .gallery .img-wrap {
+        background: #000;
     }
     .gallery img:hover {
         opacity: 0.5;
+        transform: scale(1.1);
     }
-    .gallery img:first-child {
+    .gallery .img-wrap:first-child {
         grid-column: 1/8;
         grid-row: 1/20;
     }
-    .gallery img:nth-child(2) {
+    .gallery .img-wrap:nth-child(2) {
         grid-column: 8/13;
         grid-row: 1/10;
     }
-    .gallery img:nth-child(3) {
+    .gallery .img-wrap:nth-child(3) {
         grid-column: 8/10;
         grid-row: 11/20;
     }
-    .gallery img:nth-child(4) {
+    .gallery .img-wrap:nth-child(4) {
         grid-column: 10/13;
         grid-row: 11/20;
     }
-    .gallery img:nth-child(5) {
+    .gallery .img-wrap:nth-child(5) {
         grid-column: 1/4;
         grid-row: 21/30;
     }
-    .gallery img:nth-child(6) {
+    .gallery .img-wrap:nth-child(6) {
         grid-column: 4/8;
         grid-row: 21/30;
     }
-    .gallery img:nth-child(7) {
+    .gallery .img-wrap:nth-child(7) {
         grid-column: 8/13;
         grid-row: 21/30;
     }
