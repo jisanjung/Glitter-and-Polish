@@ -7,7 +7,7 @@
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
         echo "incomplete";
     } else {
-        $to = 'jjsk8er13@gmail.com';
+        $to = 'glitterpolishnailspa@gmail.com';
         $subject = 'Message from: '.$name;
         $txt = "Name: ".$name."\n"."Email: ".$email."\n"."Message: "."\n".$message;
         $headers = "From: ".$email;

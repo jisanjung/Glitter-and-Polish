@@ -37,25 +37,16 @@
 
         <main class="about-main">
             <div class="grid-wrap">
-                <img src="images/welcomedesk.jpg" class="img img-temp">
+                <img src="images/welcomedesk.jpeg" class="img img-temp">
                 <h1 class="playfair-serif">Welcome to Glitter & Polish</h1>
                 <div class="right-column">
                     <p class="open-sans">
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                        We want to give our best efforts when it comes to services. Our technicians are trained to provide comforting, excellent service as well as leaving you with beautiful looking nails.  We want to give back our friendliest service while providing you with a professional and modern look. Our spas are luxurious and pristine even after a hard day of work!
                     </p>
                     <p class="open-sans">
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                        Here at Glitter and Polish, we provide services such as painless Acrylic Nail Removal, Classic Manicures for everyday use, Eyebrow services, Gel fill-in, gorgeous nail art, Hot Oil treatments, Nail repair for those pesky nails that did not make out, callus removal, Classic Pedicures, Gel Nail removal, Nail Art removal, Polish Change, and foot massages amongst many more services.
                     </p>
                 </div>
-                <div class="left-column">
-                    <p class="open-sans">
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-                    </p>
-                    <p class="open-sans">
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. ]
-                    </p>
-                </div>
-                <img src="images/frontsign.jpg" class="img img-temp last-image">
             </div>
         </main>
 

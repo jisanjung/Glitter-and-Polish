@@ -54,10 +54,9 @@
                 <div class="container-lg grid-wrap">
                     <img src="images/colors.jpg" class="img">
                     <div class="about-text">
-                        <p class="open-sans text-gray p-text">Lorem ipsum dolor sit amet, ludus maluisset his cu, ut prodesset posidonium nam, quo facilisis democritum eloquentiam at. Pri ad ipsum assueverit, cu sea possim concludaturque. No eos aliquid phaedrum, ex viderer salutandi mea. In has prima assum voluptatibus.</p>
-                        <p class="open-sans text-gray p-text">Vel eros option mediocrem no. In quidam dolorem mei, in ornatus sententiae percipitur has. Cu vim amet singulis, mei saepe ceteros partiendo ex. Eam tation eirmod ei, utamur delectus vis id. Iudico maiestatis mea ut, ne admodum consulatu mea, suas tamquam
-                            vis at.</p>
-                        <p class="open-sans text-gray p-text">Mea graece labitur ad, eripuit explicari concludaturque mel te. Falli patrioque splendide te pri, vim ubique virtute ponderum no.</p>
+                        <p class="open-sans text-gray p-text">Our salon provides excellent service with quality products. This can include waxing as well as premium manicures and pedicures. All ages are welcome as we also provide services for children 10 and under.</p>
+                        <p class="open-sans text-gray p-text">When it comes to our clients, we don't cut corners. We give 100% of what is expected and what it is worth. Because of this, any feedback we receive is taken into consideration and improved upon.</p>
+                        <p class="open-sans text-gray p-text">If you are looking for a clean, modern look to your everyday outfit, we are here to provide it. Experience your new look today!</p>
                         <a href="#showcaseID" class="back-to-top cursor-pointer">
                         </a>
                         <a href="about" class="btn btn-white text-decoration text-center">READ MORE</a>
@@ -75,7 +74,7 @@
                 <div class="grid-wrap">
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">Waxing</h1>
-                       <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
+                       <p class="open-sans p-text text-center">We use sensitive-skin type products for facial wax in addition to our other services.</p>
 
                        <div class="table-wrap">
                         <table class="oswald-sans blue-table">
@@ -138,7 +137,7 @@
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">Manicure</h1>
-                       <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
+                       <p class="open-sans p-text text-center">We provide quick and effective polishes that do not require full cuticle maintenance!</p>
 
                        <div class="table-wrap">
                         <table class="oswald-sans gray-table">
@@ -185,7 +184,7 @@
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">Pedicure</h1>
-                       <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
+                       <p class="open-sans p-text text-center">From simple trim and shape ups to deep sea-salt foot soaks, we provide premium services.</p>
 
                        <div class="table-wrap">
                         <table class="oswald-sans blue-table">
@@ -236,7 +235,7 @@
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">Children 10 & Under</h1>
-                       <p class="open-sans p-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, corrupti ipsa. Dolore minima quod sunt eveniet.</p>
+                       <p class="open-sans p-text text-center">Give your kids a fresh look woth these affordable prices. They can look lavish as well!</p>
 
                        <div class="table-wrap">
                         <table class="oswald-sans gray-table">
