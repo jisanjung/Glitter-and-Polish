@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli("localhost", "root", "", "bookings") or die("error");
+    $conn = new mysqli("localhost", "jisanjun_jjung", "456pickupsticks.", "jisanjun_orders") or die("error");
 
     if (!$conn) {
         echo "connection error".mysqli_connect_error();

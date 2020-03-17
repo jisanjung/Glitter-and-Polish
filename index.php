@@ -20,6 +20,16 @@
     </head>
     <body>
 
+    <!--COVID-19 warning-->
+    <aside class="open-sans">
+        <div>
+            <p>
+                Due to the Coronavirus (COVID-19), we are temporarily closed as instructed by local township officials. We apologize for the inconvenience.
+            </p>
+            <p>If an appointment is critical, please call: </br><a href="tel:267-699-8413">267-699-8413</a></p>
+        </div>
+    </aside>
+
     <!--showcase-->
     <div class="showcase" id="showcaseID">
 
@@ -52,7 +62,7 @@
                 <h1 class="title text-center">About Our Salon</h1>
                 <div class="divider"></div>
                 <div class="container-lg grid-wrap">
-                    <img src="images/colors.jpg" class="img">
+                    <img src="images/colors.JPG" class="img">
                     <div class="about-text">
                         <p class="open-sans text-gray p-text">Our salon provides excellent service with quality products. This can include waxing as well as premium manicures and pedicures. All ages are welcome as we also provide services for children 10 and under.</p>
                         <p class="open-sans text-gray p-text">When it comes to our clients, we don't cut corners. We give 100% of what is expected and what it is worth. Because of this, any feedback we receive is taken into consideration and improved upon.</p>
@@ -296,7 +306,7 @@
                         <img src="images/maroonnails.jpg" class="img cursor-pointer">
                     </div>
                     <div class="img-wrap overflow-hidden">
-                        <img src="images/clientseats.jpg" class="img cursor-pointer">
+                        <img src="images/clientseats.JPG" class="img cursor-pointer">
                     </div>
                     <div class="img-wrap overflow-hidden">
                         <img src="images/blacknails.jpg" class="img cursor-pointer">

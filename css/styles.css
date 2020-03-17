@@ -194,6 +194,25 @@ html, body {
     display: block;
 }
 
+/* covid-19 warning */
+aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: 150px;
+    font-size: 14px;
+    text-align: center;
+    padding: 15px;
+    background-color: #FFCC00;
+}
+aside div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* header */
 header {
     height: 70px;
@@ -203,6 +222,7 @@ header {
     z-index: 9999;
     width: 100%;
     transition: 0.5s all;
+    top: 150px;
 }
 header .logo {
     color: #fff;
@@ -264,6 +284,8 @@ header .menu img {
     width: 100%;
     position: relative;
     background-color: #000;
+    /* temporary */
+    top: 150px;
 }
 .showcase img {
     height: 100%;
@@ -431,9 +453,11 @@ header .menu img {
 
 /* gallery */
 .gallery img {
-    grid-column: 1/13;
     height: 100%;
     margin-top: 10px;
+}
+.gallery .img-wrap {
+    grid-column: 1/13;
 }
 .gallery .grid-wrap {
     grid-auto-rows: minmax(15px, auto);
@@ -443,25 +467,25 @@ header .menu img {
     max-width: 100%;
     max-height: 100%;
 }
-.gallery img:first-child {
+.gallery .img-wrap:first-child {
     grid-row: 1/32;
 }
-.gallery img:nth-child(2) {
+.gallery .img-wrap:nth-child(2) {
     grid-row: 33/49;
 }
-.gallery img:nth-child(3) {
+.gallery .img-wrap:nth-child(3) {
     grid-row: 50/80;
 }
-.gallery img:nth-child(4) {
+.gallery .img-wrap:nth-child(4) {
     grid-row: 81/92;
 }
-.gallery img:nth-child(5) {
+.gallery .img-wrap:nth-child(5) {
     grid-row: 93/111;
 }
-.gallery img:nth-child(6) {
+.gallery .img-wrap:nth-child(6) {
     grid-row: 112/123;
 }
-.gallery img:nth-child(7) {
+.gallery .img-wrap:nth-child(7) {
     grid-row: 124/154;
 }
 
@@ -760,6 +784,11 @@ footer div:nth-child(4) p {
     }
 }
 @media screen and (min-width: 1024px) {
+    /* covid-19 */
+    aside {
+        font-size: 16px;
+    }
+
     /* header */
     .menu {
         display: none;

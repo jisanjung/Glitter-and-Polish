@@ -37,7 +37,7 @@
 
         <main class="about-main">
             <div class="grid-wrap">
-                <img src="images/welcomedesk.jpeg" class="img img-temp">
+                <img src="images/welcomedesk.JPEG" class="img img-temp">
                 <h1 class="playfair-serif">Welcome to Glitter & Polish</h1>
                 <div class="right-column">
                     <p class="open-sans">

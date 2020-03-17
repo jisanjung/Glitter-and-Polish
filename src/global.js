@@ -10,7 +10,7 @@ $(document).ready(function() {
         if (top > 0) {
             $("header").css({"top": "0", "background": "#000"});
         } else {
-            $("header").css({"top": "20px", "background": "transparent"});
+            $("header").css({"top": "150px", "background": "transparent"});
         }
 
         // reveal button takes you back to top
