@@ -7,7 +7,7 @@ $(document).ready(function() {
         var top = $(this).scrollTop();
         
         // header
-        if (top > 0) {
+        if (top > 1) {
             $("header").css({"top": "0", "background": "#000"});
         } else {
             $("header").css({"top": "150px", "background": "transparent"});

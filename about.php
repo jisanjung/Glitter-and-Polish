@@ -14,6 +14,18 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
+
+        <!--COVID-19 warning-->
+        <aside class="open-sans">
+            <div>
+                <p>
+                    Due to the Coronavirus (COVID-19), we are temporarily closed as instructed by local township officials. We apologize for the inconvenience.
+                </p>
+                <p>If an appointment is critical, please call: </br><a href="tel:267-699-8413">267-699-8413</a></p>
+            </div>
+        </aside>
+
+        <div class="relative">
         <div class="other-showcase" id="showcaseID">
             <!--header-->
             <?php
@@ -25,7 +37,7 @@
         <div class="section-divider">
             <div>
                 <h3 class="vertical-center oswald-sans">
-                    <span><a href="index.html">HOME</a></span>
+                    <span><a href="index">HOME</a></span>
                     <span>\</span>
                     <span>ABOUT US</span>
                 </h3>
@@ -62,6 +74,7 @@
         <?php
             include "footer.php";
         ?>
+        </div>
         <!--javascript-->
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"

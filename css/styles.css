@@ -196,10 +196,6 @@ html, body {
 
 /* covid-19 warning */
 aside {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     z-index: 10;
     height: 150px;
     font-size: 14px;
@@ -284,8 +280,6 @@ header .menu img {
     width: 100%;
     position: relative;
     background-color: #000;
-    /* temporary */
-    top: 150px;
 }
 .showcase img {
     height: 100%;

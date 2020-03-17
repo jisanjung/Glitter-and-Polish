@@ -245,7 +245,7 @@
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">Children 10 & Under</h1>
-                       <p class="open-sans p-text text-center">Give your kids a fresh look woth these affordable prices. They can look lavish as well!</p>
+                       <p class="open-sans p-text text-center">Give your kids a fresh look with these affordable prices. They can look lavish as well!</p>
 
                        <div class="table-wrap">
                         <table class="oswald-sans gray-table">
