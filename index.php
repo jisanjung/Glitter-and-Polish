@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Glitter & Polish | Home</title>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     </head>
     <body>
 
@@ -153,11 +154,11 @@
                         <table class="oswald-sans gray-table">
                             <tr>
                                 <td>POLISH CHANGE</td>
-                                <td>$10</td>
+                                <td>$12</td>
                             </tr>
                             <tr>
                                 <td>REGULAR MANICURE</td>
-                                <td>$14</td>
+                                <td>$15</td>
                             </tr>
                             <tr>
                                 <td>HOT OIL MANICURE</td>
@@ -165,15 +166,15 @@
                             </tr>
                             <tr>
                                 <td>GEL POLISH CHANGE</td>
-                                <td>$25</td>
+                                <td>$28</td>
                             </tr>
                             <tr>
                                 <td>REGULAR GEL MANICURE</td>
-                                <td>$30</td>
+                                <td>$33</td>
                             </tr>
                             <tr>
                                 <td>ORGANIC SPA MANICURE</td>
-                                <td>$25</td>
+                                <td>$28</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
@@ -181,11 +182,15 @@
                             </tr>
                             <tr>
                                 <td>DESIGN</td>
-                                <td>+$3 & up</td>
+                                <td>+$5 & up</td>
                             </tr>
                             <tr>
                                 <td>FRENCH/AMERICAN</td>
                                 <td>+$5</td>
+                            </tr>
+                            <tr>
+                                <td>DEEP POWDER</td>
+                                <td>$42</td>
                             </tr>
                         </table>
                        </div>
@@ -200,23 +205,23 @@
                         <table class="oswald-sans blue-table">
                             <tr>
                                 <td>POLISH CHANGE</td>
-                                <td>$15</td>
+                                <td>$18</td>
                             </tr>
                             <tr>
                                 <td>EXPRESS PEDICURE</td>
-                                <td>$25</td>
+                                <td>$28</td>
                             </tr>
                             <tr>
                                 <td>REGULAR PEDICURE</td>
-                                <td>$30</td>
+                                <td>$33</td>
                             </tr>
                             <tr>
                                 <td>SIGNATURE SPA PEDICURE</td>
-                                <td>$37</td>
+                                <td>$39</td>
                             </tr>
                             <tr>
                                 <td>PREMIUM SPA PEDICURE</td>
-                                <td>$47</td>
+                                <td>$49</td>
                             </tr>
                             <tr>
                                 <td>GLITTER & POLISH SPECIAL</td>
@@ -228,7 +233,7 @@
                             </tr>
                             <tr>
                                 <td>DESIGN</td>
-                                <td>+$3 & up</td>
+                                <td>+$5 & up</td>
                             </tr>
                             <tr>
                                 <td>FRENCH/AMERICAN</td>
@@ -251,15 +256,15 @@
                         <table class="oswald-sans gray-table">
                             <tr>
                                 <td>POLISH CHANGE FINGERS/TOES</td>
-                                <td>$6/$10</td>
+                                <td>$7/$12</td>
                             </tr>
                             <tr>
                                 <td>REGULAR MANICURE</td>
-                                <td>$10</td>
+                                <td>$12</td>
                             </tr>
                             <tr>
                                 <td>REGULAR PEDICURE</td>
-                                <td>$20</td>
+                                <td>$22</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
@@ -267,7 +272,7 @@
                             </tr>
                             <tr>
                                 <td>DESIGN</td>
-                                <td>+$1 & up</td>
+                                <td>+$2 & up</td>
                             </tr>
                             <tr>
                                 <td>FRENCH/AMERICAN</td>
