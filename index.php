@@ -21,16 +21,6 @@
     </head>
     <body>
 
-    <!--COVID-19 warning-->
-    <aside class="open-sans">
-        <div>
-            <p>
-                Due to the Coronavirus (COVID-19), we are temporarily closed as instructed by local township officials. We apologize for the inconvenience.
-            </p>
-            <p>If an appointment is critical, please call: </br><a href="tel:267-699-8413">267-699-8413</a></p>
-        </div>
-    </aside>
-
     <!--showcase-->
     <div class="showcase" id="showcaseID">
 

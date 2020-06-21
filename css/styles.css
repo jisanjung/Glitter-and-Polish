@@ -194,21 +194,6 @@ html, body {
     display: block;
 }
 
-/* covid-19 warning */
-aside {
-    z-index: 10;
-    height: 150px;
-    font-size: 14px;
-    text-align: center;
-    padding: 15px;
-    background-color: #FFCC00;
-}
-aside div {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 /* header */
 header {
     height: 70px;
@@ -218,7 +203,7 @@ header {
     z-index: 9999;
     width: 100%;
     transition: 0.5s all;
-    top: 150px;
+    top: 0px;
 }
 header .logo {
     color: #fff;
