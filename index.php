@@ -284,27 +284,28 @@
             <div class="section gallery">
                 <h1 class="title text-center">Gallery</h1>
                 <div class="divider"></div>
-                <div class="container-lg grid-wrap">
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/purpnails.jpg" class="img cursor-pointer">
+                <div class="container-lg grid-wrap gallery-wrap flex">
+                    <div class="flex">
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/purpnails.jpg" class="img cursor-pointer">
+                        </div>
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/blacknails.jpg" class="img cursor-pointer">
+                        </div>
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/designnails.jpg" class="img cursor-pointer">
+                        </div>
                     </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/glitternails.jpg" class="img cursor-pointer">
-                    </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/designnails.jpg" class="img cursor-pointer">
-                    </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/graynails.jpg" class="img cursor-pointer">
-                    </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/maroonnails.jpg" class="img cursor-pointer">
-                    </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/clientseats.JPG" class="img cursor-pointer">
-                    </div>
-                    <div class="img-wrap overflow-hidden">
-                        <img src="images/blacknails.jpg" class="img cursor-pointer">
+                    <div class="flex">
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/graynails.jpg" class="img cursor-pointer">
+                        </div>
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/maroonnails.jpg" class="img cursor-pointer">
+                        </div>
+                        <div class="img-wrap overflow-hidden">
+                            <img src="images/glitternails.jpg" class="img cursor-pointer">
+                        </div>
                     </div>
                 </div>
             </div>
