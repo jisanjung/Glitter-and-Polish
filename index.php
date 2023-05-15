@@ -81,23 +81,23 @@
                         <table class="oswald-sans blue-table">
                             <tr>
                                 <td>EYEBROW</td>
-                                <td>$10</td>
-                            </tr>
-                            <tr>
-                                <td>LIP</td>
-                                <td>$8</td>
-                            </tr>
-                            <tr>
-                                <td>CHIN</td>
-                                <td>$12 & up</td>
-                            </tr>
-                            <tr>
-                                <td>SIDEBURNS</td>
                                 <td>$13</td>
                             </tr>
                             <tr>
-                                <td>UNDERARM</td>
+                                <td>LIP</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>CHIN</td>
                                 <td>$20</td>
+                            </tr>
+                            <tr>
+                                <td>SIDEBURNS</td>
+                                <td>$20</td>
+                            </tr>
+                            <tr>
+                                <td>UNDERARM</td>
+                                <td>$25</td>
                             </tr>
                             <tr>
                                 <td>PARTIAL LEG</td>
@@ -144,27 +144,27 @@
                         <table class="oswald-sans gray-table">
                             <tr>
                                 <td>POLISH CHANGE</td>
-                                <td>$12</td>
-                            </tr>
-                            <tr>
-                                <td>REGULAR MANICURE</td>
                                 <td>$15</td>
                             </tr>
                             <tr>
+                                <td>REGULAR MANICURE</td>
+                                <td>$18</td>
+                            </tr>
+                            <tr>
                                 <td>HOT OIL MANICURE</td>
-                                <td>$20</td>
+                                <td>$25</td>
                             </tr>
                             <tr>
                                 <td>GEL POLISH CHANGE</td>
-                                <td>$28</td>
+                                <td>$32</td>
                             </tr>
                             <tr>
                                 <td>REGULAR GEL MANICURE</td>
-                                <td>$33</td>
+                                <td>$36</td>
                             </tr>
                             <tr>
                                 <td>ORGANIC SPA MANICURE</td>
-                                <td>$28</td>
+                                <td>$30</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
@@ -179,8 +179,8 @@
                                 <td>+$5</td>
                             </tr>
                             <tr>
-                                <td>DEEP POWDER</td>
-                                <td>$42</td>
+                                <td>DIP POWDER</td>
+                                <td>$46</td>
                             </tr>
                         </table>
                        </div>
@@ -195,27 +195,27 @@
                         <table class="oswald-sans blue-table">
                             <tr>
                                 <td>POLISH CHANGE</td>
-                                <td>$18</td>
+                                <td>$21</td>
                             </tr>
                             <tr>
                                 <td>EXPRESS PEDICURE</td>
-                                <td>$28</td>
+                                <td>$31</td>
                             </tr>
                             <tr>
                                 <td>REGULAR PEDICURE</td>
-                                <td>$33</td>
+                                <td>$36</td>
                             </tr>
                             <tr>
                                 <td>SIGNATURE SPA PEDICURE</td>
-                                <td>$39</td>
+                                <td>$45</td>
                             </tr>
                             <tr>
                                 <td>PREMIUM SPA PEDICURE</td>
-                                <td>$49</td>
+                                <td>$55</td>
                             </tr>
                             <tr>
                                 <td>GLITTER & POLISH SPECIAL</td>
-                                <td>$62</td>
+                                <td>$65</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
@@ -246,7 +246,7 @@
                         <table class="oswald-sans gray-table">
                             <tr>
                                 <td>POLISH CHANGE FINGERS/TOES</td>
-                                <td>$7/$12</td>
+                                <td>$10/$17</td>
                             </tr>
                             <tr>
                                 <td>REGULAR MANICURE</td>
@@ -254,7 +254,7 @@
                             </tr>
                             <tr>
                                 <td>REGULAR PEDICURE</td>
-                                <td>$22</td>
+                                <td>$20</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>

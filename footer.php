@@ -7,7 +7,7 @@
                 <div class="footer-section">
                     <h3 class="oswald-sans">Contact</h3>
                     <ul class="open-sans">
-                        <li><img src="images/marker.png" alt="Location" class="contact-icons">39 W Lancaster Avenue</br><span>Paoli, PA 19301</span></li>
+                        <li><img src="images/marker.png" alt="Location" class="contact-icons">39 E Lancaster Avenue</br><span>Paoli, PA 19301</span></li>
                         <li><img src="images/phone.png" alt="Phone" class="contact-icons"><a href="tel:484-329-7989" id="phone-number">(484) 329-7989</a></li>
                         <li class="oswald-sans"><img src="images/mail.png" alt="Mail" class="contact-icons"><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=glitterpolishnailspa@gmail.com" id="email-link">glitterpolishnailspa@gmail.com</a></li>
                         <li><img src="images/payments.png" alt="Payment Methods"></li>

@@ -74,7 +74,7 @@ $(document).ready(function() {
         attribution: '&copy; <a href="http://osm.org/           copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
         var marker = L.marker([40.0423, -75.4819]).addTo(mymap);
-        marker.bindPopup("39 W Lancaster Avenue <br> Paoli, PA 19301").openPopup();
+        marker.bindPopup("39 E Lancaster Avenue <br> Paoli, PA 19301").openPopup();
     })();
 
 
