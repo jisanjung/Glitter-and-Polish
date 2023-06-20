@@ -8,8 +8,12 @@
     $inquery = $_POST["inquery"];
     $date = $_POST["date"];
 
+    $email_regex = "/^[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/";
+
     if (empty($requestDate) || empty($requestTime) || empty($name) || empty($email) || empty($phone) || empty($service)) {
         echo "incomplete";
+    } else if (preg_match($email_regex, $email) === 0) {
+        echo "invalid email";
     } else {
         // send appointment to email
         $to = 'sandra2938@gmail.com';

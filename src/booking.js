@@ -62,9 +62,13 @@ $(document).ready(function() {
                 window.scrollTo(0, 0);
 
                 $(".submit-message").css("display", "block");
-
+                
                 if (data === "incomplete") {
                     $(".submit-message").html("Please fill in all input fields");
+                    $(".submit-message").removeClass("success");
+                    $(".submit-message").addClass("danger");
+                } else if (data === "invalid email") {
+                    $(".submit-message").html("Email is invalid");
                     $(".submit-message").removeClass("success");
                     $(".submit-message").addClass("danger");
                 } else if (data === "fail") {
