@@ -1,19 +1,5 @@
 $(document).ready(function() {
     //---------start----------
-    
-    
-    // carousel
-    $(".fade").slick({
-        inifnite: true,
-        speed: 500,
-        cssEase: "linear",
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        pauseOnFocus: false,
-        pauseOnHover: false
-    });
-
 
     // modal
     (function modalFunc() {

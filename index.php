@@ -32,13 +32,7 @@
         <!--carousel-->
         <div class="fade">
             <div><img src="images/carousel1.jpg" alt="Image 1">
-                <p class="text-white center-all text-center playfair-serif showcase-text"><span class="first-child">your nails are</span></br><span>THE REFLECTION</span></br><span class="last-child">of yourself</span></p>
-            </div>
-            <div><img src="images/carousel2.jpg" alt="Image 2">
-                <p class="text-white text-center center-all playfair-serif showcase-text"><span class="first-child">nails take</span></br><span>ANY OLD OUTFIT</span></br><span class="last-child">and make it new</span></p>
-            </div>
-            <div><img src="images/carousel3.jpg" alt="Image 3">
-                <p class="text-white text-center center-all playfair-serif showcase-text"><span>TRUE BEAUTY</span></br><span class="last-child">comes from within</span>
+                <p class="text-white center-all text-center playfair-serif showcase-text"><span class="first-child">your nails are</span></br><span>THE REFLECTION</span></br><span class="last-child">of yourself</span>
                     <a href="book" class="btn-blue">SCHEDULE AN APPOINTMENT</a>
                 </p>
             </div>
