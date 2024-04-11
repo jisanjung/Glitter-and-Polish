@@ -43,14 +43,14 @@ $(document).ready(function() {
         var phone = $("#phone");
         var service = $("#select");
         var inquery = $("#inquery");
-        var date = currentDate();
+        var date = getCurrentDateTime();
 
         $.ajax({
             method: "POST",
             url: "post.php",
             data: {
-                requestDate: requestDate.val(),
-                requestTime: requestTime.val(),
+                requestDate: formatDate(requestDate.val()),
+                requestTime: formatTimeTo12Hour(requestTime.val()),
                 name: name.val(),
                 email: email.val(),
                 phone: phone.val(),
@@ -85,15 +85,4 @@ $(document).ready(function() {
             }
         });
     });
-
-    function currentDate() {
-        var d = new Date();
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-        var output = d.getFullYear() + "-" + (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.setSeconds();
-        
-        return output;
-    }
-    
-
 });

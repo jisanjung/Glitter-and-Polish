@@ -8,6 +8,10 @@
     $inquery = $_POST["inquery"];
     $date = $_POST["date"];
 
+    $db_user = "glitterp_jisjung";
+    $db_pass = "456pickupsticks.";
+    $db_name = "glitterp_orders";
+
     $email_regex = "/^[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/";
 
     if (empty($requestDate) || empty($requestTime) || empty($name) || empty($email) || empty($phone) || empty($service)) {
@@ -36,7 +40,7 @@
         }
 
         // send appointment to db
-        $conn = new mysqli("localhost", "jisanjun_jjung", "456pickupsticks.", "jisanjun_orders") or die("error");
+        $conn = new mysqli("localhost", $db_user, $db_pass, $db_name) or die("error");
 
         $query = "insert into appointments(request_date, request_time, name, email, phone, service, inquery, date_posted) values('$requestDate', '$requestTime', '$name', '$email', '$phone', '$service', '$inquery', '$date')";
 

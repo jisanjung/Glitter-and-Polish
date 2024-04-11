@@ -99,8 +99,8 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend class="labels">Inquery:</legend>
-                    <textarea placeholder="Inquery" class="input focused" id="inquery"></textarea>
+                    <legend class="labels">Inquiry:</legend>
+                    <textarea placeholder="Inquiry" class="input focused" id="inquery"></textarea>
                 </fieldset>
 
                 <button type="submit" class="btn btn-blue cursor-pointer" id="bookBtn">BOOK NOW</button>
@@ -126,6 +126,7 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <script src="src/utils.js"></script>
         <script src="src/validation.js"></script>
         <script src="src/global.js"></script>
         <script src="src/booking.js"></script>
