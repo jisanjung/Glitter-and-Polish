@@ -14,29 +14,27 @@ function formatTimeTo12Hour(timeString) {
 }
 
 function formatDate(inputDate) {
-    const date = new Date(inputDate);
-    
-    // Define months array
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
-    // Get month, day and year
-    const month = months[date.getMonth()];
-    const day = date.getDate();
-    const year = date.getFullYear();
-    
-    // Add "st", "nd", "rd" or "th" to the day
-    let daySuffix = 'th';
-    if (day === 1 || day === 21 || day === 31) {
-        daySuffix = 'st';
-    } else if (day === 2 || day === 22) {
-        daySuffix = 'nd';
-    } else if (day === 3 || day === 23) {
-        daySuffix = 'rd';
+    // Split the inputDate to get year, month, and day
+    const [year, month, day] = inputDate.split('-');
+
+    // Array of month names
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    // Function to get the ordinal suffix for the day
+    function getOrdinalSuffix(day) {
+        if (day > 3 && day < 21) return 'th';
+        switch (day % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+        }
     }
-    
-    // Format the date
-    const formattedDate = `${month} ${day}${daySuffix}, ${year}`;
-    
+
+    // Format the date in 'MMM Dth, YYYY' format
+    const formattedDate = `${monthNames[parseInt(month, 10) - 1]} ${parseInt(day, 10)}${getOrdinalSuffix(parseInt(day, 10))}, ${year}`;
+
     return formattedDate;
 }
 
