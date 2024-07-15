@@ -64,3 +64,18 @@ function getCurrentDateTime() {
 
     return formattedDateTime;
 }
+
+function isEmailValid(email) {
+    // Regular expression for basic email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function currentDate() {
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var output = d.getFullYear() + "-" + (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.setSeconds();
+    
+    return output;
+}

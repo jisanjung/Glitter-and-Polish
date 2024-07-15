@@ -42,47 +42,52 @@ $(document).ready(function() {
         var email = $("#email");
         var phone = $("#phone");
         var service = $("#select");
-        var inquery = $("#inquery");
-        var date = getCurrentDateTime();
+        var inquiry = $("#inquery");
 
-        $.ajax({
-            method: "POST",
-            url: "post.php",
-            data: {
+        $(".submit-message").css("display", "block");
+
+        if (!requestDate.val() || !requestTime.val() || !name.val() || !email.val() || !phone.val() || !service.val()) {
+            $(".submit-message").html("Please fill in all input fields");
+            $(".submit-message").removeClass("success");
+            $(".submit-message").addClass("danger");
+        } else if (!isEmailValid(email.val())) {
+            $(".submit-message").html("Email is invalid");
+            $(".submit-message").removeClass("success");
+            $(".submit-message").addClass("danger");
+        } else {
+            const body = {
                 requestDate: formatDate(requestDate.val()),
                 requestTime: formatTimeTo12Hour(requestTime.val()),
                 name: name.val(),
                 email: email.val(),
                 phone: phone.val(),
                 service: service.val(),
-                inquery: inquery.val(),
-                date: date
-            },
-            success: function(data) {
-                window.scrollTo(0, 0);
+                inquiry: inquiry.val(),
+                datePosted: currentDate()
+            };
+            const reqOptions = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json', // specify the content type as JSON
+                  },
+                body: JSON.stringify(body)
+            };
 
-                $(".submit-message").css("display", "block");
-                
-                if (data === "incomplete") {
-                    $(".submit-message").html("Please fill in all input fields");
-                    $(".submit-message").removeClass("success");
-                    $(".submit-message").addClass("danger");
-                } else if (data === "invalid email") {
-                    $(".submit-message").html("Email is invalid");
-                    $(".submit-message").removeClass("success");
-                    $(".submit-message").addClass("danger");
-                } else if (data === "fail") {
-                    $(".submit-message").html("Something went wrong");
-                    $(".submit-message").removeClass("success");
-                    $(".submit-message").addClass("danger");
-                } else if (data === "pass") {
-                    $("input").val("");
-                    $("textarea").val("");
-                    $(".submit-message").html("Thank you! Sent successfully");
-                    $(".submit-message").addClass("danger");
-                    $(".submit-message").addClass("success");
-                }
-            }
-        });
+            fetch("https://glitterpolishnails.com/api/add", reqOptions)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.success) {
+                        $(".submit-message").html("Something went wrong");
+                        $(".submit-message").removeClass("success");
+                        $(".submit-message").addClass("danger");
+                    } else {
+                        $("input").val("");
+                        $("textarea").val("");
+                        $(".submit-message").html("Thank you! Sent successfully");
+                        $(".submit-message").addClass("danger");
+                        $(".submit-message").addClass("success");
+                    }
+                });
+        }
     });
 });
