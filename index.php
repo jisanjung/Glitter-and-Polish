@@ -145,24 +145,28 @@
                                 <td>$18</td>
                             </tr>
                             <tr>
-                                <td>HOT OIL MANICURE</td>
-                                <td>$25</td>
+                                <td>SOFTGEL MANICURE</td>
+                                <td>$46</td>
                             </tr>
                             <tr>
                                 <td>GEL POLISH CHANGE</td>
                                 <td>$32</td>
                             </tr>
                             <tr>
-                                <td>REGULAR GEL MANICURE</td>
+                                <td>GEL MANICURE</td>
                                 <td>$36</td>
                             </tr>
                             <tr>
-                                <td>ORGANIC SPA MANICURE</td>
-                                <td>$30</td>
+                                <td>ORGANIC SPA MANICURE (REG)</td>
+                                <td>$28</td>
+                            </tr>
+                            <tr>
+                                <td>ORGANIC SPA MANICURE (GEL)</td>
+                                <td>$46</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
-                                <td>+$3</td>
+                                <td>+$5</td>
                             </tr>
                             <tr>
                                 <td>DESIGN</td>
@@ -175,6 +179,14 @@
                             <tr>
                                 <td>DIP POWDER</td>
                                 <td>$46</td>
+                            </tr>
+                            <tr>
+                                <td>REG FULLSET</td>
+                                <td>$45</td>
+                            </tr>
+                            <tr>
+                                <td>GEL FULLSET</td>
+                                <td>$60</td>
                             </tr>
                         </table>
                        </div>
@@ -204,12 +216,12 @@
                                 <td>$45</td>
                             </tr>
                             <tr>
-                                <td>PREMIUM SPA PEDICURE</td>
-                                <td>$55</td>
+                                <td>VITAMIN GLOW SPA</td>
+                                <td>$49</td>
                             </tr>
                             <tr>
-                                <td>GLITTER & POLISH SPECIAL</td>
-                                <td>$65</td>
+                                <td>PREMIUM SPA PEDICURE</td>
+                                <td>$58</td>
                             </tr>
                             <tr>
                                 <td>EXTENDED WEAR POLISH</td>
@@ -264,7 +276,7 @@
                             </tr>
                             <tr>
                                 <td>GEL POLISH ADD ON</td>
-                                <td>+$16</td>
+                                <td>+$18</td>
                             </tr>
                         </table>
                        </div>
