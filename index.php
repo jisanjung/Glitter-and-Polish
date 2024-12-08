@@ -74,12 +74,20 @@
                        <div class="table-wrap">
                         <table class="oswald-sans blue-table">
                             <tr>
-                                <td>EYEBROW</td>
-                                <td>$13</td>
+                                <td>FINGERS</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>TOES</td>
+                                <td>$10</td>
                             </tr>
                             <tr>
                                 <td>LIP</td>
                                 <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>EYEBROW</td>
+                                <td>$13</td>
                             </tr>
                             <tr>
                                 <td>CHIN</td>
@@ -94,36 +102,28 @@
                                 <td>$25</td>
                             </tr>
                             <tr>
-                                <td>PARTIAL LEG</td>
-                                <td>$40</td>
-                            </tr>
-                            <tr>
-                                <td>FULL LEG</td>
-                                <td>$60</td>
-                            </tr>
-                            <tr>
                                 <td>PARTIAL ARM</td>
                                 <td>$30</td>
-                            </tr>
-                            <tr>
-                                <td>FULL ARM</td>
-                                <td>$40</td>
                             </tr>
                             <tr>
                                 <td>BIKINI</td>
                                 <td>$35 & up</td>
                             </tr>
                             <tr>
+                                <td>FULL ARM</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>PARTIAL LEG</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
                                 <td>BRAZILIAN</td>
                                 <td>$55 & up</td>
                             </tr>
                             <tr>
-                                <td>FINGERS</td>
-                                <td>$10</td>
-                            </tr>
-                            <tr>
-                                <td>TOES</td>
-                                <td>$10</td>
+                                <td>FULL LEG</td>
+                                <td>$60</td>
                             </tr>
                         </table>
                        </div>
@@ -145,8 +145,8 @@
                                 <td>$18</td>
                             </tr>
                             <tr>
-                                <td>SOFTGEL MANICURE</td>
-                                <td>$46</td>
+                                <td>ORGANIC SPA MANICURE (REG)</td>
+                                <td>$28</td>
                             </tr>
                             <tr>
                                 <td>GEL POLISH CHANGE</td>
@@ -157,36 +157,36 @@
                                 <td>$36</td>
                             </tr>
                             <tr>
-                                <td>ORGANIC SPA MANICURE (REG)</td>
-                                <td>$28</td>
-                            </tr>
-                            <tr>
-                                <td>ORGANIC SPA MANICURE (GEL)</td>
-                                <td>$46</td>
-                            </tr>
-                            <tr>
-                                <td>EXTENDED WEAR POLISH</td>
-                                <td>+$5</td>
-                            </tr>
-                            <tr>
-                                <td>DESIGN</td>
-                                <td>+$5 & up</td>
-                            </tr>
-                            <tr>
-                                <td>FRENCH/AMERICAN</td>
-                                <td>+$5</td>
+                                <td>REG FULLSET</td>
+                                <td>$45</td>
                             </tr>
                             <tr>
                                 <td>DIP POWDER</td>
                                 <td>$46</td>
                             </tr>
                             <tr>
-                                <td>REG FULLSET</td>
-                                <td>$45</td>
+                                <td>ORGANIC SPA MANICURE (GEL)</td>
+                                <td>$46</td>
+                            </tr>
+                            <tr>
+                                <td>SOFTGEL MANICURE</td>
+                                <td>$46</td>
                             </tr>
                             <tr>
                                 <td>GEL FULLSET</td>
                                 <td>$60</td>
+                            </tr>
+                            <tr>
+                                <td>EXTENDED WEAR POLISH</td>
+                                <td>+$5</td>
+                            </tr>
+                            <tr>
+                                <td>FRENCH/AMERICAN</td>
+                                <td>+$5</td>
+                            </tr>
+                            <tr>
+                                <td>DESIGN</td>
+                                <td>+$5 & up</td>
                             </tr>
                         </table>
                        </div>
@@ -228,12 +228,12 @@
                                 <td>+$3</td>
                             </tr>
                             <tr>
-                                <td>DESIGN</td>
-                                <td>+$5 & up</td>
-                            </tr>
-                            <tr>
                                 <td>FRENCH/AMERICAN</td>
                                 <td>+$5</td>
+                            </tr>
+                            <tr>
+                                <td>DESIGN</td>
+                                <td>+$5 & up</td>
                             </tr>
                             <tr>
                                 <td>GEL POLISH ADD ON</td>
@@ -263,12 +263,12 @@
                                 <td>$20</td>
                             </tr>
                             <tr>
-                                <td>EXTENDED WEAR POLISH</td>
-                                <td>+$3</td>
-                            </tr>
-                            <tr>
                                 <td>DESIGN</td>
                                 <td>+$2 & up</td>
+                            </tr>
+                            <tr>
+                                <td>EXTENDED WEAR POLISH</td>
+                                <td>+$3</td>
                             </tr>
                             <tr>
                                 <td>FRENCH/AMERICAN</td>
