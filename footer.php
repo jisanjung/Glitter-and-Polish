@@ -29,7 +29,7 @@
             <div class="footer-bottom">
                 <div class="wrap">
                     <div class="copyright">
-                        <p class="open-sans">Glitter & Polish 2020</p>
+                        <p class="open-sans">Glitter & Polish <span id="footerYear"></span></p>
                     </div>
                     <div class="footer-icons">
                         <ul>

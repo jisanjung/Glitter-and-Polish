@@ -27,6 +27,9 @@ $(document).ready(function() {
         $(".mobile-nav").slideToggle();
     });
 
+    // set the year in footer
+    $("#footerYear").html(new Date().getFullYear().toString());
+
 
     //----------end------------
 });

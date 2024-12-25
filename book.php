@@ -44,51 +44,56 @@
 
             <div class="book-form">
                 <h1 class="text-white open-sans text-center">Booking Form</h1>
-                <form class="open-sans grid-wrap">
+                <form 
+                    id="bookingForm"
+                    class="open-sans grid-wrap"
+                    action="https://formspree.io/f/mannqebo"
+                    method="POST"
+                >
 
                 <fieldset>
                     <legend class="labels">Title:</legend>
-                    <input type="radio" name="title" value="mr">
+                    <input type="radio" value="mr">
                     <label for="mr">Mr.</label>
-                    <input type="radio" name="title" value="mrs">
+                    <input type="radio" value="mrs">
                     <label for="mrs">Mrs.</label>
-                    <input type="radio" name="title" value="ms">
+                    <input type="radio"value="ms">
                     <label for="ms">Ms.</label>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Request Date:</legend>
-                    <input type="date" name="date" placeholder="Date" class="input focused" id="date">
+                    <input type="date" name="Requested Date" placeholder="Date" class="input focused" id="date">
                     <span id="dateError" class="error">Invalid date</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Request Time:</legend>
-                    <input type="time" name="time" placeholder="Time" class="input focused" id="time">
+                    <input type="time" name="Requested Time" placeholder="Time" class="input focused" id="time">
                     <span id="timeError" class="error">AM or PM?</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Name:</legend>
-                    <input type="text" name="name" placeholder="Enter your Name" class="input focused" id="name">
+                    <input type="text" name="Customer name" placeholder="Enter your Name" class="input focused" id="name">
                     <span id="nameError" class="error">Invalid input</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Email:</legend>
-                    <input type="email" name="email" placeholder="Enter Email" class="input focused" id="email">
+                    <input type="email" name="Customer email" placeholder="Enter Email" class="input focused" id="email">
                     <span id="emailError" class="error">Invalid email</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Phone:</legend>
-                    <input type="tel" name="phone" placeholder="Enter Phone" class="input focused" id="phone">
+                    <input type="tel" name="Phone number" placeholder="Enter Phone" class="input focused" id="phone">
                     <span id="phoneError" class="error">Invalid number</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Service:</legend>
-                    <select class="input focused" id="select">
+                    <select class="input focused" id="select" name="Service">
                         <option value="Service">Please select a service</option>
                         <option value="Waxing">Waxing</option>
                         <option value="Manicure">Manicure</option>
@@ -100,7 +105,7 @@
 
                 <fieldset>
                     <legend class="labels">Inquiry:</legend>
-                    <textarea placeholder="Inquiry" class="input focused" id="inquery"></textarea>
+                    <textarea placeholder="Inquiry" class="input focused" id="inquery" name="inquery"></textarea>
                 </fieldset>
 
                 <button type="submit" class="btn btn-blue cursor-pointer" id="bookBtn">BOOK NOW</button>
