@@ -434,6 +434,28 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+        <script type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
+            import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+
+            const firebaseConfig = { 
+                apiKey : "AIzaSyB1qMcHrknhqUrvUH3ryjDX-gQZQycTOFs" , 
+                authDomain : "glitterandpolish-5c50b.firebaseapp.com" , 
+                projectId : "glitterandpolish-5c50b" , 
+                storageBucket : "glitterandpolish-5c50b.firebasestorage.app" , 
+                messagingSenderId : "206578063208" , 
+                appId : "1:206578063208:web:620972356ff9ed7a9ba8dd" , 
+                measurementId : "G-F1ECYR85SX" 
+            };
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            // const getCollection = collection(db, 'orders');
+            getDocs(collection(db, 'orders'))
+            .then(res => console.log(res));
+        </script>
         <script src="src/validation.js"></script>
         <script src="src/global.js"></script>
         <script src="src/home.js"></script>
