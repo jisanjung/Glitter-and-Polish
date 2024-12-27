@@ -74,52 +74,5 @@ $(document).ready(function() {
     subject.isValid();
     message.isValid();
 
-
-    // contact form
-    $("#submit").click(function(e) {
-        e.preventDefault();
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var subject = $("#subject").val();
-        var message = $("#message").val();
-
-        // ajax
-        $.post("contact.php", {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        }, function(data) {
-            var mql = window.matchMedia("(max-width: 451px)");
-
-            if (mql.matches) {
-                $(".submit-message").css({
-                    "display" : "block",
-                    "margin-left" : "0px",
-                    "margin-top" : "10px",
-                });
-            } else {
-                $(".submit-message").show();
-            }
-
-            if (data === "incomplete") {
-                $(".submit-message").html("Please fill in all input fields");
-                $(".submit-message").removeClass("success");
-                $(".submit-message").addClass("danger");
-            } else if (data === "fail") {
-                $(".submit-message").html("Something went wrong");
-                $(".submit-message").removeClass("success");
-                $(".submit-message").addClass("danger");
-            } else if (data === "pass") {
-                $("input").val("");
-                $("textarea").val("");
-                $(".submit-message").html("Thank you! Sent successfully");
-                $(".submit-message").removeClass("danger");
-                $(".submit-message").addClass("success");
-            }
-        });
-    });
-
-
     //----------end------------
 });
