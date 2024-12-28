@@ -1,18 +1,23 @@
 //----------------------------------------------------------------
+import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+import { db } from "../../server/firebase.js";
 
-
-getOrder();
+// immediately invoke
+(async () => {
+    await getOrder();
+})().catch(err => {
+    console.error(err);
+});
 
 $("#newOrder").on("click", function() {
     window.location.reload(true);
-    getOrder();
 });
 
 // each order gets pushed into this array
 var orderList = [];
 
 // order class
-var Order = function(name, email, phone, request_date, request_time, service, inquery, date_posted) {
+var Order = function({ name, email, phone, request_date, request_time, service, inquery, date_posted }) {
     this.name = name;
     this.email = email;
     this.phone = phone;
@@ -37,21 +42,33 @@ var Order = function(name, email, phone, request_date, request_time, service, in
 }
 
 // ajax
-function getOrder() {
-    $.ajax({
-        method: "GET",
-        url: "get.php",
-        dataType: "json",
-        success: function(data) {
-            $.each(data, function(i, order) {
-                orderList.push(new Order(order.name, order.email, order.phone, order.request_date, order.request_time, order.service, order.inquery, order.date_posted));
+async function getOrder() {
 
-                handleData(i, orderList);
-            });
-
-            handleStatus();
-        }
+    const res = await getDocs(collection(db, 'orders'));
+    const data = res?.docs.map(order => ({...order?.data(), id: order?.id}));
+    
+    data.forEach((val, i) => {
+        console.log(val);
+        orderList.push(new Order(val));
+        handleData(i, orderList);
     });
+
+    handleStatus();
+
+    // $.ajax({
+    //     method: "GET",
+    //     url: "get.php",
+    //     dataType: "json",
+    //     success: function(data) {
+    //         $.each(data, function(i, order) {
+    //             orderList.push(new Order(order.name, order.email, order.phone, order.request_date, order.request_time, order.service, order.inquery, order.date_posted));
+
+    //             handleData(i, orderList);
+    //         });
+
+    //         handleStatus();
+    //     }
+    // });
 }
 
 
