@@ -1,3 +1,5 @@
+import { postOrder } from "../../orders/src/helpers.js";
+
 $(document).ready(function() {
 
     async function postEmailFormSpree(e, body) {
@@ -19,12 +21,6 @@ $(document).ready(function() {
         });
         
         return res.ok;
-    }
-
-    async function postToOrdersDB(reqOptions) {
-        const res = await fetch("https://glitterpolishnails.com/api/add", reqOptions);
-        const data = await res.json();
-        console.log(data.success ? 'order success' : 'order failed');
     }
     
     async function handleSubmit(e) {
@@ -50,25 +46,18 @@ $(document).ready(function() {
             $(".submit-message").addClass("danger");
         } else {
             const body = {
-                requestDate: formatDate(requestDate.val()),
-                requestTime: formatTimeTo12Hour(requestTime.val()),
+                request_date: formatDate(requestDate.val()),
+                request_time: formatTimeTo12Hour(requestTime.val()),
                 name: name.val(),
                 email: email.val(),
                 phone: phone.val(),
                 service: service.val(),
-                inquiry: inquiry.val(),
-                datePosted: currentDate()
-            };
-            const reqOptions = {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json', // specify the content type as JSON
-                  },
-                body: JSON.stringify(body)
+                inquery: inquiry.val(),
+                date_posted: currentDate()
             };
 
             const postEmail = await postEmailFormSpree(e, body);
-            postToOrdersDB(reqOptions); // fire and forget
+            postOrder(body); // fire and forget
 
             if (!postEmail) {
                 $(".submit-message").html("Something went wrong");

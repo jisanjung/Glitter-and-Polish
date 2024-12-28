@@ -75,7 +75,7 @@ function currentDate() {
     var d = new Date();
     var month = d.getMonth() + 1;
     var day = d.getDate();
-    var output = d.getFullYear() + "-" + (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.setSeconds();
+    var output = d.getFullYear() + "-" + (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     
     return output;
 }

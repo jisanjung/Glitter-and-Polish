@@ -43,32 +43,15 @@ var Order = function({ name, email, phone, request_date, request_time, service, 
 
 // ajax
 async function getOrder() {
-
     const res = await getDocs(collection(db, 'orders'));
     const data = res?.docs.map(order => ({...order?.data(), id: order?.id}));
     
     data.forEach((val, i) => {
-        console.log(val);
         orderList.push(new Order(val));
         handleData(i, orderList);
     });
 
     handleStatus();
-
-    // $.ajax({
-    //     method: "GET",
-    //     url: "get.php",
-    //     dataType: "json",
-    //     success: function(data) {
-    //         $.each(data, function(i, order) {
-    //             orderList.push(new Order(order.name, order.email, order.phone, order.request_date, order.request_time, order.service, order.inquery, order.date_posted));
-
-    //             handleData(i, orderList);
-    //         });
-
-    //         handleStatus();
-    //     }
-    // });
 }
 
 
