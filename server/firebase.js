@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+import { getFirestore, collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
 
 const FIREBASE_API_KEY = "AIzaSyB1qMcHrknhqUrvUH3ryjDX-gQZQycTOFs";
 const FIREBASE_AUTH_DOMAIN = "glitterandpolish-5c50b.firebaseapp.com";
@@ -33,7 +33,7 @@ export const postOrder = async (payload) => {
         console.log(res.id ? 'ORDER_SUCCESS' : 'ORDER_FAILED');
         return Boolean(res.id); // 'id' should be in response if successful
     } catch (err) {
-        console.log('ERROR_POSTING_AN_ORDER_TO_FIREBASE', err);
+        console.error('ERROR_POSTING_AN_ORDER_TO_FIREBASE', err);
     }
 };
 
@@ -44,7 +44,7 @@ export const getAllOrders = async () => {
 
         return data || [];
     } catch (err) {
-        console.log('ERROR_FETCHING_ALL_ORDERS_FROM_FIREBASE', err);
+        console.error('ERROR_FETCHING_ALL_ORDERS_FROM_FIREBASE', err);
         return [];
     }
 };
