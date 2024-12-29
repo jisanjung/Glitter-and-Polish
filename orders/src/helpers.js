@@ -8,6 +8,7 @@ export const postOrder = async (payload) => {
     try {
         const res = await addDoc(collection(db, 'orders'), { ...payload });
         
+        console.log(res.id ? 'ORDER_SUCCESS' : 'ORDER_FAILED');
         return Boolean(res.id); // 'id' should be in response if successful
     } catch (err) {
         console.log('ERROR_POSTING_AN_ORDER_TO_FIREBASE', err);

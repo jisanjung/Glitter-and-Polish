@@ -1,6 +1,5 @@
 //----------------------------------------------------------------
-import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
-import { db } from "../../server/firebase.js";
+import { getAllOrders } from './helpers.js';
 
 // immediately invoke
 (async () => {
@@ -43,8 +42,7 @@ var Order = function({ name, email, phone, request_date, request_time, service, 
 
 // ajax
 async function getOrder() {
-    const res = await getDocs(collection(db, 'orders'));
-    const data = res?.docs.map(order => ({...order?.data(), id: order?.id}));
+    const data = await getAllOrders();
     
     data.forEach((val, i) => {
         orderList.push(new Order(val));
