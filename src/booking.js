@@ -1,4 +1,4 @@
-import { postOrder } from "../orders/src/helpers.js";
+import { postOrder } from "../server/firebase.js";
 
 async function postEmailFormSpree(e, body) {
     const data = {

@@ -1,5 +1,5 @@
 //----------------------------------------------------------------
-import { getAllOrders } from './helpers.js';
+import { getAllOrders } from '../server/firebase.js';
 
 // immediately invoke
 (async () => {
