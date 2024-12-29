@@ -27,12 +27,11 @@ var Order = function({ name, email, phone, request_date, request_time, service, 
     this.date_posted = date_posted;
 
     this.convertDate = function() {
-        var request = moment(this.request_date, "YYYY-MM-DD");
         var posted = moment(this.date_posted, "YYYY-MM-DD hh:mm:ss");
         var time = moment(this.request_time, "HH:mm:ss");
 
         return {
-            requestDate: request.format("MMMM Do, YYYY"),
+            requestDate: request_date,
             postedDate: posted.format("MMMM Do YYYY hh:mma"),
             fromNow: posted.fromNow(),
             time: time.format("h:mma")
@@ -44,6 +43,15 @@ var Order = function({ name, email, phone, request_date, request_time, service, 
 async function getOrder() {
     const data = await getAllOrders();
     
+    // sort first
+    data.sort((a, b) => {
+        const dateA = new Date(a.date_posted).getTime();
+        const dateB = new Date(b.date_posted).getTime();
+
+        return dateB - dateA;
+    });
+    
+    // then paint data to ui
     data.forEach((val, i) => {
         orderList.push(new Order(val));
         handleData(i, orderList);
