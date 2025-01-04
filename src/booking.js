@@ -2,13 +2,13 @@ import { postOrder } from "../server/firebase.js";
 
 async function postEmailFormSpree(e, body) {
     const data = {
-        Date: body.requestDate,
-        Time: body.requestTime,
+        Date: body.request_date,
+        Time: body.request_time,
         Name: body.name,
         Email: body.email,
         Phone: body.phone,
         Service: body.service,
-        Note: body.inquiry,
+        Note: body.inquery,
     };
     const res = await fetch(e.target.action, {
         method: 'post',
