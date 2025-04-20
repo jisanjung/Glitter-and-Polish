@@ -36,15 +36,3 @@ export const postOrder = async (payload) => {
         console.error('ERROR_POSTING_AN_ORDER_TO_FIREBASE', err);
     }
 };
-
-export const getAllOrders = async () => {
-    try {
-        const res = await getDocs(collection(db, 'orders'));
-        const data = res?.docs.map(order => ({...order?.data(), id: order?.id}));
-
-        return data || [];
-    } catch (err) {
-        console.error('ERROR_FETCHING_ALL_ORDERS_FROM_FIREBASE', err);
-        return [];
-    }
-};
