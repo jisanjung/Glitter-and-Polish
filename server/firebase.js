@@ -1,13 +1,13 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
 import { getFirestore, collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
 
-const FIREBASE_API_KEY = "AIzaSyB1qMcHrknhqUrvUH3ryjDX-gQZQycTOFs";
-const FIREBASE_AUTH_DOMAIN = "glitterandpolish-5c50b.firebaseapp.com";
-const FIREBASE_PROJECT_ID = "glitterandpolish-5c50b";
-const FIREBASE_STORAGE_BUCKET = "glitterandpolish-5c50b.firebasestorage.app";
-const FIREBASE_MESSAGING_SENDER_ID = "206578063208";
-const FIREBASE_APP_ID = "1:206578063208:web:620972356ff9ed7a9ba8dd";
-const FIREBASE_MEASUREMENT_ID = "G-F1ECYR85SX";
+const FIREBASE_API_KEY = process.env.FIREBASE_API_KEY;
+const FIREBASE_AUTH_DOMAIN = process.env.FIREBASE_AUTH_DOMAIN;
+const FIREBASE_PROJECT_ID = process.env.FIREBASE_PROJECT_ID;
+const FIREBASE_STORAGE_BUCKET = process.env.FIREBASE_STORAGE_BUCKET;
+const FIREBASE_MESSAGING_SENDER_ID = process.env.FIREBASE_MESSAGING_SENDER_ID;
+const FIREBASE_APP_ID = process.env.FIREBASE_APP_ID;
+const FIREBASE_MEASUREMENT_ID = process.env.FIREBASE_MEASUREMENT_ID;
  
 const firebaseConfig = { 
     apiKey: FIREBASE_API_KEY, 
