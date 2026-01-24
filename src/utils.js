@@ -1,4 +1,4 @@
-function formatTimeTo12Hour(timeString) {
+export function formatTimeTo12Hour(timeString) {
     const [hours, minutes] = timeString.split(':');
     let suffix = 'AM';
     let formattedHours = parseInt(hours, 10);
@@ -13,7 +13,7 @@ function formatTimeTo12Hour(timeString) {
     return `${formattedHours}:${minutes} ${suffix}`;
 }
 
-function formatDate(inputDate) {
+export function formatDate(inputDate) {
     // Split the inputDate to get year, month, and day
     const [year, month, day] = inputDate.split('-');
 
@@ -38,7 +38,7 @@ function formatDate(inputDate) {
     return formattedDate;
 }
 
-function getCurrentDateTime() {
+export function getCurrentDateTime() {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const daysSuffix = ['th', 'st', 'nd', 'rd'];
 
@@ -65,13 +65,13 @@ function getCurrentDateTime() {
     return formattedDateTime;
 }
 
-function isEmailValid(email) {
+export function isEmailValid(email) {
     // Regular expression for basic email validation
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-function currentDate() {
+export function currentDate() {
     var d = new Date();
     var month = d.getMonth() + 1;
     var day = d.getDate();

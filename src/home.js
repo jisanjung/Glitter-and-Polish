@@ -1,3 +1,5 @@
+import Validation from "./validation";
+
 $(document).ready(function() {
     //---------start----------
 

@@ -27,3 +27,5 @@ Validation.prototype.isValid = function() {
         }
     });
 };
+
+export default Validation;
