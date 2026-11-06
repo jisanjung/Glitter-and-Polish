@@ -109,20 +109,28 @@
 
                     <fieldset class="form-step">
                         <legend><span class="step-num" aria-hidden="true">2</span> Pick a date &amp; time</legend>
-                        <div class="field-row">
-                            <div class="field">
-                                <label for="date">Date</label>
-                                <input type="date" id="date" name="date" required>
-                                <span class="field-error" id="date-error">Please choose today or a later date.</span>
-                            </div>
-                            <div class="field">
-                                <label for="time">Time</label>
-                                <input type="time" id="time" name="time" step="900" required>
-                                <span class="field-error" id="time-error">Please choose a time during opening hours.</span>
+                        <div class="picker-head">
+                            <span class="picker-label" id="date-label">Date</span>
+                            <div class="picker-nav">
+                                <button type="button" class="picker-arrow" data-scroll="-1" aria-label="Earlier dates">‹</button>
+                                <button type="button" class="picker-arrow" data-scroll="1" aria-label="Later dates">›</button>
                             </div>
                         </div>
-                        <p class="field-hint" id="hours-hint">Choose a date to see that day's hours.</p>
-                    </fieldset>
+                        <div class="date-strip" id="date-group" role="radiogroup" aria-labelledby="date-label">
+                            <noscript><p class="field-hint">Please call (484) 329-7989 to book.</p></noscript>
+                        </div>
+                        <span class="field-error" id="date-error">Please choose a date.</span>
+
+                        <div class="picker-head">
+                            <span class="picker-label" id="time-label">Time</span>
+                            <span class="field-hint" id="hours-hint"></span>
+                        </div>
+                        <div class="time-slots" id="time-group" role="radiogroup" aria-labelledby="time-label">
+                            <p class="slots-empty"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Choose a date to see available times.</span></p>
+                        </div>
+                        <span class="field-error" id="time-error">Please choose a time.</span>
+
+                        <p class="picker-summary" id="picker-summary" aria-live="polite" hidden></p>                    </fieldset>
 
                     <fieldset class="form-step">
                         <legend><span class="step-num" aria-hidden="true">3</span> Your details</legend>
