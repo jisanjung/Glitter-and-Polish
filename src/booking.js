@@ -1,109 +1,185 @@
-import { postOrder } from "../server/firebase.js";
+// Booking page: validation + submit to Formspree (email) and Firebase (orders log).
+import { HOURS, formatHour } from "./site.js";
 import { currentDate, formatDate, formatTimeTo12Hour, isEmailValid } from "./utils.js";
-import Validation from "./validation.js";
 
-async function postEmailFormSpree(e, body) {
-    const data = {
-        Date: body.request_date,
-        Time: body.request_time,
-        Name: body.name,
-        Email: body.email,
-        Phone: body.phone,
-        Service: body.service,
-        Note: body.inquery,
-    };
-    const res = await fetch(e.target.action, {
-        method: 'post',
-        body: JSON.stringify(data),
-        headers: {
-            'Accept': 'application/json',
+const form = document.getElementById("bookingForm");
+const status = form.querySelector(".form-status");
+const submit = form.querySelector('button[type="submit"]');
+const dateInput = document.getElementById("date");
+const timeInput = document.getElementById("time");
+const hoursHint = document.getElementById("hours-hint");
+const serviceGroup = document.getElementById("service-group");
+const serviceError = document.getElementById("service-error");
+
+// ---------- Date helpers ----------
+const pad = (n) => String(n).padStart(2, "0");
+const toISODate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const todayISO = () => toISODate(new Date());
+
+// Parse "YYYY-MM-DD" as a local date (not UTC).
+function parseDate(value) {
+    const [y, m, d] = value.split("-").map(Number);
+    return new Date(y, m - 1, d);
+}
+
+const timeToHours = (value) => {
+    const [h, m] = value.split(":").map(Number);
+    return h + m / 60;
+};
+
+dateInput.min = todayISO();
+
+function updateHoursHint() {
+    if (!dateInput.value) {
+        hoursHint.textContent = "Choose a date to see that day's hours.";
+        timeInput.removeAttribute("min");
+        timeInput.removeAttribute("max");
+        return;
+    }
+    const day = parseDate(dateInput.value);
+    const [open, close] = HOURS[day.getDay()];
+    const weekday = day.toLocaleDateString("en-US", { weekday: "long" });
+    hoursHint.textContent = `We're open ${formatHour(open)} – ${formatHour(close)} on ${weekday}.`;
+    timeInput.min = `${pad(Math.floor(open))}:${pad(Math.round((open % 1) * 60))}`;
+    timeInput.max = `${pad(Math.floor(close))}:${pad(Math.round((close % 1) * 60))}`;
+}
+
+// ---------- Validation ----------
+// Each rule returns an error message, or "" when valid.
+const rules = {
+    date: (v) => {
+        if (!v) return "Please choose a date.";
+        if (v < todayISO()) return "Please choose today or a later date.";
+        return "";
+    },
+    time: (v) => {
+        if (!v) return "Please choose a time.";
+        if (!dateInput.value) return "";
+        const [open, close] = HOURS[parseDate(dateInput.value).getDay()];
+        const t = timeToHours(v);
+        if (t < open || t >= close) {
+            return `Please choose a time between ${formatHour(open)} and ${formatHour(close)}.`;
         }
+        if (dateInput.value === todayISO()) {
+            const now = new Date();
+            if (t <= now.getHours() + now.getMinutes() / 60) return "That time has already passed today.";
+        }
+        return "";
+    },
+    name: (v) => (/^[a-z ,.'-]+$/i.test(v.trim()) ? "" : "Please enter your name."),
+    email: (v) => (isEmailValid(v.trim()) ? "" : "Please enter a valid email address."),
+    phone: (v) => (/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(v.trim()) ? "" : "Please enter a 10-digit phone number."),
+};
+
+function validate(input) {
+    const message = rules[input.id](input.value);
+    const field = input.closest(".field");
+    const error = document.getElementById(`${input.id}-error`);
+    if (message) error.textContent = message;
+    field.classList.toggle("has-error", Boolean(message));
+    input.setAttribute("aria-invalid", String(Boolean(message)));
+    if (message) input.setAttribute("aria-describedby", error.id);
+    else input.removeAttribute("aria-describedby");
+    return !message;
+}
+
+function selectedService() {
+    return form.querySelector('input[name="service"]:checked');
+}
+
+function validateService() {
+    const ok = Boolean(selectedService());
+    serviceGroup.classList.toggle("has-error", !ok);
+    serviceError.style.display = ok ? "" : "block";
+    return ok;
+}
+
+Object.keys(rules).forEach((id) => {
+    const input = document.getElementById(id);
+    input.addEventListener("blur", () => { if (input.value) validate(input); });
+    input.addEventListener("input", () => {
+        if (input.closest(".field").classList.contains("has-error")) validate(input);
     });
-    
+});
+
+dateInput.addEventListener("change", () => {
+    updateHoursHint();
+    if (timeInput.value) validate(timeInput);
+});
+serviceGroup.addEventListener("change", validateService);
+
+// ---------- Submit ----------
+async function sendEmail(body) {
+    const data = new FormData();
+    data.append("Date", body.request_date);
+    data.append("Time", body.request_time);
+    data.append("Name", body.name);
+    data.append("Email", body.email);
+    data.append("Phone", body.phone);
+    data.append("Service", body.service);
+    data.append("Note", body.inquery);
+
+    const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+    });
     return res.ok;
 }
 
-async function handleSubmit(e) {
-    e.preventDefault();
-
-    var requestDate = $("#date");
-    var requestTime = $("#time");
-    var name = $("#name");
-    var email = $("#email");
-    var phone = $("#phone");
-    var service = $("#select");
-    var inquiry = $("#inquery");
-
-    $(".submit-message").css("display", "block");
-
-    if (!requestDate.val() || !requestTime.val() || !name.val() || !email.val() || !phone.val() || !service.val()) {
-        $(".submit-message").html("Please fill in all input fields");
-        $(".submit-message").removeClass("success");
-        $(".submit-message").addClass("danger");
-    } else if (!isEmailValid(email.val())) {
-        $(".submit-message").html("Email is invalid");
-        $(".submit-message").removeClass("success");
-        $(".submit-message").addClass("danger");
-    } else {
-        const body = {
-            request_date: formatDate(requestDate.val()),
-            request_time: formatTimeTo12Hour(requestTime.val()),
-            name: name.val(),
-            email: email.val(),
-            phone: phone.val(),
-            service: service.val(),
-            inquery: inquiry.val(),
-            date_posted: currentDate()
-        };
-
-        const postEmail = await postEmailFormSpree(e, body);
-        postOrder(body); // fire and forget
-
-        if (!postEmail) {
-            $(".submit-message").html("Something went wrong");
-            $(".submit-message").removeClass("success");
-            $(".submit-message").addClass("danger");
-        }
-        // email post succeeded
-        $("input").val("");
-        $("textarea").val("");
-        $(".submit-message").html("Thank you! Sent successfully");
-        $(".submit-message").addClass("danger");
-        $(".submit-message").addClass("success");
+// Fire and forget; loaded lazily so a Firebase problem never blocks booking.
+async function logOrder(body) {
+    try {
+        const { postOrder } = await import("../server/firebase.js");
+        await postOrder(body);
+    } catch (err) {
+        console.error("ERROR_POSTING_AN_ORDER_TO_FIREBASE", err);
     }
 }
 
-$(document).ready(function() {
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    var date = new Validation("#date", /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/);
-    date.isValid();
+    const serviceOk = validateService();
+    const inputs = Object.keys(rules).map((id) => document.getElementById(id));
+    const results = inputs.map(validate);
+    const firstInvalid = !serviceOk
+        ? form.querySelector('input[name="service"]')
+        : inputs[results.indexOf(false)];
+    if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+    }
 
-    var time = new Validation("#time", /^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/);
-    time.isValid();
+    const body = {
+        request_date: formatDate(dateInput.value),
+        request_time: formatTimeTo12Hour(timeInput.value),
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        service: selectedService().value,
+        inquery: document.getElementById("inquiry").value.trim(),
+        date_posted: currentDate(),
+    };
 
-    var name = new Validation("#name", /^[a-z ,.'-]+$/i);
-    name.isValid();
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    status.className = "form-status";
+    status.textContent = "";
 
-    var email = new Validation("#email", /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-    email.isValid();
-
-    var phone = new Validation("#phone", /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/);
-    phone.isValid();
-
-
-    // service select options
-    var select = $("#select");
-
-    // error handle when user leaves on default
-    select.on("blur", function() {
-        if ($(this).val() === "service") {
-            $("#selectError").show();
-        } else {
-            $("#selectError").hide();
-        }
-    });
-
-    // post order into DB and email
-    const bookingForm = $("#bookingForm");
-    bookingForm.on("submit", handleSubmit);
+    try {
+        logOrder(body);
+        const ok = await sendEmail(body);
+        if (!ok) throw new Error("Formspree request failed");
+        form.reset();
+        updateHoursHint();
+        status.classList.add("is-success");
+        status.textContent = `Thank you, ${body.name}! Your request for ${body.request_date} at ${body.request_time} was sent. We'll be in touch to confirm.`;
+    } catch (err) {
+        status.classList.add("is-error");
+        status.textContent = "Sorry, something went wrong. Please try again or call us at (484) 329-7989.";
+    } finally {
+        submit.disabled = false;
+        submit.textContent = "Request appointment";
+    }
 });

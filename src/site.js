@@ -7,7 +7,7 @@ export const HOURS = {
     6: [9, 18],
 };
 
-function formatHour(h) {
+export function formatHour(h) {
     const hours = Math.floor(h);
     const minutes = Math.round((h - hours) * 60);
     const suffix = hours >= 12 ? "PM" : "AM";
