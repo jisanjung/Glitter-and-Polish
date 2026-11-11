@@ -1,0 +1,37 @@
+name: Website task
+description: A change to the Glitter & Polish website (tracked on the task board)
+title: "<short imperative title>"
+labels: ["task"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be true when this is done?
+    validations:
+      required: true
+  - type: textarea
+    id: needs
+    attributes:
+      label: Needs from owner
+      description: Content, access or decisions required (prices, photos, names, logins…)
+      placeholder: "- [ ] ..."
+  - type: input
+    id: depends
+    attributes:
+      label: Depends on
+      placeholder: "#12, #14 or —"
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Requested in chat (priority)
+        - Normal (follow recommended order)

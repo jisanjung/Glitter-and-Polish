@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run preview)",
+      "Bash(npm run check)",
+      "Bash(npm ci)",
+      "Bash(node scripts/check-site.mjs)",
+      "Bash(scripts/board.sh list)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git switch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh project item-list:*)",
+      "Bash(gh project list:*)",
+      "Bash(git push -u origin task/:*)",
+      "Bash(git push origin task/:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(scripts/board.sh move:*)",
+      "Bash(scripts/board.sh add:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(git push --force:*)",
+      "Bash(git push origin master:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(git push origin HEAD:master:*)",
+      "Bash(git push -u origin master:*)"
+    ]
+  }
+}
