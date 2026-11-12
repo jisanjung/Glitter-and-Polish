@@ -6,7 +6,7 @@ import { CATEGORIES, TECHNICIANS, formatDuration } from "./services.js";
 
 // ---------- Picker settings ----------
 const DAYS_AHEAD = 21;          // how many days the date strip shows
-const SLOT_MINUTES = 30;        // spacing between time slots
+const SLOT_MINUTES = 15;        // spacing between time slots; booked length rounds up to this
 const DEFAULT_MINUTES = 30;     // appointment length assumed before any service is picked
 const SAME_DAY_LEAD_MINUTES = 30;  // today's slots must start at least this far from now
 
@@ -23,6 +23,7 @@ const serviceGroup = document.getElementById("service-group");
 const selectedBox = document.getElementById("selected-services");
 const selectedList = document.getElementById("selected-list");
 const selectedTotal = document.getElementById("selected-total");
+const selectedNote = document.getElementById("selected-note");
 const techSelect = document.getElementById("technician");
 const techHint = document.getElementById("tech-hint");
 
@@ -113,6 +114,9 @@ function renderSelected() {
         return li;
     }));
     selectedTotal.textContent = `Total ${formatDuration(totalMinutes())}`;
+    const block = blockMinutes();
+    selectedNote.hidden = block === totalMinutes();
+    selectedNote.textContent = `We book in 15-minute blocks, so we'll reserve ${formatDuration(block)} for you.`;
 }
 
 selectedList.addEventListener("click", (e) => {
@@ -136,11 +140,18 @@ function updateTechHint() {
     }
 }
 
+// Appointment length in minutes, rounded up to the next 15-min block
+// (e.g. 2 hr 5 min -> 2 hr 15 min) so the next appointment starts on a slot.
+function blockMinutes() {
+    const min = totalMinutes() || DEFAULT_MINUTES;
+    return Math.ceil(min / SLOT_MINUTES) * SLOT_MINUTES;
+}
+
 // Start times (decimal hours) on the given date; a slot is available when the
 // whole appointment fits before closing and the technician works that day.
 function slotsFor(date) {
     const [open, close] = HOURS[date.getDay()];
-    const length = (totalMinutes() || DEFAULT_MINUTES) / 60;
+    const length = blockMinutes() / 60;
     const tech = currentTech();
     const works = !tech.days || tech.days.includes(date.getDay());
     const now = new Date();
@@ -252,7 +263,9 @@ function updateSummary() {
     const day = parseDate(date.value).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
     const tech = currentTech();
     const withTech = tech.id === "any" ? "" : ` with ${tech.name}`;
-    summary.textContent = `${day} at ${formatTimeTo12Hour(time.value)}${withTech} · ${formatDuration(totalMinutes() || DEFAULT_MINUTES)}`;
+    const [h, m] = time.value.split(":").map(Number);
+    const end = formatHour(h + m / 60 + blockMinutes() / 60);
+    summary.textContent = `${day}, ${formatTimeTo12Hour(time.value)} – ${end}${withTech}`;
     summary.hidden = false;
 }
 
