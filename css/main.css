@@ -960,8 +960,6 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
     line-height: 1;
     cursor: pointer;
 }
-.selected-note { margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--line); font-size: .875rem; color: var(--muted); }
-.selected-note[hidden] { display: none; }
 .selected-remove:hover { background: var(--blush); color: var(--rose-dark); }
 
 /* Technician dropdown */

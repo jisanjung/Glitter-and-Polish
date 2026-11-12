@@ -23,7 +23,6 @@ const serviceGroup = document.getElementById("service-group");
 const selectedBox = document.getElementById("selected-services");
 const selectedList = document.getElementById("selected-list");
 const selectedTotal = document.getElementById("selected-total");
-const selectedNote = document.getElementById("selected-note");
 const techSelect = document.getElementById("technician");
 const techHint = document.getElementById("tech-hint");
 
@@ -114,9 +113,6 @@ function renderSelected() {
         return li;
     }));
     selectedTotal.textContent = `Total ${formatDuration(totalMinutes())}`;
-    const block = blockMinutes();
-    selectedNote.hidden = block === totalMinutes();
-    selectedNote.textContent = `We book in 15-minute blocks, so we'll reserve ${formatDuration(block)} for you.`;
 }
 
 selectedList.addEventListener("click", (e) => {
@@ -140,8 +136,9 @@ function updateTechHint() {
     }
 }
 
-// Appointment length in minutes, rounded up to the next 15-min block
-// (e.g. 2 hr 5 min -> 2 hr 15 min) so the next appointment starts on a slot.
+// Internal only: the time held for an appointment, rounded up to the next
+// 15-min block (e.g. 2 hr 5 min -> 2 hr 15 min) so the next customer starts
+// on a slot. Customers always see the real service length and end time.
 function blockMinutes() {
     const min = totalMinutes() || DEFAULT_MINUTES;
     return Math.ceil(min / SLOT_MINUTES) * SLOT_MINUTES;
@@ -151,7 +148,8 @@ function blockMinutes() {
 // whole appointment fits before closing and the technician works that day.
 function slotsFor(date) {
     const [open, close] = HOURS[date.getDay()];
-    const length = blockMinutes() / 60;
+    const block = blockMinutes() / 60;                       // used for availability only
+    const length = (totalMinutes() || DEFAULT_MINUTES) / 60; // shown to the customer
     const tech = currentTech();
     const works = !tech.days || tech.days.includes(date.getDay());
     const now = new Date();
@@ -160,7 +158,7 @@ function slotsFor(date) {
 
     const slots = [];
     for (let t = open; t <= close - SLOT_MINUTES / 60 + 1e-9; t += SLOT_MINUTES / 60) {
-        const fits = t + length <= close + 1e-9;
+        const fits = t + block <= close + 1e-9;
         slots.push({ hour: t, end: t + length, available: works && fits && (!isToday || t >= earliest) });
     }
     return slots;
@@ -264,7 +262,7 @@ function updateSummary() {
     const tech = currentTech();
     const withTech = tech.id === "any" ? "" : ` with ${tech.name}`;
     const [h, m] = time.value.split(":").map(Number);
-    const end = formatHour(h + m / 60 + blockMinutes() / 60);
+    const end = formatHour(h + m / 60 + (totalMinutes() || DEFAULT_MINUTES) / 60);
     summary.textContent = `${day}, ${formatTimeTo12Hour(time.value)} – ${end}${withTech}`;
     summary.hidden = false;
 }
