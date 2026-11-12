@@ -2,11 +2,12 @@
 // and Firebase (orders log).
 import { HOURS, formatHour } from "./site.js";
 import { currentDate, formatDate, formatTimeTo12Hour, isEmailValid } from "./utils.js";
+import { CATEGORIES, TECHNICIANS, formatDuration } from "./services.js";
 
 // ---------- Picker settings ----------
 const DAYS_AHEAD = 21;          // how many days the date strip shows
 const SLOT_MINUTES = 30;        // spacing between time slots
-const LAST_SLOT_BEFORE_CLOSE = 30; // minutes; last slot starts this long before closing
+const DEFAULT_MINUTES = 30;     // appointment length assumed before any service is picked
 const SAME_DAY_LEAD_MINUTES = 30;  // today's slots must start at least this far from now
 
 const form = document.getElementById("bookingForm");
@@ -16,6 +17,14 @@ const dateGroup = document.getElementById("date-group");
 const timeGroup = document.getElementById("time-group");
 const hoursHint = document.getElementById("hours-hint");
 const summary = document.getElementById("picker-summary");
+const categoryGroup = document.getElementById("category-group");
+const servicePicker = document.getElementById("service-picker");
+const serviceGroup = document.getElementById("service-group");
+const selectedBox = document.getElementById("selected-services");
+const selectedList = document.getElementById("selected-list");
+const selectedTotal = document.getElementById("selected-total");
+const techSelect = document.getElementById("technician");
+const techHint = document.getElementById("tech-hint");
 
 // ---------- Helpers ----------
 const pad = (n) => String(n).padStart(2, "0");
@@ -30,23 +39,125 @@ function parseDate(value) {
 
 const checked = (name) => form.querySelector(`input[name="${name}"]:checked`);
 
-// Start times (decimal hours) still bookable on the given date.
+// ---------- Services ----------
+const categoryById = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));
+
+// Item value is "<category>:<s|a>:<index>" (s = service, a = add-on).
+function itemFor(value) {
+    const [catId, kind, i] = value.split(":");
+    const cat = categoryById[catId];
+    const item = (kind === "a" ? cat.addons : cat.services)[Number(i)];
+    return { ...item, category: cat, addon: kind === "a", value };
+}
+
+function selectedItems() {
+    return [...form.querySelectorAll('input[name="item"]:checked')].map((el) => itemFor(el.value));
+}
+
+function totalMinutes() {
+    return selectedItems().reduce((sum, item) => sum + item.min, 0);
+}
+
+function chip(cat, kind, item, i) {
+    const label = document.createElement("label");
+    label.className = "service-chip";
+    label.innerHTML = `
+        <input type="checkbox" name="item" value="${cat.id}:${kind}:${i}">
+        <span>${item.name}<small>${kind === "a" ? "+" : ""}${formatDuration(item.min)}</small></span>`;
+    return label;
+}
+
+function renderServicePanels() {
+    const kept = new Set(selectedItems().map((i) => i.value));
+    const picked = [...categoryGroup.querySelectorAll("input:checked")].map((el) => el.value);
+    const frag = document.createDocumentFragment();
+
+    CATEGORIES.filter((c) => picked.includes(c.id)).forEach((cat) => {
+        const panel = document.createElement("div");
+        panel.className = "service-panel";
+        panel.innerHTML = `<p class="service-panel-name">${cat.name}</p><div class="chip-grid"></div>`;
+        const grid = panel.querySelector(".chip-grid");
+        cat.services.forEach((item, i) => grid.appendChild(chip(cat, "s", item, i)));
+
+        if (cat.addons.length) {
+            const head = document.createElement("p");
+            head.className = "service-addon-head";
+            head.textContent = "Add-ons";
+            const addons = document.createElement("div");
+            addons.className = "chip-grid";
+            cat.addons.forEach((item, i) => addons.appendChild(chip(cat, "a", item, i)));
+            panel.append(head, addons);
+        }
+        frag.appendChild(panel);
+    });
+
+    serviceGroup.replaceChildren(frag);
+    serviceGroup.querySelectorAll('input[name="item"]').forEach((el) => { el.checked = kept.has(el.value); });
+    servicePicker.hidden = picked.length === 0;
+}
+
+function renderSelected() {
+    const items = selectedItems();
+    selectedBox.hidden = items.length === 0;
+    if (!items.length) return;
+
+    selectedList.replaceChildren(...items.map((item) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span class="selected-name">
+                <small>${item.category.name}${item.addon ? " · Add-on" : ""}</small>
+                ${item.name}
+            </span>
+            <span class="selected-min">${item.addon ? "+" : ""}${formatDuration(item.min)}</span>
+            <button type="button" class="selected-remove" data-value="${item.value}" aria-label="Remove ${item.name}">×</button>`;
+        return li;
+    }));
+    selectedTotal.textContent = `Total ${formatDuration(totalMinutes())}`;
+}
+
+selectedList.addEventListener("click", (e) => {
+    const btn = e.target.closest(".selected-remove");
+    if (!btn) return;
+    const input = serviceGroup.querySelector(`input[value="${btn.dataset.value}"]`);
+    if (input) input.checked = false;
+    onServicesChange();
+});
+
+// ---------- Technician ----------
+techSelect.replaceChildren(...TECHNICIANS.map((t) => new Option(t.name, t.id)));
+const currentTech = () => TECHNICIANS.find((t) => t.id === techSelect.value) || TECHNICIANS[0];
+
+function updateTechHint() {
+    const tech = currentTech();
+    techHint.hidden = !tech.days;
+    if (tech.days) {
+        const names = tech.days.map((d) => new Date(2024, 0, 7 + d).toLocaleDateString("en-US", { weekday: "long" }));
+        techHint.textContent = `${tech.name} works ${names.reverse().map((n) => `${n}s`).join(" & ")} only.`;
+    }
+}
+
+// Start times (decimal hours) on the given date; a slot is available when the
+// whole appointment fits before closing and the technician works that day.
 function slotsFor(date) {
     const [open, close] = HOURS[date.getDay()];
-    const last = close - LAST_SLOT_BEFORE_CLOSE / 60;
+    const length = (totalMinutes() || DEFAULT_MINUTES) / 60;
+    const tech = currentTech();
+    const works = !tech.days || tech.days.includes(date.getDay());
     const now = new Date();
     const isToday = toISODate(date) === toISODate(now);
     const earliest = now.getHours() + (now.getMinutes() + SAME_DAY_LEAD_MINUTES) / 60;
 
     const slots = [];
-    for (let t = open; t <= last + 1e-9; t += SLOT_MINUTES / 60) {
-        slots.push({ hour: t, available: !isToday || t >= earliest });
+    for (let t = open; t <= close - SLOT_MINUTES / 60 + 1e-9; t += SLOT_MINUTES / 60) {
+        const fits = t + length <= close + 1e-9;
+        slots.push({ hour: t, end: t + length, available: works && fits && (!isToday || t >= earliest) });
     }
     return slots;
 }
 
 // ---------- Date strip ----------
 function renderDates() {
+    const previous = checked("date")?.value;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const frag = document.createDocumentFragment();
@@ -63,7 +174,7 @@ function renderDates() {
         const label = document.createElement("label");
         label.className = "date-chip";
         label.innerHTML = `
-            <input type="radio" name="date" value="${value}" ${open ? "" : "disabled"}
+            <input type="radio" name="date" value="${value}" ${open ? "" : "disabled"} ${open && value === previous ? "checked" : ""}
                 aria-label="${full}${open ? "" : ", no times left"}">
             <span>
                 <small>${top}</small>
@@ -115,14 +226,14 @@ function renderTimes() {
         section.innerHTML = `<p class="slot-period-name">${name}</p><div class="slot-grid"></div>`;
         const grid = section.querySelector(".slot-grid");
 
-        group.forEach(({ hour, available }) => {
+        group.forEach(({ hour, end, available }) => {
             const value = toTimeValue(hour);
             const label = document.createElement("label");
             label.className = "time-slot";
             label.innerHTML = `
                 <input type="radio" name="time" value="${value}"
                     ${available ? "" : "disabled"} ${available && value === previous ? "checked" : ""}>
-                <span>${formatHour(hour)}</span>`;
+                <span>${formatHour(hour)}<small>to ${formatHour(end)}</small></span>`;
             grid.appendChild(label);
         });
         frag.appendChild(section);
@@ -139,7 +250,9 @@ function updateSummary() {
         return;
     }
     const day = parseDate(date.value).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
-    summary.textContent = `${day} at ${formatTimeTo12Hour(time.value)}`;
+    const tech = currentTech();
+    const withTech = tech.id === "any" ? "" : ` with ${tech.name}`;
+    summary.textContent = `${day} at ${formatTimeTo12Hour(time.value)}${withTech} · ${formatDuration(totalMinutes() || DEFAULT_MINUTES)}`;
     summary.hidden = false;
 }
 
@@ -163,15 +276,15 @@ function validate(input) {
     return !message;
 }
 
-// Radio groups: service, date, time.
+// Choice groups: service, date, time.
 const groups = {
-    service: document.getElementById("service-group"),
+    service: categoryGroup,
     date: dateGroup,
     time: timeGroup,
 };
 
 function validateGroup(name) {
-    const ok = Boolean(checked(name));
+    const ok = name === "service" ? selectedItems().length > 0 : Boolean(checked(name));
     groups[name].classList.toggle("has-error", !ok);
     document.getElementById(`${name}-error`).style.display = ok ? "" : "block";
     return ok;
@@ -185,7 +298,28 @@ Object.keys(rules).forEach((id) => {
     });
 });
 
-groups.service.addEventListener("change", () => validateGroup("service"));
+// Re-render dates & times whenever the appointment length or technician changes.
+function refreshSchedule() {
+    renderDates();
+    renderTimes();
+    updateSummary();
+}
+
+function onServicesChange() {
+    renderSelected();
+    if (categoryGroup.classList.contains("has-error")) validateGroup("service");
+    refreshSchedule();
+}
+
+categoryGroup.addEventListener("change", () => {
+    renderServicePanels();
+    onServicesChange();
+});
+serviceGroup.addEventListener("change", onServicesChange);
+techSelect.addEventListener("change", () => {
+    updateTechHint();
+    refreshSchedule();
+});
 dateGroup.addEventListener("change", () => {
     validateGroup("date");
     renderTimes();
@@ -208,6 +342,8 @@ async function sendEmail(body) {
     data.append("Email", body.email);
     data.append("Phone", body.phone);
     data.append("Service", body.service);
+    data.append("Duration", body.duration);
+    data.append("Technician", body.technician);
     data.append("Note", body.inquery);
 
     const res = await fetch(form.action, {
@@ -234,7 +370,7 @@ form.addEventListener("submit", async (e) => {
     // Validate in on-screen order and focus the first problem.
     const problems = [];
     ["service", "date", "time"].forEach((name) => {
-        if (!validateGroup(name)) problems.push(groups[name].querySelector("input:not(:disabled)") || groups[name]);
+        if (!validateGroup(name)) problems.push((name === "service" && serviceGroup.querySelector("input")) || groups[name].querySelector("input:not(:disabled)") || groups[name]);
     });
     Object.keys(rules).forEach((id) => {
         const input = document.getElementById(id);
@@ -251,7 +387,9 @@ form.addEventListener("submit", async (e) => {
         name: document.getElementById("name").value.trim(),
         email: document.getElementById("email").value.trim(),
         phone: document.getElementById("phone").value.trim(),
-        service: checked("service").value,
+        service: selectedItems().map((i) => `${i.category.name}: ${i.name}${i.addon ? " (add-on)" : ""}`).join(", "),
+        duration: formatDuration(totalMinutes()),
+        technician: currentTech().name,
         inquery: document.getElementById("inquiry").value.trim(),
         date_posted: currentDate(),
     };
@@ -266,9 +404,10 @@ form.addEventListener("submit", async (e) => {
         const ok = await sendEmail(body);
         if (!ok) throw new Error("Formspree request failed");
         form.reset();
-        renderDates();
-        renderTimes();
-        updateSummary();
+        renderServicePanels();
+        renderSelected();
+        updateTechHint();
+        refreshSchedule();
         status.classList.add("is-success");
         status.textContent = `Thank you, ${body.name}! Your request for ${body.request_date} at ${body.request_time} was sent. We'll be in touch to confirm.`;
     } catch (err) {

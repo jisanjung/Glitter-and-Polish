@@ -65,7 +65,7 @@
                     </ol>
                 </nav>
                 <h1>Book your <em>appointment</em></h1>
-                <p class="lead">Pick a service and a time that works for you. It takes less than a minute.</p>
+                <p class="lead">Pick your services and a time that works for you. It takes less than a minute.</p>
             </div>
         </section>
 
@@ -75,39 +75,61 @@
 
                 <form class="contact-form booking-form" id="bookingForm" action="https://formspree.io/f/myzwggae" method="post" novalidate>
                     <fieldset class="form-step">
-                        <legend><span class="step-num" aria-hidden="true">1</span> Choose a service</legend>
-                        <div class="service-options" id="service-group">
+                        <legend><span class="step-num" aria-hidden="true">1</span> Choose your services</legend>
+                        <p class="field-hint step-hint" id="category-hint">Pick one or more categories.</p>
+                        <div class="service-options" id="category-group" aria-describedby="category-hint">
                             <label class="service-option">
-                                <input type="radio" name="service" value="Manicure" required>
+                                <input type="checkbox" name="category" value="manicure">
                                 <span>
                                     <strong>Manicure</strong>
                                     <small>Regular, gel, dip &amp; more</small>
                                 </span>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="service" value="Pedicure">
+                                <input type="checkbox" name="category" value="pedicure">
                                 <span>
                                     <strong>Pedicure</strong>
                                     <small>Express to premium spa</small>
                                 </span>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="service" value="Waxing">
+                                <input type="checkbox" name="category" value="waxing">
                                 <span>
                                     <strong>Waxing</strong>
                                     <small>Brows, lip, arms, legs</small>
                                 </span>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="service" value="Children">
+                                <input type="checkbox" name="category" value="kids">
                                 <span>
                                     <strong>Kids 9 &amp; under</strong>
                                     <small>Mani, pedi &amp; polish</small>
                                 </span>
                             </label>
                         </div>
-                        <span class="field-error" id="service-error">Please choose a service.</span>
+
+                        <div class="service-picker" id="service-picker" hidden>
+                            <p class="service-picker-intro">Now customize your visit: tap every service you'd like. You can pick more than one, and add-ons add a little extra time.</p>
+                            <div id="service-group"></div>
+                        </div>
+                        <span class="field-error" id="service-error">Please choose at least one service.</span>
+
+                        <div class="selected-services" id="selected-services" aria-live="polite" hidden>
+                            <div class="selected-head">
+                                <span class="picker-label">Your services</span>
+                                <span class="selected-total" id="selected-total"></span>
+                            </div>
+                            <ul class="selected-list" id="selected-list"></ul>
+                        </div>
                     </fieldset>
+
+                    <div class="field tech-field">
+                        <label for="technician">Technician <span class="optional">(optional)</span></label>
+                        <div class="select-wrap">
+                            <select id="technician" name="technician"></select>
+                        </div>
+                        <span class="field-hint tech-hint" id="tech-hint" hidden></span>
+                    </div>
 
                     <fieldset class="form-step">
                         <legend><span class="step-num" aria-hidden="true">2</span> Pick a date &amp; time</legend>
@@ -132,7 +154,8 @@
                         </div>
                         <span class="field-error" id="time-error">Please choose a time.</span>
 
-                        <p class="picker-summary" id="picker-summary" aria-live="polite" hidden></p>                    </fieldset>
+                        <p class="picker-summary" id="picker-summary" aria-live="polite" hidden></p>
+                    </fieldset>
 
                     <fieldset class="form-step">
                         <legend><span class="step-num" aria-hidden="true">3</span> Your details</legend>
@@ -155,7 +178,7 @@
                         </div>
                         <div class="field">
                             <label for="inquiry">Notes <span class="optional">(optional)</span></label>
-                            <textarea id="inquiry" name="inquiry" rows="4" placeholder="Add-ons, design ideas, number of guests…"></textarea>
+                            <textarea id="inquiry" name="inquiry" rows="4" placeholder="Design ideas, number of guests…"></textarea>
                         </div>
                     </fieldset>
 

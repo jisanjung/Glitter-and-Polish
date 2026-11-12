@@ -871,6 +871,126 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .service-options.has-error .service-option > span { border-color: #A3343F; }
 #service-error { margin-top: 10px; }
 
+/* Multi-select categories use a square check instead of a radio dot */
+.service-option input[type="checkbox"] + span::before { border-radius: 6px; }
+.service-option input[type="checkbox"]:checked + span::before {
+    border-color: var(--rose-dark);
+    background: var(--rose-dark) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 12px no-repeat;
+    box-shadow: none;
+}
+.step-hint { margin: -8px 0 14px; }
+
+/* Service items under the chosen categories */
+.service-picker { margin-top: 22px; }
+.service-picker[hidden] { display: none; }
+.service-picker-intro {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    background: var(--blush-soft);
+    border-left: 3px solid var(--rose);
+    border-radius: var(--radius-sm);
+    font-size: .95rem;
+    color: var(--plum);
+}
+.service-panel + .service-panel { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
+.service-panel-name, .service-addon-head {
+    margin-bottom: 10px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.service-panel-name { color: var(--rose-dark); }
+.service-addon-head { margin-top: 14px; }
+.chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.service-chip { position: relative; cursor: pointer; }
+.service-chip input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+.service-chip > span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 9px 14px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--plum-deep);
+    transition: border-color .2s, background-color .2s, color .2s;
+}
+.service-chip small { font-size: .78rem; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.service-chip:hover > span { border-color: var(--rose); }
+.service-chip input:checked + span { background: var(--plum); border-color: var(--plum); color: #fff; }
+.service-chip input:checked + span small { color: #E9DDE1; }
+.service-chip input:focus-visible + span { outline: 3px solid var(--rose); outline-offset: 2px; }
+.service-options.has-error + .service-picker .service-chip > span { border-color: #A3343F; }
+.service-options.has-error ~ #service-error { display: block; }
+
+/* Selected services summary */
+.selected-services {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+}
+.selected-services[hidden] { display: none; }
+.selected-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.selected-total { font-weight: 600; color: var(--rose-dark); font-variant-numeric: tabular-nums; }
+.selected-list { list-style: none; margin: 0; padding: 0; }
+.selected-list li {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px solid var(--line);
+}
+.selected-name { font-weight: 500; color: var(--plum-deep); }
+.selected-name small { display: block; font-size: .75rem; font-weight: 500; color: var(--muted); }
+.selected-min { font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.selected-remove {
+    width: 28px; height: 28px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.selected-remove:hover { background: var(--blush); color: var(--rose-dark); }
+
+/* Technician dropdown */
+.tech-field { margin: -4px 0 28px; max-width: 340px; }
+.select-wrap { position: relative; }
+.select-wrap::after {
+    content: "";
+    position: absolute;
+    right: 18px; top: 50%;
+    width: 8px; height: 8px;
+    border-right: 1.5px solid var(--plum);
+    border-bottom: 1.5px solid var(--plum);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+}
+.field select {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 44px 12px 16px;
+    font: inherit;
+    color: var(--plum);
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-sm);
+    appearance: none;
+    cursor: pointer;
+}
+.field select:focus { outline: none; background: var(--surface); border-color: var(--rose); box-shadow: 0 0 0 4px rgba(180, 104, 122, .15); }
+.tech-hint { margin: 0; }
+.tech-hint[hidden] { display: none; }
+
 /* Date & time picker */
 .picker-head {
     display: flex;
@@ -954,20 +1074,24 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
     text-transform: uppercase;
     color: var(--muted);
 }
-.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
 .time-slot { position: relative; cursor: pointer; }
 .time-slot > span {
     display: grid;
     place-items: center;
-    min-height: 44px;
+    align-content: center;
+    min-height: 52px;
+    line-height: 1.2;
     background: var(--cream);
     border: 1.5px solid var(--line);
-    border-radius: 999px;
+    border-radius: 14px;
     font-weight: 500;
     font-size: .95rem;
     font-variant-numeric: tabular-nums;
     transition: border-color .2s, background-color .2s, color .2s;
 }
+.time-slot small { font-size: .72rem; font-weight: 400; color: var(--muted); }
+.time-slot input:checked + span small { color: #E9DDE1; }
 
 .date-chip:hover > span, .time-slot:hover > span { border-color: var(--rose); }
 .date-chip input:checked + span, .time-slot input:checked + span {
