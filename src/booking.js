@@ -127,13 +127,41 @@ selectedList.addEventListener("click", (e) => {
 techSelect.replaceChildren(...TECHNICIANS.map((t) => new Option(t.name, t.id)));
 const currentTech = () => TECHNICIANS.find((t) => t.id === techSelect.value) || TECHNICIANS[0];
 
+// Bookable [open, close] on a date for the chosen technician, or null when
+// they don't work that day.
+function hoursFor(date, tech = currentTech()) {
+    const day = date.getDay();
+    if (tech.days && !tech.days.includes(day)) return null;
+    const [open, close] = HOURS[day];
+    if (!tech.hours) return [open, close];
+    return [Math.max(open, tech.hours[0]), Math.min(close, tech.hours[1])];
+}
+
+// "Mondays – Fridays", "Mondays & Fridays", "Fridays – Sundays", "Saturdays"
+const WEEK = [1, 2, 3, 4, 5, 6, 0]; // Monday first
+const dayName = (d) => new Date(2024, 0, 7 + d).toLocaleDateString("en-US", { weekday: "long" }) + "s";
+function describeDays(days) {
+    const idx = days.map((d) => WEEK.indexOf(d)).sort((a, b) => a - b);
+    const runs = [];
+    idx.forEach((i) => {
+        const run = runs[runs.length - 1];
+        if (run && i === run[1] + 1) run[1] = i;
+        else runs.push([i, i]);
+    });
+    const parts = runs.flatMap(([a, b]) => {
+        if (a === b) return [dayName(WEEK[a])];
+        if (b === a + 1) return [dayName(WEEK[a]), dayName(WEEK[b])];
+        return [`${dayName(WEEK[a])} – ${dayName(WEEK[b])}`];
+    });
+    return parts.length > 1 ? `${parts.slice(0, -1).join(", ")} & ${parts.at(-1)}` : parts[0];
+}
+
 function updateTechHint() {
     const tech = currentTech();
     techHint.hidden = !tech.days;
-    if (tech.days) {
-        const names = tech.days.map((d) => new Date(2024, 0, 7 + d).toLocaleDateString("en-US", { weekday: "long" }));
-        techHint.textContent = `${tech.name} works ${names.reverse().map((n) => `${n}s`).join(" & ")} only.`;
-    }
+    if (!tech.days) return;
+    const hours = tech.hours ? `, ${formatHour(tech.hours[0])} – ${formatHour(tech.hours[1])}` : "";
+    techHint.textContent = `${tech.name} works ${describeDays(tech.days)}${hours}.`;
 }
 
 // Internal only: the time held for an appointment, rounded up to the next
@@ -147,11 +175,11 @@ function blockMinutes() {
 // Start times (decimal hours) on the given date; a slot is available when the
 // whole appointment fits before closing and the technician works that day.
 function slotsFor(date) {
-    const [open, close] = HOURS[date.getDay()];
+    const hours = hoursFor(date);
+    if (!hours) return [];
+    const [open, close] = hours;
     const block = blockMinutes() / 60;                       // used for availability only
     const length = (totalMinutes() || DEFAULT_MINUTES) / 60; // shown to the customer
-    const tech = currentTech();
-    const works = !tech.days || tech.days.includes(date.getDay());
     const now = new Date();
     const isToday = toISODate(date) === toISODate(now);
     const earliest = now.getHours() + (now.getMinutes() + SAME_DAY_LEAD_MINUTES) / 60;
@@ -159,7 +187,7 @@ function slotsFor(date) {
     const slots = [];
     for (let t = open; t <= close - SLOT_MINUTES / 60 + 1e-9; t += SLOT_MINUTES / 60) {
         const fits = t + block <= close + 1e-9;
-        slots.push({ hour: t, end: t + length, available: works && fits && (!isToday || t >= earliest) });
+        slots.push({ hour: t, end: t + length, available: fits && (!isToday || t >= earliest) });
     }
     return slots;
 }
@@ -220,8 +248,9 @@ function renderTimes() {
     }
 
     const date = parseDate(dateInput.value);
-    const [open, close] = HOURS[date.getDay()];
-    hoursHint.textContent = `Open ${formatHour(open)} – ${formatHour(close)}`;
+    const [open, close] = hoursFor(date);
+    const tech = currentTech();
+    hoursHint.textContent = `${tech.hours ? `${tech.name} is in` : "Open"} ${formatHour(open)} – ${formatHour(close)}`;
 
     const slots = slotsFor(date);
     const frag = document.createDocumentFragment();

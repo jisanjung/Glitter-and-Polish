@@ -75,10 +75,17 @@ export const CATEGORIES = [
     },
 ];
 
-// Technicians. `days` limits bookable weekdays (0 = Sunday); omit for every day.
+// Technicians. `days` are the weekdays they work (0 = Sunday); `hours`
+// optionally narrows the salon's hours as [start, end] in 24h decimal hours.
+// "Any available tech" has neither, so it follows the salon's hours.
 export const TECHNICIANS = [
     { id: "any", name: "Any available tech" },
-    { id: "jenny", name: "Jenny", days: [0, 6] },
+    { id: "isabel", name: "Isabel", days: [1, 2, 3, 4, 5] },
+    { id: "jessie", name: "Jessie", days: [1, 2, 3, 4] },
+    { id: "nancy", name: "Nancy", days: [1, 5], hours: [10, 18] },
+    { id: "carolina", name: "Carolina", days: [5, 6, 0] },
+    { id: "jenny", name: "Jenny", days: [6, 0] },
+    { id: "daniela", name: "Daniela", days: [6] },
 ];
 
 export function formatDuration(min) {
